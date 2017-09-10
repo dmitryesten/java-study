@@ -6,8 +6,10 @@ package net.thumbtack.denisenko.trainee;
  */
 public class Trainee
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) {
+        HelloWorld stringHelloWorld = new HelloWorld();
+
+        System.out.println(stringHelloWorld.printStringHelloWorld());
+
     }
 }
