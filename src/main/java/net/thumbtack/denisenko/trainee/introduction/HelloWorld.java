@@ -1,11 +1,11 @@
-package net.thumbtack.denisenko.trainee;
+package net.thumbtack.denisenko.trainee.introduction;
 
 public class HelloWorld {
 
     /*
     /Print string "Hello World"
      */
-    protected String printStringHelloWorld(){
+    public String printStringHelloWorld(){
         return "Hello World";
     }
 }
