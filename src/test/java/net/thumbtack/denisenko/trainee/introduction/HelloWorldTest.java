@@ -1,9 +1,18 @@
+
 package net.thumbtack.denisenko.trainee.introduction;
+
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import static org.junit.Assert.*;
+import org.junit.*;
 
 public class HelloWorldTest {
 
+    HelloWorld helloWorld = new HelloWorld();
 
-    public String testPrintStringHelloWorld(){
-        assert();
+    @Test
+    public void testPrintStringHelloWorld(){
+        assertEquals("Hello, World", helloWorld.printStringHelloWorld());
+        assertNotNull(helloWorld.printStringHelloWorld());
     }
+
 }
