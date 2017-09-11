@@ -21,22 +21,30 @@ public class ElementaryMathOperation {
     /*
         Частное двух чисел
      */
-    public int devision(int valueOne, int  valueTwo){
-        return valueOne / valueTwo;
+    public String devision(int valueOne, int  valueTwo) throws ArithmeticException{
+        if(valueTwo == 0)
+            return "На 0 делить нельзя";
+        else
+            return " "+(valueOne / valueTwo);
     }
 
     /*
         Остаток от деления
      */
-    public int remainderOfDivision(int  valueOne, int valueTwo){
-        return valueOne % valueTwo;
+    public String remainderOfDivision(int  valueOne, int valueTwo)throws ArithmeticException{
+        if(valueTwo == 0)
+            return "На 0 делить нельзя";
+        else
+            return " "+(valueOne % valueTwo);
     }
 
     /*
         Сравнение двух чисел
      */
     public String compareValues(int  valueOne, int  valueTwo){
-        if(valueOne < valueTwo)
+        if(valueOne == valueTwo)
+            return "Два числа равны";
+         else if(valueOne < valueTwo)
             return valueTwo + " больше, чем " + valueOne;
         else
             return valueTwo  + " меньше, чем " + valueOne;

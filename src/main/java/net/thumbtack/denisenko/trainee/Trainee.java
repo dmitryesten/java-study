@@ -13,7 +13,7 @@ public class Trainee
     static int valueTwo;
     static int sizeOfArray;
 
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws Throwable {
         Scanner in = new Scanner(System.in);
 
         HelloWorld stringHelloWorld = new HelloWorld();
@@ -26,9 +26,9 @@ public class Trainee
 
         // Task_2 and Task_3 part Intro
         System.out.println("Input value_1:");
-        valueOne = 80; //in.nextDouble();
+        valueOne = 8; //in.nextDouble();
         System.out.println("Input value_2:");
-        valueTwo = 3; //in.nextDouble();
+        valueTwo = -3; //in.nextDouble();
         System.out.println("Сумма:" + elementaryMathOperation.adder(valueOne, valueTwo));
         System.out.println("Произведение:" + elementaryMathOperation.multy(valueOne, valueTwo));
         System.out.println("Частное:" + elementaryMathOperation.devision(valueOne, valueTwo));
