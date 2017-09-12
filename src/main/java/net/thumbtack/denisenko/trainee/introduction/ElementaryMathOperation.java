@@ -7,6 +7,7 @@ public class ElementaryMathOperation {
     /*
         Cумма чисел
      */
+	// REVU static
     public int adder(int valueOne, int valueTwo){
         return valueOne + valueTwo;
     }
@@ -14,6 +15,7 @@ public class ElementaryMathOperation {
     /*
         Произведение двух чисел
      */
+	// REVU static
     public int multy(int valueOne, int valueTwo){
         return valueOne * valueTwo;
     }
@@ -21,6 +23,9 @@ public class ElementaryMathOperation {
     /*
         Частное двух чисел
      */
+	// REVU static
+    // why returns String ?
+    // it must throw exception if valueTwo == 0
     public String devision(int valueOne, int  valueTwo) throws ArithmeticException{
         if(valueTwo == 0)
             return "На 0 делить нельзя";
@@ -41,6 +46,7 @@ public class ElementaryMathOperation {
     /*
         Сравнение двух чисел
      */
+    // REVU this method must return int (< 0, ==0 or >0)
     public String compareValues(int  valueOne, int  valueTwo){
         if(valueOne == valueTwo)
             return "Два числа равны";

@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class OperationsAboveElementsOfArray {
 
+	// REVU private
     Random rand = new Random();
     String allElementsArray = "";
 
@@ -27,6 +28,8 @@ public class OperationsAboveElementsOfArray {
     }
 
 
+    // REVU assigning to foreach variable inside loop has no sense
+    // this method doesn't populate array!
     private int[] randomValuesArray(int [] arrayIntegerValues){
         for ( int iter : arrayIntegerValues) {
             iter = rand.nextInt(100) ;

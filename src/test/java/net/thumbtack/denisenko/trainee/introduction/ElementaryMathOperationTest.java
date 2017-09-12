@@ -1,11 +1,14 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
+// REVU remove
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.*;
 
+// REVU 4 tests from 5 fail
 public class ElementaryMathOperationTest {
+	// REVU private
     ElementaryMathOperation elementaryMathOperation = new ElementaryMathOperation();
 
     @Test
