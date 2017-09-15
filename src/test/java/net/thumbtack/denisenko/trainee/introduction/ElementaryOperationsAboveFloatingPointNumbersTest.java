@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+// REVU too long name
 public class ElementaryOperationsAboveFloatingPointNumbersTest {
     ElementaryOperationsAboveFloatingPointNumbers elemOperFloatingNumbers = new ElementaryOperationsAboveFloatingPointNumbers();
 
@@ -17,6 +18,7 @@ public class ElementaryOperationsAboveFloatingPointNumbersTest {
         assertEquals(6.276800000000001E-25, elemOperFloatingNumbers.multiplication(0.000000000000008, 0.00000000007846), 0.000001);
     }
 
+  // REVU test fails
     @Test
     public void compareValues() throws Exception {
         double comparingValueOne = 0.0000000008;

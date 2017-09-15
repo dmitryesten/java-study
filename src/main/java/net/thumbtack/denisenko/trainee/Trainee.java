@@ -14,6 +14,7 @@ public class Trainee
     static int sizeOfArray;
 
     public static void main( String[] args ) throws Throwable {
+    	// REVU Scanner is not closed
         Scanner in = new Scanner(System.in);
 
         HelloWorld stringHelloWorld = new HelloWorld();
