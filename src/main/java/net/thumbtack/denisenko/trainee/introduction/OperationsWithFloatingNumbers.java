@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
 
-public class OperationsAboveFloatingNumbers {
+public class OperationsWithFloatingNumbers {
 
 
     /**
