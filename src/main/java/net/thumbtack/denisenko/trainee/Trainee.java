@@ -64,17 +64,9 @@ public class Trainee
 
 
 
-        int [] array2 = {1, 2, 80};
-        int [] array3 = {5, 4, 2, 1};
-        //Task_6
-        int equalTwoPairValuesArray = 1;
-        int t = 0;
-        for(int iterator = 1; iterator < array2.length - 1; iterator++){
-            equalTwoPairValuesArray = (array2[iterator] >= array2[iterator - 1]) ? t + 1 : (equalTwoPairValuesArray - 1);
-        }
-        System.out.println(array2.length+" x "+ (t));
-        System.out.println("Массив возрастающий: " + checkSortingArray.checkAscendingArray(array2));
-        System.out.println("Массив убывающий: " + checkSortingArray.checkDescendingArray(array3));
+        //Task_5
+        System.out.println("Массив возрастающий: " + checkSortingArray.checkAscendingArray(array));
+        System.out.println("Массив убывающий: " + checkSortingArray.checkDescendingArray(array));
 
 
 
