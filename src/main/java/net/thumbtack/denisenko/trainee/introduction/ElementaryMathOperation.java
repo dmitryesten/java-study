@@ -5,55 +5,51 @@ public class ElementaryMathOperation {
 
 
     /*
-        Cумма чисел
+        Amount of two numbers
      */
-	// REVU static
-    public int adder(int valueOne, int valueTwo){
+    public static int adder(int valueOne, int valueTwo){
         return valueOne + valueTwo;
     }
 
     /*
         Произведение двух чисел
      */
-	// REVU static
-    public int multy(int valueOne, int valueTwo){
+
+    public static int multy(int valueOne, int valueTwo){
         return valueOne * valueTwo;
     }
 
     /*
         Частное двух чисел
      */
-	// REVU static
-    // why returns String ?
-    // it must throw exception if valueTwo == 0
-    public String devision(int valueOne, int  valueTwo) throws ArithmeticException{
-        if(valueTwo == 0)
-            return "На 0 делить нельзя";
-        else
-            return " "+(valueOne / valueTwo);
+    public static int devision(int valueOne, int  valueTwo) throws ArithmeticException{
+        int resultDevision = 0;
+        try{
+            resultDevision = valueOne / valueTwo;
+        }catch (ArithmeticException e ) {
+            System.out.println("На ноль делить нельзя");
+        }
+        return resultDevision;
     }
 
     /*
         Остаток от деления
      */
-    public String remainderOfDivision(int  valueOne, int valueTwo)throws ArithmeticException{
-        if(valueTwo == 0)
-            return "На 0 делить нельзя";
-        else
-            return " "+(valueOne % valueTwo);
+    public static double remainderOfDivision(int  valueOne, int valueTwo)throws ArithmeticException{
+        double resultRemainder = 0;
+        try{
+            resultRemainder = valueOne % valueTwo;
+        }catch (ArithmeticException e ) {
+            System.out.println("На ноль делить нельзя");
+        }
+            return resultRemainder;
     }
 
     /*
         Сравнение двух чисел
      */
-    // REVU this method must return int (< 0, ==0 or >0)
-    public String compareValues(int  valueOne, int  valueTwo){
-        if(valueOne == valueTwo)
-            return "Два числа равны";
-         else if(valueOne < valueTwo)
-            return valueTwo + " больше, чем " + valueOne;
-        else
-            return valueTwo  + " меньше, чем " + valueOne;
+    public static int compareValues(int  valueOne, int  valueTwo){
+        return (valueOne == valueTwo) ? valueOne : (valueOne < valueTwo)? valueOne: valueTwo;
     }
 
 
