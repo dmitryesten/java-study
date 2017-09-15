@@ -1,47 +1,73 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
-import java.util.Random;
+
 
 public class OperationsAboveElementsOfArray {
 
-	// REVU private
-    Random rand = new Random();
-    String allElementsArray = "";
 
-    int  sizeArray = randomSizeArray();
-    int [] arrayIntegerValues = new int[sizeArray];
+    /**
+     * @param array
+     * @return result amount
+     */
+    public static int amountAllValues (int [] array) {
+        int amount = 0;
+        for(int iteration = 0; iteration < array.length; iteration++ )
+            amount += array[iteration];
+
+        return amount;
+    }
 
 
-    public String printAllElementsArray(){
+    /**
+     * @param array
+     * @return result multiplication
+     */
+    public static int multyAllValues (int [] array) {
+        int multy = 1;
+        for(int iteration = 0; iteration < array.length; iteration++ )
+            multy *= array[iteration];
 
-        int [] arrayIntegerValues = {40, 5, 12, 55, 6, 27, 10};
+        return multy;
+    }
 
-        for ( int iter : arrayIntegerValues) {
-            allElementsArray += iter + " ";
+
+    /**
+     * @param array
+     * @return minimum value of the array
+     */
+    public static int minValueArray(int [] array){
+        int min = array[0];
+        for(int iteration = 0; iteration < array.length; iteration++ ) {
+            if (array[iteration] < min)
+                min = array[iteration];
         }
-        return allElementsArray;
+        return min;
     }
 
 
-    private int randomSizeArray(){
-        return rand.nextInt(50) + 1;
-    }
-
-
-    // REVU assigning to foreach variable inside loop has no sense
-    // this method doesn't populate array!
-    private int[] randomValuesArray(int [] arrayIntegerValues){
-        for ( int iter : arrayIntegerValues) {
-            iter = rand.nextInt(100) ;
+    /**
+     * @param array
+     * @return max value of the array
+     */
+    public static int maxValueArray(int [] array){
+        int max = array[0];
+        for(int iteration = 0; iteration < array.length; iteration++ ) {
+            if (array[iteration] > max)
+                max = array[iteration];
         }
-        return arrayIntegerValues;
+        return max;
     }
 
 
-    /*
-    public int amountAllElementsOfArray(int [] array){
-
+    /**
+     * @param array
+     * @param amountValue amount all value
+     * @return middle value of the array
+     */
+    public static double middleValue(int [] array, int amountValue) {
+        return (double)amountValue / (double)array.length;
     }
-    */
+
+
 
 }
