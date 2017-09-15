@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 // REVU too long name
-public class ElementaryOperationsAboveFloatingPointNumbersTest {
-    ElementaryOperationsAboveFloatingPointNumbers elemOperFloatingNumbers = new ElementaryOperationsAboveFloatingPointNumbers();
+public class OperationsAboveFloatingNumbersTest {
+    OperationsAboveFloatingNumbers elemOperFloatingNumbers = new OperationsAboveFloatingNumbers();
 
     @Test
     public void add() throws Exception {
