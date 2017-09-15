@@ -37,9 +37,8 @@ public class Trainee
 
         // Task_5 part Intro
         //sizeOfArray = in.nextInt();
-        int [] arrayIntegerValues = new int[20];
-        System.out.println();
-        //System.out.println(operationsAboveElementsOfArray.printAllElementsArray());
+
+
 
 
 

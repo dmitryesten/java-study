@@ -11,9 +11,9 @@ public class OperationsAboveElementsOfArray {
     int [] arrayIntegerValues = new int[sizeArray];
 
 
-    public String printAllElementsArray(int [] arrayIntegerValues){
+    public String printAllElementsArray(){
 
-        //int [] arrayIntegerValues = {40, 5, 12, 55, 6, 27, 10};
+        int [] arrayIntegerValues = {40, 5, 12, 55, 6, 27, 10};
 
         for ( int iter : arrayIntegerValues) {
             allElementsArray += iter + " ";
