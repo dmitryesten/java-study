@@ -1,5 +1,7 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
+import java.util.Objects;
+
 public class Rectangle {
 
     private Point2D leftDownPoint = new Point2D( 1, 3);
@@ -59,6 +61,7 @@ public class Rectangle {
                 "Left-Up angle: ( "+ rect.getXLeftDownAngle()+ ", " + rect.getYRightUpAngle()+ ") " + "\r\n";
     }
 
+
     public void moveRectangale(int newX, int newY){
         xLeftDownAngle += newX;
         yLeftDownAngle += newY;
@@ -73,7 +76,7 @@ public class Rectangle {
         yRightUpAngle += newY;
     }
 
-    public void reduceRactangle(int valueReduceX, int valueReduceY ){
+    public void reduceRectangle(int valueReduceX, int valueReduceY ){
         xRightDownAngle -=valueReduceX;
 
         xRightUpAngle -= valueReduceX;
@@ -83,60 +86,51 @@ public class Rectangle {
     }
 
 
+    /**
+     * @param rect object class Rectangle
+     * @return area's rectangle
+     */
     public int areaRectangle(Rectangle rect){
         return (rect.getXRightDownAngle() - rect.getXLeftDownAngle()) * (rect.getYLeftUpAngle() - rect.getYLeftDownAngle());
     }
 
+    /**
+     * @param point
+     * @param rectangle
+     * @return true if point is contained in rect and false if point isn't contained in rect
+     */
     public boolean isPointContainedInRactangle (Point2D point, Rectangle rectangle){
 
         int coordPointX = point.getAbscissaOx();
         int coordPointY = point.getOrdinateOy();
 
-        return ((coordPointX >= rectangle.getXLeftDownAngle() &&
-                coordPointX <= rectangle.getXRightDownAngle())
+        return ((coordPointX >= rectangle.getXLeftDownAngle() && coordPointX <= rectangle.getXRightDownAngle())
                 &&
-                (coordPointY >=rectangle.getYLeftDownAngle() &&
-                coordPointY<=rectangle.getYLeftUpAngle())) ? true : false;
+                (coordPointY >=rectangle.getYLeftDownAngle() && coordPointY<=rectangle.getYLeftUpAngle())
+        ) ? true : false;
+    }
+
+    /**
+     * @param innerRect
+     * @param externalRect
+     * @return true if rect is contained in other rect and false if rect isn't contained
+     */
+    public boolean isRectangleContainedInOtherRectangle(Rectangle innerRect, Rectangle externalRect){
+        return ((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
+                && (innerRect.getYRightUpAngle() >= externalRect.getYRightDownAngle() && innerRect.getYRightUpAngle()<=externalRect.getYRightUpAngle())
+                ) ? true : false;
     }
 
 
+    public boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
+        return (
+                (crossingRect.getXLeftDownAngle() >= defaultRect.getXLeftDownAngle() && crossingRect.getXLeftDownAngle() >= defaultRect.getXRightDownAngle())
+                        ||(crossingRect.getXRightDownAngle() < defaultRect.getXLeftDownAngle() )
 
-    public int getXRightDownAngle() {
-        return xRightDownAngle;
+                ) ? true : false;
     }
 
-    public int getYLeftUpAngle() {
-        return yLeftUpAngle;
-    }
-
-    public void setYLeftUpAngle(int yLeftUpAngle) {
-        this.yLeftUpAngle = yLeftUpAngle;
-    }
-
-    public int getXLeftUpAngle() {
-
-        return xLeftUpAngle;
-    }
-
-    public void setXLeftUpAngle(int xLeftUpAngle) {
-        this.xLeftUpAngle = xLeftUpAngle;
-    }
-
-    public int getYRightDownAngle() {
-
-        return yRightDownAngle;
-    }
-
-    public void setYRightDownAngle(int yRightDownAngle) {
-        this.yRightDownAngle = yRightDownAngle;
-    }
-
-    public void setXRightDownAngle(int xRightDownAngle) {
-        this.xRightDownAngle = xRightDownAngle;
-    }
-
-
-
+   
 
 
     //Left down angle
@@ -155,6 +149,7 @@ public class Rectangle {
     public void setYLeftDownAngle(int yLeftDownAngle) {
         this.yLeftDownAngle = yLeftDownAngle;
     }
+    // --------------------------------------------------------
 
     //Right Up angle
     public int getXRightUpAngle() {
@@ -172,7 +167,46 @@ public class Rectangle {
     public void setYRightUpAngle(int yRightUpAngle) {
         this.yRightUpAngle = yRightUpAngle;
     }
+    //--------------------------------------------------------
 
+
+    //Right Down Angle XY
+    public int getXRightDownAngle() {
+        return xRightDownAngle;
+    }
+
+    public void setXRightDownAngle(int xRightDownAngle) {
+        this.xRightDownAngle = xRightDownAngle;
+    }
+
+    public int getYRightDownAngle() {
+        return yRightDownAngle;
+    }
+
+    public void setYRightDownAngle(int yRightDownAngle) {
+        this.yRightDownAngle = yRightDownAngle;
+    }
+    //-----------------------------------------------------------
+
+
+    //Left Up Angle
+    public int getXLeftUpAngle() {
+        return xLeftUpAngle;
+    }
+
+    public void setXLeftUpAngle(int xLeftUpAngle) {
+        this.xLeftUpAngle = xLeftUpAngle;
+    }
+
+    public int getYLeftUpAngle() {
+        return yLeftUpAngle;
+    }
+
+    public void setYLeftUpAngle(int yLeftUpAngle) {
+        this.yLeftUpAngle = yLeftUpAngle;
+    }
+
+    //-------------------------------------------------------------
 
 
 
