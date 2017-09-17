@@ -3,8 +3,8 @@ package net.thumbtack.denisenko.trainee.introduction;
 public class Point2D {
 
 
-    private static int abscissaOx;
-    private static int ordinateOy;
+    private int abscissaOx;
+    private  int ordinateOy;
 
     public Point2D(){
         this(0, 0);
@@ -17,44 +17,35 @@ public class Point2D {
     }
 
 
-    public static int getAbscissaOx(){
+    public  int getAbscissaOx(){
         return abscissaOx;
     }
 
 
-    public static int setAbscissaOx(int oX){
+    public  int setAbscissaOx(int oX){
         return abscissaOx = oX;
     }
 
 
-    public static int getOrdinateOy(){
+    public  int getOrdinateOy(){
         return ordinateOy;
     }
 
 
-    public static int setOrdinateOy(int oY){
+    public  int setOrdinateOy(int oY){
         return ordinateOy = oY;
     }
 
 
-    public static void movePoint(int valueMoveOX, int valueMoveOY){
+    public void movePoint(int valueMoveOX, int valueMoveOY){
         abscissaOx += valueMoveOX;
         ordinateOy += valueMoveOY;
     }
 
 
-    public static String printCoordinates(){
-        return "OX: "+ getAbscissaOx()+"; OY: "+ getOrdinateOy();
+    public static String printCoordinates(Point2D point){
+        return "OX: "+ point.getAbscissaOx()+"; OY: "+ point.getOrdinateOy();
     }
 
-    /*
-    public boolean equals(){
-        return true;
-    }
-
-    public int hashCode(){
-        return 0;
-    }
-    */
 
 }
