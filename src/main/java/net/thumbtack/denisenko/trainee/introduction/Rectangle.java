@@ -122,15 +122,18 @@ public class Rectangle {
     }
 
 
+
+
+    /*
     public boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
         return (
                 (crossingRect.getXLeftDownAngle() >= defaultRect.getXLeftDownAngle() && crossingRect.getXLeftDownAngle() >= defaultRect.getXRightDownAngle())
                         ||(crossingRect.getXRightDownAngle() < defaultRect.getXLeftDownAngle() )
 
                 ) ? true : false;
-    }
+    }*/
 
-   
+
 
 
     //Left down angle
