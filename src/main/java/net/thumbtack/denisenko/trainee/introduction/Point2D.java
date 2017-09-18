@@ -11,7 +11,7 @@ public class Point2D {
     }
 
 
-    Point2D(int abscissaOx, int ordinateOy){
+    public Point2D(int abscissaOx, int ordinateOy){
         this.abscissaOx = abscissaOx;
         this.ordinateOy = ordinateOy;
     }
