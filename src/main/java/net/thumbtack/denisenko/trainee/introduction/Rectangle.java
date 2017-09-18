@@ -23,27 +23,40 @@ public class Rectangle {
     private int xLeftUpAngle;
     private int yLeftUpAngle;
 
-    Rectangle(){
+    public Rectangle(){
         this(1, 1);
         Point2D leftDownPoint = new Point2D();
         this.xLeftDownAngle = leftDownPoint.setAbscissaOx(0);
         this.yLeftDownAngle = leftDownPoint.setOrdinateOy(0);
     }
 
-    Rectangle(Point2D leftDownPoint, Point2D rightUpPoint){
+    public Rectangle(Point2D leftDownPoint, Point2D rightUpPoint){
 
         //Left-Down Angle
         this.xLeftDownAngle = leftDownPoint.getAbscissaOx();
         this.yLeftDownAngle = leftDownPoint.getOrdinateOy();
+
+        //Right-Down Angle
+        this.xRightDownAngle = rightUpPoint.getAbscissaOx();
+        this.yRightDownAngle = leftDownPoint.getOrdinateOy();
         //Right-Up Angle
         this.xRightUpAngle = rightUpPoint.getAbscissaOx();
         this.yRightUpAngle = rightUpPoint.getOrdinateOy();
+
+        //Left-Up Angle
+        this.xLeftUpAngle = leftDownPoint.getAbscissaOx();
+        this.yLeftUpAngle = rightUpPoint.getOrdinateOy();
+
     }
 
 
     Rectangle(int width, int height) {
         Point2D firstPoint = new Point2D();
         Point2D secoundPoint = new Point2D();
+
+        this.width = width;
+        this.height = height;
+
         this.xLeftDownAngle = firstPoint.getAbscissaOx();
         this.yLeftDownAngle = firstPoint.getOrdinateOy();
 
@@ -54,26 +67,72 @@ public class Rectangle {
 
 
 
-    public String printCoordinatesRactangle(Rectangle rect) {
+    public static String printCoordinatesRactangle(Rectangle rect) {
         return  "Left-Down angle: ("+rect.getXLeftDownAngle()+ ", " + rect.getYLeftDownAngle()+") " + "\r\n" +
-                "Right-Down angle: ( "+ rect.getXRightUpAngle()+ ", " + rect.getYLeftDownAngle()+ ") " + "\r\n"+
-                "Right-Up angle: ( "+ rect.getXRightUpAngle()+ ", " + rect.getYRightUpAngle()+ ") " + "\r\n" +
-                "Left-Up angle: ( "+ rect.getXLeftDownAngle()+ ", " + rect.getYRightUpAngle()+ ") " + "\r\n";
+                "Right-Down angle: ("+ rect.getXRightUpAngle()+ ", " + rect.getYLeftDownAngle()+ ") " + "\r\n"+
+                "Right-Up angle: ("+ rect.getXRightUpAngle()+ ", " + rect.getYRightUpAngle()+ ") " + "\r\n" +
+                "Left-Up angle: ("+ rect.getXLeftDownAngle()+ ", " + rect.getYRightUpAngle()+ ") " ;
     }
 
+
+
+
+
+    /**
+     * @param rect object class Rectangle
+     * @return area's rectangle
+     */
+    public static int areaRectangle(Rectangle rect){
+        return (rect.getXRightDownAngle() - rect.getXLeftDownAngle()) * (rect.getYLeftUpAngle() - rect.getYLeftDownAngle());
+    }
+
+    /**
+     * @param point
+     * @param rectangle
+     * @return true if point is contained in rect and false if point isn't contained in rect
+     */
+    public static boolean isPointContainedInRactangle (Point2D point, Rectangle rectangle){
+        return ((point.getAbscissaOx() >= rectangle.getXLeftDownAngle() && point.getAbscissaOx() <= rectangle.getXRightDownAngle())
+                &&
+                (point.getOrdinateOy() >=rectangle.getYLeftDownAngle() && point.getOrdinateOy()<=rectangle.getYLeftUpAngle())
+        ) ? true : false;
+    }
+
+
+    /**
+     * @param innerRect
+     * @param externalRect
+     * @return true if rect is contained in other rect and false if rect isn't contained
+     */
+    public static boolean isRectangleContainedInOtherRectangle(Rectangle innerRect, Rectangle externalRect){
+        return ((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
+                && (innerRect.getYRightUpAngle() >= externalRect.getYRightDownAngle() && innerRect.getYRightUpAngle()<=externalRect.getYRightUpAngle())
+                ) ? true : false;
+    }
+
+
+
+    /*
+    public static boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
+        return (
+                (crossingRect.getXLeftDownAngle() >= defaultRect.getXLeftDownAngle() && crossingRect.getXLeftDownAngle() >= defaultRect.getXRightDownAngle())
+                        ||(crossingRect.getXRightDownAngle() < defaultRect.getXLeftDownAngle() )
+
+                ) ? true : false;
+    }*/
 
     public void moveRectangale(int newX, int newY){
         xLeftDownAngle += newX;
         yLeftDownAngle += newY;
-
-        xRightUpAngle += newX;
-        yRightUpAngle += newY;
 
         xRightDownAngle +=newX;
         yRightDownAngle +=newY;
 
         xRightUpAngle += newX;
         yRightUpAngle += newY;
+
+        xLeftUpAngle += newX;
+        yLeftUpAngle += newY;
     }
 
     public void reduceRectangle(int valueReduceX, int valueReduceY ){
@@ -84,55 +143,6 @@ public class Rectangle {
 
         yLeftUpAngle -= valueReduceY;
     }
-
-
-    /**
-     * @param rect object class Rectangle
-     * @return area's rectangle
-     */
-    public int areaRectangle(Rectangle rect){
-        return (rect.getXRightDownAngle() - rect.getXLeftDownAngle()) * (rect.getYLeftUpAngle() - rect.getYLeftDownAngle());
-    }
-
-    /**
-     * @param point
-     * @param rectangle
-     * @return true if point is contained in rect and false if point isn't contained in rect
-     */
-    public boolean isPointContainedInRactangle (Point2D point, Rectangle rectangle){
-
-        int coordPointX = point.getAbscissaOx();
-        int coordPointY = point.getOrdinateOy();
-
-        return ((coordPointX >= rectangle.getXLeftDownAngle() && coordPointX <= rectangle.getXRightDownAngle())
-                &&
-                (coordPointY >=rectangle.getYLeftDownAngle() && coordPointY<=rectangle.getYLeftUpAngle())
-        ) ? true : false;
-    }
-
-    /**
-     * @param innerRect
-     * @param externalRect
-     * @return true if rect is contained in other rect and false if rect isn't contained
-     */
-    public boolean isRectangleContainedInOtherRectangle(Rectangle innerRect, Rectangle externalRect){
-        return ((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
-                && (innerRect.getYRightUpAngle() >= externalRect.getYRightDownAngle() && innerRect.getYRightUpAngle()<=externalRect.getYRightUpAngle())
-                ) ? true : false;
-    }
-
-
-
-
-    /*
-    public boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
-        return (
-                (crossingRect.getXLeftDownAngle() >= defaultRect.getXLeftDownAngle() && crossingRect.getXLeftDownAngle() >= defaultRect.getXRightDownAngle())
-                        ||(crossingRect.getXRightDownAngle() < defaultRect.getXLeftDownAngle() )
-
-                ) ? true : false;
-    }*/
-
 
 
 
