@@ -20,7 +20,7 @@ public class Trainee
         ElementaryMathOperation elementaryMathOperation = new ElementaryMathOperation();
         OperationsAboveElementsOfArray operationsAboveElementsOfArray = new OperationsAboveElementsOfArray();
         CheckSortingArray checkSortingArray = new CheckSortingArray();
-        Point2D point2D = new Point2D();
+
 
         Scanner in = new Scanner(System.in);
         Random random = new Random();
@@ -29,13 +29,13 @@ public class Trainee
         array = new int[random.nextInt(12) + 1];
 
 
+        System.out.println("----------Task_1-----------------------------" );
         // Task_1 part Intro
-        System.out.println("Task_1");
         System.out.println(stringHelloWorld.printStringHelloWorld());
 
 
+        System.out.println("\r\n----------Task_2-----------------------------" );
         // Task_2
-        System.out.println("\r\nTask_2");
         System.out.println("Input value_1:");
         valueOne = 8; //in.nextDouble();
         System.out.println("Input value_2:");
@@ -49,6 +49,7 @@ public class Trainee
 
         System.out.println("\r\nTask_4");
 
+        System.out.println("----------Task_5-----------------------------" );
         randomValue(array);
         String valuesArray = "";
         for(int i = 0; i < array.length; i++){
@@ -63,18 +64,40 @@ public class Trainee
         System.out.println("Среднее значение: " + operationsAboveElementsOfArray.middleValue(array, operationsAboveElementsOfArray.amountAllValues(array) ) );
 
 
-
+        System.out.println("\r\n----------Task_6-----------------------------" );
         //Task_5
         System.out.println("Массив возрастающий: " + checkSortingArray.checkAscendingArray(array));
         System.out.println("Массив убывающий: " + checkSortingArray.checkDescendingArray(array));
 
 
+        System.out.println("\r\n----------Task_7-----------------------------" );
+        Point2D point2D = new Point2D(1, 2);
+        System.out.println("Начальная координата: " + Point2D.printCoordinates(point2D) );
+        point2D.movePoint(2,4);
+        System.out.println("Точка перемещена:" + Point2D.printCoordinates(point2D) );
 
-        //Task_7
-        point2D.movePoint(2,3);
-        System.out.println(point2D.getAbscissaOx());
-        System.out.println(point2D.getOrdinateOy());
-        System.out.println( point2D.printCoordinates() );
+
+        System.out.println("\r\n----------Task_8 & Task_4-----------------------------" );
+        //Task_8
+        Point2D point1 = new Point2D(1, 2);
+        Point2D point2 = new Point2D(3, 4);
+        Point2D point3 = new Point2D(2, 4);
+        Point2D point4 = new Point2D(3, 4);
+        Rectangle rectangle = new Rectangle(point1, point2);
+        Rectangle rectangle2 = new Rectangle(point3, point4);
+        System.out.println( Rectangle.printCoordinatesRactangle(rectangle) );
+        System.out.println("Площадь = " + Rectangle.areaRectangle(rectangle) );
+        rectangle.moveRectangale(1,1);
+        System.out.println("Перемещенин треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle) );
+        rectangle.reduceRectangle(1,1);
+        System.out.println("Уменьшение треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle)+"\r\n" );
+        System.out.println("Точка лежит на плоскасти: "+ Rectangle.isPointContainedInRactangle(point3, rectangle) );
+        System.out.println("Прямоугольник находиться внутри другого: "+ Rectangle.isRectangleContainedInOtherRectangle(rectangle2, rectangle) );
+
+
+
+
+
 
 
 
