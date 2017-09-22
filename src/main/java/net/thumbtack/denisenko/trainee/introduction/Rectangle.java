@@ -4,6 +4,9 @@ import java.util.Objects;
 
 public class Rectangle {
 
+	// REVU remove assignment. You do not need in default values
+	
+	// REVU TOO many fields. Two points (or 4 ints) is enough
     private Point2D leftDownPoint = new Point2D( 1, 3);
     private Point2D rightUpPoint = new Point2D(5, 5);
 

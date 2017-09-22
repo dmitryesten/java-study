@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
 
-
+// REVU ArrayOperations :-)
 public class OperationsAboveElementsOfArray {
 
 
@@ -24,6 +24,7 @@ public class OperationsAboveElementsOfArray {
      */
     public static int multyAllValues (int [] array) {
         int multy = 1;
+        // REVU use for each
         for(int iteration = 0; iteration < array.length; iteration++ )
             multy *= array[iteration];
 
@@ -37,6 +38,7 @@ public class OperationsAboveElementsOfArray {
      */
     public static int minValueArray(int [] array){
         int min = array[0];
+        // REVU use for each
         for(int iteration = 0; iteration < array.length; iteration++ ) {
             if (array[iteration] < min)
                 min = array[iteration];
@@ -51,7 +53,8 @@ public class OperationsAboveElementsOfArray {
      */
     public static int maxValueArray(int [] array){
         int max = array[0];
-        for(int iteration = 0; iteration < array.length; iteration++ ) {
+        // REVU use for each
+       for(int iteration = 0; iteration < array.length; iteration++ ) {
             if (array[iteration] > max)
                 max = array[iteration];
         }

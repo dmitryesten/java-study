@@ -9,9 +9,13 @@ public class CheckSortingArray {
      */
     public boolean checkAscendingArray (int [] array) {
         int equalTwoPairValuesArray = 0;
+        // REVU fot(int i = 1, ... is more clear
         for(int iterator = 1; iterator < array.length - 1; iterator++){
             equalTwoPairValuesArray += (array[iterator] >= array[iterator - 1]) ?  equalTwoPairValuesArray + 1 : equalTwoPairValuesArray - 1;
         }
+       
+        // REVU simply
+        // return equalTwoPairValuesArray == array.length - 1;
         return (equalTwoPairValuesArray == (array.length - 1)) ? true : false;
     }
 
