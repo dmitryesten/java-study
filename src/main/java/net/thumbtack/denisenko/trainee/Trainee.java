@@ -81,19 +81,21 @@ public class Trainee
         //Task_8
         Point2D point1 = new Point2D(1, 2);
         Point2D point2 = new Point2D(3, 4);
-        Point2D point3 = new Point2D(2, 4);
-        Point2D point4 = new Point2D(3, 4);
+        //Point2D point3 = new Point2D(4, 1);
+        //Point2D point4 = new Point2D(6, 2);
+        Point2D point3 = new Point2D(2, 3);
+        Point2D point4 = new Point2D(4, 5);
         Rectangle rectangle = new Rectangle(point1, point2);
         Rectangle rectangle2 = new Rectangle(point3, point4);
         System.out.println( Rectangle.printCoordinatesRactangle(rectangle) );
         System.out.println("Площадь = " + Rectangle.areaRectangle(rectangle) );
-        rectangle.moveRectangale(1,1);
-        System.out.println("Перемещенин треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle) );
-        rectangle.reduceRectangle(1,1);
-        System.out.println("Уменьшение треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle)+"\r\n" );
-        System.out.println("Точка лежит на плоскасти: "+ Rectangle.isPointContainedInRactangle(point3, rectangle) );
+        //rectangle.moveRectangale(1,1);
+        //System.out.println("Перемещенин треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle) );
+        //rectangle.reduceRectangle(1,1);
+        //System.out.println("Уменьшение треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle)+"\r\n" );
+        //System.out.println("Точка лежит на плоскасти: "+ Rectangle.isPointContainedInRactangle(point3, rectangle) );
         System.out.println("Прямоугольник находиться внутри другого: "+ Rectangle.isRectangleContainedInOtherRectangle(rectangle2, rectangle) );
-
+        System.out.println("Два прямоугольнрка пересекаются:"+Rectangle.isRectangleCrossingWithOtherRectangle(rectangle, rectangle2));
 
 
 

@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public class Rectangle {
 
-    private Point2D leftDownPoint = new Point2D( 1, 3);
-    private Point2D rightUpPoint = new Point2D(5, 5);
+
 
     private int width;
     private int height;
@@ -31,6 +30,9 @@ public class Rectangle {
     }
 
     public Rectangle(Point2D leftDownPoint, Point2D rightUpPoint){
+
+        this.width = rightUpPoint.getAbscissaOx() - leftDownPoint.getAbscissaOx();
+        this.height = rightUpPoint.getOrdinateOy() - leftDownPoint.getOrdinateOy();
 
         //Left-Down Angle
         this.xLeftDownAngle = leftDownPoint.getAbscissaOx();
@@ -105,21 +107,28 @@ public class Rectangle {
      * @return true if rect is contained in other rect and false if rect isn't contained
      */
     public static boolean isRectangleContainedInOtherRectangle(Rectangle innerRect, Rectangle externalRect){
-        return ((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
+        return !((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
                 && (innerRect.getYRightUpAngle() >= externalRect.getYRightDownAngle() && innerRect.getYRightUpAngle()<=externalRect.getYRightUpAngle())
                 ) ? true : false;
     }
 
 
 
-    /*
     public static boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
-        return (
-                (crossingRect.getXLeftDownAngle() >= defaultRect.getXLeftDownAngle() && crossingRect.getXLeftDownAngle() >= defaultRect.getXRightDownAngle())
-                        ||(crossingRect.getXRightDownAngle() < defaultRect.getXLeftDownAngle() )
+        return (crossingRect.getYLeftUpAngle() < defaultRect.getYRightDownAngle()||
+                crossingRect.getYLeftDownAngle() > defaultRect.getYRightUpAngle()||
+                crossingRect.getXRightDownAngle() < defaultRect.getXLeftUpAngle() ||
+                        crossingRect.getXLeftUpAngle() > defaultRect.getXRightDownAngle() )? false : true;
+        /*
+        return ( a.y < b.y1 || a.y1 > b.y || a.x1 < b.x || a.x > b.x1 );
+        return (crossingRect.getXRightUpAngle() < defaultRect.getXLeftDownAngle() ||
+                crossingRect.getXLeftDownAngle() > defaultRect.getXRightUpAngle()||
+                crossingRect.getYLeftDownAngle() < defaultRect.getYRightUpAngle() ||
+                crossingRect.getYRightUpAngle() > defaultRect.getYLeftDownAngle() ) ? true : false;
+        */
+    }
 
-                ) ? true : false;
-    }*/
+
 
     public void moveRectangale(int newX, int newY){
         xLeftDownAngle += newX;
