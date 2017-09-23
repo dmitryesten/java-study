@@ -1,81 +1,65 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task8;
 
 import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
 
+import java.util.Objects;
+
+/**
+ *
+ */
 public class Rectangle {
 
     private int width;
     private int height;
 
+    private int topLeftX;
+    private int topLeftY;
 
-    private int xLeftDownAngle;
-    private int yLeftDownAngle;
+    private int bottomRightX;
+    private int bottomRightY;
 
-    private int xRightUpAngle;
-    private int yRightUpAngle;
-
-    private int xRightDownAngle;
-    private int yRightDownAngle;
-
-    private int xLeftUpAngle;
-    private int yLeftUpAngle;
 
     public Rectangle(){
         this(1, 1);
-        Point2D leftDownPoint = new Point2D();
-        this.xLeftDownAngle = leftDownPoint.setX(0);
-        this.yLeftDownAngle = leftDownPoint.setY(0);
+        this.topLeftX = 0;
+        this.bottomRightY = 0;
     }
 
-    public Rectangle(Point2D leftDownPoint, Point2D rightUpPoint){
 
-        this.width = rightUpPoint.getX() - leftDownPoint.getX();
-        this.height = rightUpPoint.getY() - leftDownPoint.getY();
+    public Rectangle(Point2D topLeft, Point2D bottomRight){
+        this.width = bottomRight.getX() - topLeft.getX();
+        this.height = topLeft.getY() - bottomRight.getY();
 
-        //Left-Down Angle
-        this.xLeftDownAngle = leftDownPoint.getX();
-        this.yLeftDownAngle = leftDownPoint.getY();
-
-        //Right-Down Angle
-        this.xRightDownAngle = rightUpPoint.getX();
-        this.yRightDownAngle = leftDownPoint.getY();
-        //Right-Up Angle
-        this.xRightUpAngle = rightUpPoint.getX();
-        this.yRightUpAngle = rightUpPoint.getY();
-
-        //Left-Up Angle
-        this.xLeftUpAngle = leftDownPoint.getX();
-        this.yLeftUpAngle = rightUpPoint.getY();
-
+        this.topLeftX = topLeft.getX();
+        this.topLeftY = topLeft.getY();
+        this.bottomRightX = bottomRight.getX();
+        this.bottomRightY = bottomRight.getY();
     }
+
 
 
     Rectangle(int width, int height) {
-        Point2D firstPoint = new Point2D();
-        Point2D secoundPoint = new Point2D();
-
         this.width = width;
         this.height = height;
-
-        this.xLeftDownAngle = firstPoint.getX();
-        this.yLeftDownAngle = firstPoint.getY();
-
-        this.xRightUpAngle = secoundPoint.setX(width);
-        this.yRightUpAngle = secoundPoint.setY(height);
-
+        this.topLeftY = 1;
+        this.bottomRightX = 1;
     }
 
 
 
-    public static String printCoordinatesRactangle(Rectangle rect) {
-        return  "Left-Down angle: ("+rect.getXLeftDownAngle()+ ", " + rect.getYLeftDownAngle()+") " + "\r\n" +
-                "Right-Down angle: ("+ rect.getXRightUpAngle()+ ", " + rect.getYLeftDownAngle()+ ") " + "\r\n"+
-                "Right-Up angle: ("+ rect.getXRightUpAngle()+ ", " + rect.getYRightUpAngle()+ ") " + "\r\n" +
-                "Left-Up angle: ("+ rect.getXLeftDownAngle()+ ", " + rect.getYRightUpAngle()+ ") " ;
+    public static String printCoordinatesRectangle(Rectangle rect) {
+        return  "Left-bottom angle: ("+rect.getTopLeftX()+ ", " + rect.getBottomRightY()+") " + "\r\n" +
+                "Right-bottom angle: ("+ rect.getBottomRightX()+ ", " + rect.getBottomRightY()+ ") " + "\r\n"+
+                "Right-Up angle: ("+ rect.getBottomRightX()+ ", " + rect.getTopLeftY()+ ") " + "\r\n" +
+                "Left-Up angle: ("+ rect.getTopLeftX()+ ", " + rect.getTopLeftY()+ ") " ;
     }
 
 
-
+    public static Rectangle large (int n, Rectangle rectangle){
+        rectangle.setTopLeftY(rectangle.getTopLeftY() * n);
+        rectangle.setBottomRightX(rectangle.getBottomRightX() * n);
+        return rectangle;
+    }
 
 
     /**
@@ -83,7 +67,7 @@ public class Rectangle {
      * @return area's rectangle
      */
     public static int areaRectangle(Rectangle rect){
-        return (rect.getXRightDownAngle() - rect.getXLeftDownAngle()) * (rect.getYLeftUpAngle() - rect.getYLeftDownAngle());
+        return (rect.getBottomRightX() - rect.getTopLeftX()) * (rect.getTopLeftY() - rect.getBottomRightY());
     }
 
     /**
@@ -92,10 +76,8 @@ public class Rectangle {
      * @return true if point is contained in rect and false if point isn't contained in rect
      */
     public static boolean isPointContainedInRactangle (Point2D point, Rectangle rectangle){
-        return ((point.getX() >= rectangle.getXLeftDownAngle() && point.getX() <= rectangle.getXRightDownAngle())
-                &&
-                (point.getY() >=rectangle.getYLeftDownAngle() && point.getY()<=rectangle.getYLeftUpAngle())
-        ) ? true : false;
+        return ((point.getX() >= rectangle.getTopLeftX() && point.getX() <= rectangle.getBottomRightX()) &&
+                (point.getY() >=rectangle.getBottomRightY() && point.getY()<=rectangle.getTopLeftY()) );
     }
 
 
@@ -105,125 +87,102 @@ public class Rectangle {
      * @return true if rect is contained in other rect and false if rect isn't contained
      */
     public static boolean isRectangleContainedInOtherRectangle(Rectangle innerRect, Rectangle externalRect){
-        return !((innerRect.getXLeftDownAngle() >= externalRect.getXLeftDownAngle() && innerRect.getXRightDownAngle()<= externalRect.getXRightDownAngle())
-                && (innerRect.getYRightUpAngle() >= externalRect.getYRightDownAngle() && innerRect.getYRightUpAngle()<=externalRect.getYRightUpAngle())
-                ) ? true : false;
+        return ((innerRect.getTopLeftX() >= externalRect.getTopLeftX() && innerRect.getBottomRightX() <= externalRect.getBottomRightX())
+                && (innerRect.getTopLeftY() <= externalRect.getTopLeftY() && innerRect.getBottomRightY() >= externalRect.getBottomRightY()));
     }
 
+    private static int maxLeftX(Rectangle a, Rectangle b){
+        return (a.getTopLeftX() > b.getTopLeftX()) ? a.getTopLeftX() : b.getTopLeftX();
+    }
+
+    private static int minRightX(Rectangle a, Rectangle b){
+        return (a.getBottomRightX() < b.getBottomRightX()) ? a.getBottomRightX() : b.getBottomRightX();
+    }
+
+    private static int maxLeftY(Rectangle a, Rectangle b){
+        return (a.getTopLeftY() > b.getTopLeftY()) ? a.getTopLeftY() : b.getTopLeftY();
+    }
+
+    private static int minRightY(Rectangle a, Rectangle b){
+        return (a.getBottomRightY() < b.getBottomRightY()) ? a.getBottomRightY() : b.getBottomRightY();
+    }
 
 
     public static boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
-        return (crossingRect.getYLeftUpAngle() < defaultRect.getYRightDownAngle()||
-                crossingRect.getYLeftDownAngle() > defaultRect.getYRightUpAngle()||
-                crossingRect.getXRightDownAngle() < defaultRect.getXLeftUpAngle() ||
-                        crossingRect.getXLeftUpAngle() > defaultRect.getXRightDownAngle() )? false : true;
-        /*
-        return ( a.y < b.y1 || a.y1 > b.y || a.x1 < b.x || a.x > b.x1 );
-        return (crossingRect.getXRightUpAngle() < defaultRect.getXLeftDownAngle() ||
-                crossingRect.getXLeftDownAngle() > defaultRect.getXRightUpAngle()||
-                crossingRect.getYLeftDownAngle() < defaultRect.getYRightUpAngle() ||
-                crossingRect.getYRightUpAngle() > defaultRect.getYLeftDownAngle() ) ? true : false;
-        */
+        int maxLeftX = maxLeftX(crossingRect, defaultRect);
+        int maxLeftY = maxLeftY(crossingRect, defaultRect);
+
+        int minRightX = minRightX(crossingRect, defaultRect);
+        int minRightY = minRightY(crossingRect, defaultRect);
+
+        return !( (maxLeftX > minRightX) && (maxLeftY > minRightY));
     }
 
 
 
-    public void moveRectangale(int newX, int newY){
-        xLeftDownAngle += newX;
-        yLeftDownAngle += newY;
-
-        xRightDownAngle +=newX;
-        yRightDownAngle +=newY;
-
-        xRightUpAngle += newX;
-        yRightUpAngle += newY;
-
-        xLeftUpAngle += newX;
-        yLeftUpAngle += newY;
+    public void move(int newX, int newY){
+        setTopLeftX(getTopLeftX() + newX);
+        setTopLeftY(getTopLeftY() + newY);
+        setBottomRightX(getBottomRightX() + newX);
+        setBottomRightY(getBottomRightY() + newY);
     }
+
 
     public void reduceRectangle(int valueReduceX, int valueReduceY ){
-        xRightDownAngle -=valueReduceX;
-
-        xRightUpAngle -= valueReduceX;
-        yRightUpAngle -= valueReduceY;
-
-        yLeftUpAngle -= valueReduceY;
+        setBottomRightX(getBottomRightX() - valueReduceX);
+        setTopLeftY(getTopLeftY() - valueReduceY);
     }
 
 
 
-    //Left down angle
-    public int getXLeftDownAngle() {
-        return xLeftDownAngle;
+    public int getTopLeftX() {
+        return topLeftX;
     }
 
-    public void setXLeftDownAngle(int xLeftDownAngle) {
-        this.xLeftDownAngle = xLeftDownAngle;
+    public void setTopLeftX(int topLeftX) {
+        this.topLeftX = topLeftX;
     }
 
-    public int getYLeftDownAngle() {
-        return yLeftDownAngle;
+    public int getTopLeftY() {
+        return topLeftY;
     }
 
-    public void setYLeftDownAngle(int yLeftDownAngle) {
-        this.yLeftDownAngle = yLeftDownAngle;
-    }
-    // --------------------------------------------------------
-
-    //Right Up angle
-    public int getXRightUpAngle() {
-        return xRightUpAngle;
+    public void setTopLeftY(int topLeftY) {
+        this.topLeftY = topLeftY;
     }
 
-    public void setXRightUpAngle(int xRightUpAngle) {
-        this.xRightUpAngle = xRightUpAngle;
+    public int getBottomRightX() {
+        return bottomRightX;
     }
 
-    public int getYRightUpAngle() {
-        return yRightUpAngle;
+    public void setBottomRightX(int bottonRightX) {
+        this.bottomRightX = bottonRightX;
     }
 
-    public void setYRightUpAngle(int yRightUpAngle) {
-        this.yRightUpAngle = yRightUpAngle;
-    }
-    //--------------------------------------------------------
-
-
-    //Right Down Angle XY
-    public int getXRightDownAngle() {
-        return xRightDownAngle;
+    public int getBottomRightY() {
+        return bottomRightY;
     }
 
-    public void setXRightDownAngle(int xRightDownAngle) {
-        this.xRightDownAngle = xRightDownAngle;
+    public void setBottomRightY(int bottonRightY) {
+        this.bottomRightY = bottonRightY;
     }
 
-    public int getYRightDownAngle() {
-        return yRightDownAngle;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return width == rectangle.width &&
+                height == rectangle.height &&
+                topLeftX == rectangle.topLeftX &&
+                topLeftY == rectangle.topLeftY &&
+                bottomRightX == rectangle.bottomRightX &&
+                bottomRightY == rectangle.bottomRightY;
     }
 
-    public void setYRightDownAngle(int yRightDownAngle) {
-        this.yRightDownAngle = yRightDownAngle;
-    }
-    //-----------------------------------------------------------
-
-
-    //Left Up Angle
-    public int getXLeftUpAngle() {
-        return xLeftUpAngle;
-    }
-
-    public void setXLeftUpAngle(int xLeftUpAngle) {
-        this.xLeftUpAngle = xLeftUpAngle;
-    }
-
-    public int getYLeftUpAngle() {
-        return yLeftUpAngle;
-    }
-
-    public void setYLeftUpAngle(int yLeftUpAngle) {
-        this.yLeftUpAngle = yLeftUpAngle;
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height, topLeftX, topLeftY, bottomRightX, bottomRightY);
     }
 
     //-------------------------------------------------------------
