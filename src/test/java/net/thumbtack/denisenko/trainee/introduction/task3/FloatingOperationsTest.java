@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task3;
 
 import net.thumbtack.denisenko.trainee.introduction.task3.FloatingOperations;
 import org.junit.Test;
