@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
 
-public class OperationsWithFloatingNumbers {
+public class FloatingOperations {
 
 
     /**
@@ -30,7 +30,8 @@ public class OperationsWithFloatingNumbers {
      * @return
      */
     public static double compareValues(double  valueOne, double  valueTwo){
-        return (valueOne == valueTwo) ? valueOne : (valueOne < valueTwo)? valueOne: valueTwo;
+        return Math.abs(valueOne - valueTwo) <= 0.000001 ? valueOne : (valueOne < valueTwo) ? valueOne : valueTwo;
+        //return (valueOne == valueTwo) ? valueOne : (valueOne < valueTwo)? valueOne: valueTwo;
     }
 
 

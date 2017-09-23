@@ -9,10 +9,10 @@ public class CheckSortingArray {
      */
     public boolean checkAscendingArray (int [] array) {
         int equalTwoPairValuesArray = 0;
-        for(int iterator = 1; iterator < array.length - 1; iterator++){
-            equalTwoPairValuesArray += (array[iterator] >= array[iterator - 1]) ?  equalTwoPairValuesArray + 1 : equalTwoPairValuesArray - 1;
+        for(int i = 1; i < array.length - 1; i++){
+            equalTwoPairValuesArray += (array[i] >= array[i - 1]) ?  equalTwoPairValuesArray + 1 : equalTwoPairValuesArray - 1;
         }
-        return (equalTwoPairValuesArray == (array.length - 1)) ? true : false;
+        return (equalTwoPairValuesArray == array.length - 1);
     }
 
 
@@ -26,8 +26,7 @@ public class CheckSortingArray {
         for(int iterator = 1; iterator < array.length; iterator++){
             equalTwoPairValuesArray += (array[iterator] <= array[iterator - 1]) ?  (equalTwoPairValuesArray + 1) : (equalTwoPairValuesArray - 1);
         }
-
-        return (equalTwoPairValuesArray == (array.length - 1)) ? true : false;
+        return (equalTwoPairValuesArray == array.length - 1);
     }
 
 

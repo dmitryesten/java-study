@@ -1,8 +1,10 @@
 
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task1;
 
 
 import static org.junit.Assert.*;
+
+import net.thumbtack.denisenko.trainee.introduction.task1.HelloWorld;
 import org.junit.*;
 
 public class HelloWorldTest {

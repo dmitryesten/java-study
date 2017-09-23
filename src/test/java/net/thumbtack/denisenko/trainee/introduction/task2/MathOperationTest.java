@@ -1,16 +1,17 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task2;
 
 
 import static org.junit.Assert.*;
 
+import net.thumbtack.denisenko.trainee.introduction.task2.MathOperation;
 import org.junit.Assert;
 import org.junit.Test;
 
 
 // REVU 4 tests from 5 fail
-public class ElementaryMathOperationTest {
+public class MathOperationTest {
 
-    private ElementaryMathOperation elementaryMathOperation = new ElementaryMathOperation();
+    private MathOperation elementaryMathOperation = new MathOperation();
 
     @Test
     public void testAdder() {

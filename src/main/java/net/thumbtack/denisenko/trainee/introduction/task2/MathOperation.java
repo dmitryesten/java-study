@@ -1,6 +1,6 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task2;
 
-public class ElementaryMathOperation {
+public class MathOperation {
 
 
 

@@ -1,12 +1,13 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
+import net.thumbtack.denisenko.trainee.introduction.task3.FloatingOperations;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 
-public class OperationsWithFloatingNumbersTest {
-    OperationsWithFloatingNumbers elemOperFloatingNumbers = new OperationsWithFloatingNumbers();
+public class FloatingOperationsTest {
+    FloatingOperations elemOperFloatingNumbers = new FloatingOperations();
 
     @Test
     public void add() throws Exception {

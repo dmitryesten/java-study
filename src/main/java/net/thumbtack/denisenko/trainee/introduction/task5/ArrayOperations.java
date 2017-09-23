@@ -2,7 +2,7 @@ package net.thumbtack.denisenko.trainee.introduction;
 
 
 
-public class OperationsAboveElementsOfArray {
+public class ArrayOperations {
 
 
     /**
@@ -11,9 +11,9 @@ public class OperationsAboveElementsOfArray {
      */
     public static int amountAllValues (int [] array) {
         int amount = 0;
-        for(int iteration = 0; iteration < array.length; iteration++ )
-            amount += array[iteration];
-
+        for (int iter : array) {
+            amount += iter;
+        }
         return amount;
     }
 
@@ -24,9 +24,9 @@ public class OperationsAboveElementsOfArray {
      */
     public static int multyAllValues (int [] array) {
         int multy = 1;
-        for(int iteration = 0; iteration < array.length; iteration++ )
-            multy *= array[iteration];
-
+        for (int iter : array) {
+            multy *= iter;
+        }
         return multy;
     }
 
@@ -37,9 +37,9 @@ public class OperationsAboveElementsOfArray {
      */
     public static int minValueArray(int [] array){
         int min = array[0];
-        for(int iteration = 0; iteration < array.length; iteration++ ) {
-            if (array[iteration] < min)
-                min = array[iteration];
+        for (int iter : array) {
+            if(iter < min)
+                min = iter;
         }
         return min;
     }
@@ -51,9 +51,9 @@ public class OperationsAboveElementsOfArray {
      */
     public static int maxValueArray(int [] array){
         int max = array[0];
-        for(int iteration = 0; iteration < array.length; iteration++ ) {
-            if (array[iteration] > max)
-                max = array[iteration];
+        for (int iter : array) {
+            if(iter > max)
+                max = iter;
         }
         return max;
     }

@@ -1,11 +1,12 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
+import net.thumbtack.denisenko.trainee.introduction.task5.ArrayOperations;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class OperationsAboveElementsOfArrayTest {
-    OperationsAboveElementsOfArray operationsArray = new OperationsAboveElementsOfArray();
+public class ArrayOperationsTest {
+    ArrayOperations operationsArray = new ArrayOperations();
 
 
 

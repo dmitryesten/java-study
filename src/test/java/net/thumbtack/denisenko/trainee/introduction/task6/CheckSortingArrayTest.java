@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
+import net.thumbtack.denisenko.trainee.introduction.task6.CheckSortingArray;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

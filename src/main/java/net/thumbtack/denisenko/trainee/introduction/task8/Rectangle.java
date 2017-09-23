@@ -1,10 +1,8 @@
 package net.thumbtack.denisenko.trainee.introduction;
 
-import java.util.Objects;
+import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
 
 public class Rectangle {
-
-
 
     private int width;
     private int height;
@@ -25,29 +23,29 @@ public class Rectangle {
     public Rectangle(){
         this(1, 1);
         Point2D leftDownPoint = new Point2D();
-        this.xLeftDownAngle = leftDownPoint.setAbscissaOx(0);
-        this.yLeftDownAngle = leftDownPoint.setOrdinateOy(0);
+        this.xLeftDownAngle = leftDownPoint.setX(0);
+        this.yLeftDownAngle = leftDownPoint.setY(0);
     }
 
     public Rectangle(Point2D leftDownPoint, Point2D rightUpPoint){
 
-        this.width = rightUpPoint.getAbscissaOx() - leftDownPoint.getAbscissaOx();
-        this.height = rightUpPoint.getOrdinateOy() - leftDownPoint.getOrdinateOy();
+        this.width = rightUpPoint.getX() - leftDownPoint.getX();
+        this.height = rightUpPoint.getY() - leftDownPoint.getY();
 
         //Left-Down Angle
-        this.xLeftDownAngle = leftDownPoint.getAbscissaOx();
-        this.yLeftDownAngle = leftDownPoint.getOrdinateOy();
+        this.xLeftDownAngle = leftDownPoint.getX();
+        this.yLeftDownAngle = leftDownPoint.getY();
 
         //Right-Down Angle
-        this.xRightDownAngle = rightUpPoint.getAbscissaOx();
-        this.yRightDownAngle = leftDownPoint.getOrdinateOy();
+        this.xRightDownAngle = rightUpPoint.getX();
+        this.yRightDownAngle = leftDownPoint.getY();
         //Right-Up Angle
-        this.xRightUpAngle = rightUpPoint.getAbscissaOx();
-        this.yRightUpAngle = rightUpPoint.getOrdinateOy();
+        this.xRightUpAngle = rightUpPoint.getX();
+        this.yRightUpAngle = rightUpPoint.getY();
 
         //Left-Up Angle
-        this.xLeftUpAngle = leftDownPoint.getAbscissaOx();
-        this.yLeftUpAngle = rightUpPoint.getOrdinateOy();
+        this.xLeftUpAngle = leftDownPoint.getX();
+        this.yLeftUpAngle = rightUpPoint.getY();
 
     }
 
@@ -59,11 +57,11 @@ public class Rectangle {
         this.width = width;
         this.height = height;
 
-        this.xLeftDownAngle = firstPoint.getAbscissaOx();
-        this.yLeftDownAngle = firstPoint.getOrdinateOy();
+        this.xLeftDownAngle = firstPoint.getX();
+        this.yLeftDownAngle = firstPoint.getY();
 
-        this.xRightUpAngle = secoundPoint.setAbscissaOx(width);
-        this.yRightUpAngle = secoundPoint.setOrdinateOy(height);
+        this.xRightUpAngle = secoundPoint.setX(width);
+        this.yRightUpAngle = secoundPoint.setY(height);
 
     }
 
@@ -94,9 +92,9 @@ public class Rectangle {
      * @return true if point is contained in rect and false if point isn't contained in rect
      */
     public static boolean isPointContainedInRactangle (Point2D point, Rectangle rectangle){
-        return ((point.getAbscissaOx() >= rectangle.getXLeftDownAngle() && point.getAbscissaOx() <= rectangle.getXRightDownAngle())
+        return ((point.getX() >= rectangle.getXLeftDownAngle() && point.getX() <= rectangle.getXRightDownAngle())
                 &&
-                (point.getOrdinateOy() >=rectangle.getYLeftDownAngle() && point.getOrdinateOy()<=rectangle.getYLeftUpAngle())
+                (point.getY() >=rectangle.getYLeftDownAngle() && point.getY()<=rectangle.getYLeftUpAngle())
         ) ? true : false;
     }
 
