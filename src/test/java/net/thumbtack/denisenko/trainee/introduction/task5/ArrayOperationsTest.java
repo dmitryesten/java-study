@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task5;
 
 import net.thumbtack.denisenko.trainee.introduction.task5.ArrayOperations;
 import org.junit.Test;
