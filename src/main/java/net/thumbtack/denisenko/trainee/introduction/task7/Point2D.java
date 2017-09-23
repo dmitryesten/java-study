@@ -1,6 +1,8 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task7;
 
-// REVU move to another package, create it
+
+import java.util.Objects;
+
 public class Point2D {
 
 
@@ -50,4 +52,17 @@ public class Point2D {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point2D point2D = (Point2D) o;
+        return x == point2D.x &&
+                y == point2D.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
 }

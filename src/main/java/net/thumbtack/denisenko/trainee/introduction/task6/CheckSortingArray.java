@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task6;
 
 public class CheckSortingArray {
 

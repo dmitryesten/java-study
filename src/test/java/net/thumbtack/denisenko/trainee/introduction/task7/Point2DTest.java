@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.introduction;
+package net.thumbtack.denisenko.trainee.introduction.task7;
 
 import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
 import org.junit.Test;
