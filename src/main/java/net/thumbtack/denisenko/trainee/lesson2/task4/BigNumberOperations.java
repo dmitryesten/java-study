@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.lesson2;
+package net.thumbtack.denisenko.trainee.lesson2.task4;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
