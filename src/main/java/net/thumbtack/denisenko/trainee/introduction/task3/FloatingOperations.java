@@ -3,6 +3,7 @@ package net.thumbtack.denisenko.trainee.introduction.task3;
 
 public class FloatingOperations {
 
+    private static final double eps = 0.000001;
 
     /**
      * @param valueOne
@@ -29,8 +30,8 @@ public class FloatingOperations {
      * @param valueTwo
      * @return
      */
-    public static double compareValues(double  valueOne, double  valueTwo){
-        return Math.abs(valueOne - valueTwo) <= 0.000001 ? valueOne : (valueOne < valueTwo) ? valueOne : valueTwo;
+    public static boolean compareValues(double  valueOne, double  valueTwo){
+        return (Math.abs(valueOne - valueTwo) <= FloatingOperations.eps);
         //return (valueOne == valueTwo) ? valueOne : (valueOne < valueTwo)? valueOne: valueTwo;
     }
 

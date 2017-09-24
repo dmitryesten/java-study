@@ -34,7 +34,7 @@ public class Circle {
 
 
     public static boolean isPointInCircle(Point2D point, Circle circle){
-        return (Math.sqrt(point.getX()*point.getX() + point.getY()*point.getY()) < circle.getRadius()) ? false : true;
+        return (Math.sqrt(point.getX()*point.getX() + point.getY()*point.getY()) < circle.getRadius());
     }
 
 

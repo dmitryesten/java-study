@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-// REVU 4 tests from 5 fail
+
 public class MathOperationTest {
 
     private MathOperation elementaryMathOperation = new MathOperation();
@@ -60,12 +60,12 @@ public class MathOperationTest {
 
     }
 
+
     @Test
     public void testCompareValues(){
         assertEquals(4, elementaryMathOperation.compareValues(4, 4), 0.00000001);
         assertEquals(2, elementaryMathOperation.compareValues(4, 2), 0.00000001);
         assertEquals(2, elementaryMathOperation.compareValues(2, 4), 0.00000001);
-
     }
 
 

@@ -25,7 +25,7 @@ public class CircleFactory {
     }
 
 
-    public static void setNumberInstances(int numberInstances) {
+    private void setNumberInstances(int numberInstances) {
         CircleFactory.numberInstances = numberInstances;
     }
 

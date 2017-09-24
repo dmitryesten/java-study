@@ -9,6 +9,7 @@ import net.thumbtack.denisenko.trainee.introduction.task5.ArrayOperations;
 import net.thumbtack.denisenko.trainee.introduction.task6.CheckSortingArray;
 import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
 import net.thumbtack.denisenko.trainee.introduction.task8.Rectangle;
+import net.thumbtack.denisenko.trainee.introduction.task9.Triangle;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -123,6 +124,17 @@ public class Trainee
         CircleFactory circleFactory3 = new CircleFactory(point2D, 3);
         System.out.println("i ="+ CircleFactory.getNumberInstances() );
 
+        System.out.println("\r\n----------Task_9-----------------------------" );
+        Point2D p1 = new Point2D(2,1);
+        Point2D p2 = new Point2D(5,6);
+        Point2D p3 = new Point2D(8,1);
+
+        Point2D p4 = new Point2D(5,3);
+        Point2D p5 = new Point2D(10,10);
+
+
+        Triangle triangle = new Triangle(p1, p2, p3);
+        System.out.println("\r\n- "+ Triangle.area(triangle));
 
 
         in.close();

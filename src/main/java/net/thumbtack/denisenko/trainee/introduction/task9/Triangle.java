@@ -1,6 +1,9 @@
 package net.thumbtack.denisenko.trainee.introduction.task9;
 
+import net.thumbtack.denisenko.trainee.introduction.task3.FloatingOperations;
 import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
+
+import java.util.Objects;
 
 public class Triangle {
 
@@ -30,6 +33,61 @@ public class Triangle {
         return "Angle_№1: ("+triangle.getX1()+ ", " + triangle.getY1()+") " + "\r\n" +
                 "Angle_№2: ("+triangle.getX2()+ ", " + triangle.getY2()+ ") " + "\r\n"+
                 "Angle_№3: ("+ triangle.getX3()+ ", " + triangle.getY3()+ ") " + "\r\n";
+    }
+
+    public static boolean pointInTriangle(Point2D p, Triangle t){
+         boolean a =(((p.getX() - t.getX1())*(t.getY1() - t.getY2())-(p.getY() - t.getY1())*(t.getX1() - t.getX2()) ) >= 0) ? true : false;
+         boolean b =(((p.getX() - t.getX2())*(t.getY2() - t.getY3())-(p.getY() - t.getY2())*(t.getX2() - t.getX3()) ) >= 0) ? true : false;
+         boolean c =(((p.getX() - t.getX3())*(t.getY3() - t.getY1())-(p.getY() - t.getY3())*(t.getX3() - t.getX1()) ) >= 0) ? true : false;
+        return !(a && b && c);
+    }
+
+    public boolean pointInTriangle(int x, int y){
+        boolean a =((x - getX1())*(getY1() - getY2())-(y - getY1())*(getX1() - getX2()) ) >= 0 ? true : false;
+        boolean b =((x - getX2())*(getY2() - getY3())-(y - getY2())*(getX2() - getX3()) ) >= 0 ? true : false;
+        boolean c =((x - getX3())*(getY3() - getY1())-(y - getY3())*(getX3() - getX1()) ) >= 0 ? true : false;
+        return a && b && c;
+    }
+
+
+    public static boolean isIsosceles(Triangle t){
+        return  FloatingOperations.compareValues(Triangle.lengthA(t), Triangle.lengthB(t)) &&
+                FloatingOperations.compareValues(Triangle.lengthA(t), Triangle.lengthC(t)) &&
+                FloatingOperations.compareValues(Triangle.lengthC(t), Triangle.lengthB(t));
+    }
+
+
+    public static double area(Triangle tr){
+        return Math.sqrt(Triangle.semiperimeter(tr) * (Triangle.semiperimeter(tr) - Triangle.lengthA(tr)) *
+                (Triangle.semiperimeter(tr) - Triangle.lengthB(tr))*(Triangle.semiperimeter(tr) - Triangle.lengthC(tr)) );
+    }
+
+
+
+    private static double lengthA(Triangle tr) {
+        return Math.sqrt( (tr.x1-tr.x2)*(tr.x1-tr.x2) + (tr.y1 -tr.y2)*(tr.y1 -tr.y2) );
+    }
+
+    private static double lengthB(Triangle tr) {
+        return Math.sqrt( (tr.x2-tr.x3)*(tr.x2-tr.x3) + (tr.y2 -tr.y3)*(tr.y2 -tr.y3) );
+    }
+
+    private static double lengthC(Triangle tr) {
+        return Math.sqrt( (tr.x1-tr.x2)*(tr.x1-tr.x2) + (tr.y1 -tr.y2)*(tr.y1 -tr.y2) );
+    }
+
+    private static double semiperimeter(Triangle tr){
+        return (Triangle.lengthA(tr) + Triangle.lengthB(tr) + Triangle.lengthB(tr)) / 2;
+    }
+
+    public void move(int x, int y){
+        setX1(getX1() + x);
+        setX2(getX2() + x);
+        setX3(getX3() + x);
+
+        setY1(getX1() + y);
+        setY2(getY2() + y);
+        setY3(getY3() + y);
     }
 
     public int getX1() {
@@ -80,4 +138,22 @@ public class Triangle {
         this.y3 = y3;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return x1 == triangle.x1 &&
+                y1 == triangle.y1 &&
+                x2 == triangle.x2 &&
+                y2 == triangle.y2 &&
+                x3 == triangle.x3 &&
+                y3 == triangle.y3;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x1, y1, x2, y2, x3, y3);
+    }
 }

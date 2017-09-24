@@ -42,7 +42,7 @@ public class RectangleTest {
 
     @Test
     public void large() throws Exception {
-
+        assertEquals(rect1, Rectangle.large(2, rect1));
     }
 
 
