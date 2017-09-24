@@ -11,11 +11,15 @@ public class Point3D extends Point2D {
         this.z = 0;
     }
 
-
     public Point3D(int x, int y, int z){
         super(x, y);
         this.z = z;
     }
+
+    public String printCoordinats(Point3D point3D){
+        return "X: "+super.getX()+"; Y: "+super.getY()+"; Z:"+point3D.getZ();
+    }
+
 
 
     public int getZ() {
