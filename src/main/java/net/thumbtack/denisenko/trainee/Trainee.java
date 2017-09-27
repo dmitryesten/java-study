@@ -1,15 +1,12 @@
 package net.thumbtack.denisenko.trainee;
 
-import net.thumbtack.denisenko.trainee.introduction.task1.HelloWorld;
-import net.thumbtack.denisenko.trainee.introduction.task10.Circle;
-import net.thumbtack.denisenko.trainee.introduction.task11.CircleFactory;
-import net.thumbtack.denisenko.trainee.introduction.task2.MathOperation;
-import net.thumbtack.denisenko.trainee.introduction.task3.FloatingOperations;
-import net.thumbtack.denisenko.trainee.introduction.task5.ArrayOperations;
-import net.thumbtack.denisenko.trainee.introduction.task6.CheckSortingArray;
-import net.thumbtack.denisenko.trainee.introduction.task7.Point2D;
-import net.thumbtack.denisenko.trainee.introduction.task8.Rectangle;
-import net.thumbtack.denisenko.trainee.introduction.task9.Triangle;
+import net.thumbtack.denisenko.trainee.introduction.helloworld.HelloWorld;
+import net.thumbtack.denisenko.trainee.introduction.mathoperation.MathOperation;
+import net.thumbtack.denisenko.trainee.introduction.floatingoperation.FloatingOperations;
+import net.thumbtack.denisenko.trainee.introduction.arrayoperation.ArrayOperations;
+import net.thumbtack.denisenko.trainee.introduction.checksortingarray.CheckSortingArray;
+import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import net.thumbtack.denisenko.trainee.introduction.rectangle.Rectangle;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -99,8 +96,10 @@ public class Trainee
         //Point2D bottonRight4 = new Point2D(9, 1);
         Point2D topLeft3 = new Point2D(2, 4);
         Point2D bottonRight4 = new Point2D(6, 3);
-        Rectangle rectangle = new Rectangle(topLeft1, bottonRight2);
+
+        Rectangle rectangle = new Rectangle(4, 2);
         Rectangle rectangle2 = new Rectangle(topLeft3, bottonRight4);
+
         System.out.println( Rectangle.printCoordinatesRectangle(rectangle) );
         System.out.println("\r\n"+ Rectangle.printCoordinatesRectangle(rectangle2) );
         System.out.println("Площадь = " + Rectangle.areaRectangle(rectangle) );
@@ -113,8 +112,9 @@ public class Trainee
         System.out.println("Два прямоугольнрка пересекаются:"+Rectangle.isRectangleCrossingWithOtherRectangle(rectangle, rectangle2));
 
 
-        System.out.println(Rectangle.printCoordinatesRectangle( Rectangle.large(2,rectangle)) );
+        System.out.println(Rectangle.printCoordinatesRectangle(rectangle) );
 
+        /*
         System.out.println("\r\n----------Task_11-----------------------------" );
         Point2D point2D = new Point2D(1,1);
         CircleFactory circleFactory = new CircleFactory(point2D, 3);
@@ -136,7 +136,7 @@ public class Trainee
         Triangle triangle = new Triangle(p1, p2, p3);
         System.out.println("\r\n- "+ Triangle.area(triangle));
 
-
+        */
         in.close();
 
     }
