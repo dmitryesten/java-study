@@ -52,6 +52,9 @@ public class Cylinder extends Circle {
         return (Circle.isPointInCircle(point, cylinder) && point.getZ() <= cylinder.height );
     }
 
+    public int getHeight() {
+        return height;
+    }
 
     @Override
     public boolean equals(Object o) {
