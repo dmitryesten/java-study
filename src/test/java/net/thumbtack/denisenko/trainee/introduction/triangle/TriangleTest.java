@@ -21,9 +21,9 @@ public class TriangleTest {
     @Test
     public void printCoordinates() throws Exception {
         assertEquals(
-                "Angle_№1: ("+2+ ", " + 1+") " + "\r\n" +
-                "Angle_№2: ("+5+ ", " +6+ ") " + "\r\n"+
-                "Angle_№3: ("+ 8+ ", " +1+ ") " + "\r\n",
+                "Angle_№1: ("+2.0+ ", " +1.0+") " + "\r\n" +
+                "Angle_№2: ("+5.0+ ", " +6.0+ ") " + "\r\n"+
+                "Angle_№3: ("+8.0+ ", " +1.0+ ") " + "\r\n",
                 Triangle.printCoordinats(triangle)
         );
 
@@ -38,22 +38,29 @@ public class TriangleTest {
 
     @Ignore
     public void pointInTriangle1() throws Exception {
-        assertTrue(triangle.pointInTriangle(5, 3));
+        assertTrue(triangle.pointInTriangle(5.0, 3.0));
     }
 
-
-    @Test
-    public void isIsosceles() throws Exception {
-        assertTrue(Triangle.isIsosceles(triangle));
-    }
 
     @Ignore
+    public void isIsosceles() throws Exception {
+        Triangle triangleIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(5,1));
+        Triangle triangleNotIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
+        assertFalse(Triangle.isIsosceles(triangleNotIso));
+        assertFalse(Triangle.isIsosceles(triangleIso));
+    }
+
+    @Test
     public void area() throws Exception {
-        //assertEquals();
+        Triangle triangle = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
+        assertEquals(11.1178, Triangle.area(triangle), 0.001);
     }
 
     @Ignore
     public void move() throws Exception {
+        Triangle triangle = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
+        triangle.move(1,1);
+        assertEquals(2.0, triangle.getX1(),0.1);
 
     }
 
