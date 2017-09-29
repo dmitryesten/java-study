@@ -1,6 +1,7 @@
 package net.thumbtack.denisenko.trainee.introduction.triangle;
 
 import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -34,25 +35,26 @@ public class TriangleTest {
 
     }
 
-    /*
-    @Test
+
+    @Ignore
     public void pointInTriangle1() throws Exception {
         assertTrue(triangle.pointInTriangle(5, 3));
     }
-    */
+
 
     @Test
     public void isIsosceles() throws Exception {
         assertTrue(Triangle.isIsosceles(triangle));
     }
 
-    @Test
+    @Ignore
     public void area() throws Exception {
         //assertEquals();
     }
 
-    @Test
+    @Ignore
     public void move() throws Exception {
+
     }
 
 }
