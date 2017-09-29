@@ -2,18 +2,14 @@ package net.thumbtack.denisenko.trainee.lesson2.task2;
 
 public class StringBuilderMethods {
 
-    public static StringBuilder append (StringBuilder sb, String s) {
-        return sb.append(s);
-    }
+    public static void main(String [] args){
 
+        StringBuilder sb = new StringBuilder("ABC");
 
-    public static StringBuilder insert (int i, String string, StringBuilder sb){
-        return sb.insert(i, string);
-    }
+        System.out.println(sb.append("EFG"));
+        System.out.println(sb.insert(1, "__asdqwe123__"));
+        System.out.println(sb.toString());
 
-
-    public static String toString(StringBuilder stringBuilder){
-        return stringBuilder.toString();
     }
 
 
