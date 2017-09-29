@@ -29,7 +29,7 @@ public class Cylinder extends Circle {
 
 
     public static double areaBase(Cylinder c){
-        return Circle.area(c) * c.height;
+        return Circle.area(c);
     }
 
 
