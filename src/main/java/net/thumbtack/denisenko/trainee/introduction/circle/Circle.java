@@ -45,7 +45,7 @@ public class Circle {
 
 
     public boolean isPointInCircle(int pointX, int pointY){
-        return (Math.sqrt(pointX*pointX + pointY*pointY) < getRadius());
+        return ( (pointX*pointX + pointY*pointY) < getRadius() * getRadius());
     }
 
 
