@@ -12,8 +12,6 @@ public class Rectangle3D extends Rectangle {
     private int lengthY;
     private int heightZ;
 
-    private int volume;
-
 
     public Rectangle3D(){
         this(1, 1, 1);
@@ -21,7 +19,7 @@ public class Rectangle3D extends Rectangle {
 
 
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height){
-        super(topLeftBase.getX(), topLeftBase.getY(), bottomRightBase.getX(), bottomRightBase.getY());
+        super(topLeftBase, bottomRightBase);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = height;
@@ -35,13 +33,7 @@ public class Rectangle3D extends Rectangle {
         this.heightZ = height;
     }
 
-    public int getVolume(int width, int length, int height) {
-        return new Rectangle3D(width, length, height){
-            int volume(){
-                return this.widthX * this.lengthY * this.heightZ;
-            }
-        }.volume();
-    }
+
 
     public static String printCoordinates(Rectangle3D r){
         return Rectangle3D.printCoordinatesRectangle(r) + "\r\nHeight: "+ r.heightZ;
@@ -59,10 +51,11 @@ public class Rectangle3D extends Rectangle {
         return Rectangle.areaRectangle(r);
     }
 
+    /*
     public static int volume (Rectangle3D p){
         return p.widthX * p.lengthY * p.heightZ;
     }
-
+    */
     public static boolean isPoint3DInRectagle(int x, int y, int z, Rectangle3D r){
         return Rectangle3D.isPointContainedInRactangle(new Point2D(x, y), r) && r.heightZ >= z;
     }
@@ -76,7 +69,7 @@ public class Rectangle3D extends Rectangle {
     }
 
     public static boolean isRectangleContainedInOtherRectangle(Rectangle3D innerRect, Rectangle3D externalRect){
-        return Rectangle3D.isRectangleContainedInOtherRectangle(innerRect, externalRect) && externalRect.heightZ >= innerRect.heightZ;
+        return Rectangle.isRectangleContainedInOtherRectangle(innerRect, externalRect) && externalRect.heightZ >= innerRect.heightZ;
     }
 
 
