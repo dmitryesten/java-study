@@ -1,8 +1,17 @@
+package net.thumbtack.denisenko.trainee.lesson2.cylinder;
+
+import net.thumbtack.denisenko.trainee.introduction.circle.Circle;
+import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import net.thumbtack.denisenko.trainee.lesson2.cylinder.Cylinder;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CylinderTest {
+
+
+
     @Test
     public void printCoordinates() throws Exception {
         Cylinder cylinder = new Cylinder(5, 5,3, 4);
