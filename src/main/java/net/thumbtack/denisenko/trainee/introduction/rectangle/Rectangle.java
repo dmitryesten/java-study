@@ -4,9 +4,6 @@ import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
 
 import java.util.Objects;
 
-/**
- *
- */
 public class Rectangle {
 
     private int width;
@@ -19,19 +16,11 @@ public class Rectangle {
     private int bottomRightY;
 
 
+
     public Rectangle(){
         this(1, 1);
         this.topLeftX = 0;
         this.bottomRightY = 0;
-    }
-
-    public Rectangle(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY){
-        this.topLeftX = topLeftX;
-        this.topLeftY = topLeftY;
-        this.bottomRightX = bottomRightX;
-        this.bottomRightY = bottomRightY;
-        this.width = bottomRightX - topLeftX;
-        this.height = topLeftY - bottomRightY;
     }
 
 
