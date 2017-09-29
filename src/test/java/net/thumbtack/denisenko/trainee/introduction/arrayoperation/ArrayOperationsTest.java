@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.introduction.arrayoperation;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -34,13 +35,13 @@ public class ArrayOperationsTest {
         assertEquals(8 , operationsArray.maxValueArray(array));
     }
 
-    /*
-    @Test
+
+    @Ignore
     public void middleValue() throws Exception {
         int [] array = {4, 2, 8, 6};
         int amountArray =  operationsArray.amountAllValues(array);
         assertEquals(8 , operationsArray.middleValue(array, amountArray), 0.001);
     }
-    */
+
 
 }
