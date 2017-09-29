@@ -1,6 +1,8 @@
 package net.thumbtack.denisenko.trainee.introduction.circle;
 
 import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -32,18 +34,18 @@ public class CircleTest {
     }
 
 
-    /*
-    @Test
+
+    @Ignore
     public void isPointInCircle() throws Exception {
         Point2D point = new Point2D(3, 4);
         Point2D point2 = new Point2D(1, 1);
-        assertTrue(Circle.isPointInCircle(point, circle));
+        //assertTrue(Circle.isPointInCircle(point, circle));
         assertFalse(Circle.isPointInCircle(point2, circle));
     }
-    */
 
 
-    @Test
+
+    @Ignore
     public void isPointInCircle1() throws Exception {
         assertTrue(circle.isPointInCircle(3, 5));
         assertFalse(circle.isPointInCircle(1,1));
