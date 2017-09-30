@@ -8,9 +8,9 @@ import java.util.Objects;
 
 public class Rectangle3D extends Rectangle {
 
-    private int widthX;
-    private int lengthY;
-    private int heightZ;
+    private double widthX;
+    private double lengthY;
+    private double heightZ;
 
 
     public Rectangle3D(){
@@ -47,20 +47,20 @@ public class Rectangle3D extends Rectangle {
         super.reduceRectangle(n, n);
     }
 
-    public static int areaBase(Rectangle3D r){
+    public static double areaBase(Rectangle3D r){
         return Rectangle.areaRectangle(r);
     }
 
-    /*
-    public static int volume (Rectangle3D p){
+
+    public static double volume (Rectangle3D p){
         return p.widthX * p.lengthY * p.heightZ;
     }
-    */
+
     public static boolean isPoint3DInRectagle(int x, int y, int z, Rectangle3D r){
         return Rectangle3D.isPointContainedInRactangle(new Point2D(x, y), r) && r.heightZ >= z;
     }
 
-    public static boolean isPoint3DInRectagle(Point3D p, Rectangle3D r){
+    public static boolean isPoint3DInRectangle(Point3D p, Rectangle3D r){
         return Rectangle3D.isPointContainedInRactangle(p, r) && r.heightZ >= p.getZ();
     }
 
@@ -73,7 +73,7 @@ public class Rectangle3D extends Rectangle {
     }
 
 
-    public int getHeightZ() {
+    public double getHeightZ() {
         return heightZ;
     }
 

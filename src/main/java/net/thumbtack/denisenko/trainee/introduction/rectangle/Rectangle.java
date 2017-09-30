@@ -1,19 +1,20 @@
 package net.thumbtack.denisenko.trainee.introduction.rectangle;
 
 import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import net.thumbtack.denisenko.trainee.lesson2.figure.Figure;
 
 import java.util.Objects;
 
-public class Rectangle {
+public class Rectangle extends Figure {
 
-    private int width;
-    private int height;
+    private double width;
+    private double height;
 
-    private int topLeftX;
-    private int topLeftY;
+    private double topLeftX;
+    private double topLeftY;
 
-    private int bottomRightX;
-    private int bottomRightY;
+    private double bottomRightX;
+    private double bottomRightY;
 
 
 
@@ -36,7 +37,7 @@ public class Rectangle {
 
 
 
-    public Rectangle(int width, int height) {
+    public Rectangle(double width, double height) {
         this.width = width;
         this.bottomRightX = width;
         this.height = height;
@@ -64,7 +65,7 @@ public class Rectangle {
      * @param rect object class Rectangle
      * @return area's rectangle
      */
-    public static int areaRectangle(Rectangle rect){
+    public static double areaRectangle(Rectangle rect){
         return (rect.getBottomRightX() - rect.getTopLeftX()) * (rect.getTopLeftY() - rect.getBottomRightY());
     }
 
@@ -89,29 +90,29 @@ public class Rectangle {
                 && (innerRect.getTopLeftY() <= externalRect.getTopLeftY() && innerRect.getBottomRightY() >= externalRect.getBottomRightY()));
     }
 
-    private static int maxLeftX(Rectangle a, Rectangle b){
+    private static double maxLeftX(Rectangle a, Rectangle b){
         return (a.getTopLeftX() > b.getTopLeftX()) ? a.getTopLeftX() : b.getTopLeftX();
     }
 
-    private static int minRightX(Rectangle a, Rectangle b){
+    private static double minRightX(Rectangle a, Rectangle b){
         return (a.getBottomRightX() < b.getBottomRightX()) ? a.getBottomRightX() : b.getBottomRightX();
     }
 
-    private static int maxLeftY(Rectangle a, Rectangle b){
+    private static double maxLeftY(Rectangle a, Rectangle b){
         return (a.getTopLeftY() > b.getTopLeftY()) ? a.getTopLeftY() : b.getTopLeftY();
     }
 
-    private static int minRightY(Rectangle a, Rectangle b){
+    private static double minRightY(Rectangle a, Rectangle b){
         return (a.getBottomRightY() < b.getBottomRightY()) ? a.getBottomRightY() : b.getBottomRightY();
     }
 
 
     public static boolean isRectangleCrossingWithOtherRectangle(Rectangle crossingRect, Rectangle defaultRect) {
-        int maxLeftX = maxLeftX(crossingRect, defaultRect);
-        int maxLeftY = maxLeftY(crossingRect, defaultRect);
+        double maxLeftX = maxLeftX(crossingRect, defaultRect);
+        double maxLeftY = maxLeftY(crossingRect, defaultRect);
 
-        int minRightX = minRightX(crossingRect, defaultRect);
-        int minRightY = minRightY(crossingRect, defaultRect);
+        double minRightX = minRightX(crossingRect, defaultRect);
+        double minRightY = minRightY(crossingRect, defaultRect);
 
         return !( (maxLeftX > minRightX) && (maxLeftY > minRightY));
     }
@@ -133,35 +134,35 @@ public class Rectangle {
 
 
 
-    public int getTopLeftX() {
+    public double getTopLeftX() {
         return topLeftX;
     }
 
-    public void setTopLeftX(int topLeftX) {
+    public void setTopLeftX(double topLeftX) {
         this.topLeftX = topLeftX;
     }
 
-    public int getTopLeftY() {
+    public double getTopLeftY() {
         return topLeftY;
     }
 
-    public void setTopLeftY(int topLeftY) {
+    public void setTopLeftY(double topLeftY) {
         this.topLeftY = topLeftY;
     }
 
-    public int getBottomRightX() {
+    public double getBottomRightX() {
         return bottomRightX;
     }
 
-    public void setBottomRightX(int bottonRightX) {
+    public void setBottomRightX(double bottonRightX) {
         this.bottomRightX = bottonRightX;
     }
 
-    public int getBottomRightY() {
+    public double getBottomRightY() {
         return bottomRightY;
     }
 
-    public void setBottomRightY(int bottonRightY) {
+    public void setBottomRightY(double bottonRightY) {
         this.bottomRightY = bottonRightY;
     }
 

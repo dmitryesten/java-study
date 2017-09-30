@@ -1,23 +1,24 @@
 package net.thumbtack.denisenko.trainee.introduction.circle;
 
 import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
+import net.thumbtack.denisenko.trainee.lesson2.figure.Figure;
 
 import java.util.Objects;
 
-public class Circle {
+public class Circle extends Figure {
 
-    private int x;
-    private int y;
-    private int radius;
+    private double x;
+    private double y;
+    private double radius;
 
 
-    public Circle (Point2D point, int radius) {
+    public Circle (Point2D point, double radius) {
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;
     }
 
-    public Circle (int x, int y, int radius) {
+    public Circle (double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -54,15 +55,15 @@ public class Circle {
     }
 
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
@@ -70,7 +71,7 @@ public class Circle {
         this.y = y;
     }
 
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 

@@ -5,18 +5,20 @@ import net.thumbtack.denisenko.trainee.lesson2.point3d.Point3D;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Rectangle3DTest {
+
     @Test
     public void printCoordinates() throws Exception {
         Rectangle3D r = new Rectangle3D(3, 2, 2);
-        assertEquals(0, r.getTopLeftX() );
-        assertEquals(2, r.getTopLeftY() );
+        assertEquals(0.0, r.getTopLeftX() );
+        assertEquals(2.0, r.getTopLeftY() );
 
-        assertEquals(3, r.getBottomRightX() );
-        assertEquals(0, r.getBottomRightY() );
+        assertEquals(3.0, r.getBottomRightX() );
+        assertEquals(0.0, r.getBottomRightY() );
 
-        assertEquals(2, r.getHeightZ() );
+        assertEquals(2.0, r.getHeightZ() );
     }
 
     @Test
@@ -24,13 +26,13 @@ public class Rectangle3DTest {
         int n = 1;
         Rectangle3D r = new Rectangle3D(3, 2, 2);
         r.move(n, n);
-        assertEquals(3 + n, r.getBottomRightX());
-        assertEquals(0 + n, r.getBottomRightY());
+        assertEquals(3.0 + n, r.getBottomRightX());
+        assertEquals(0.0 + n, r.getBottomRightY());
 
-        assertEquals(0 + n, r.getTopLeftX());
-        assertEquals(2 + n, r.getTopLeftY());
+        assertEquals(0.0 + n, r.getTopLeftX());
+        assertEquals(2.0 + n, r.getTopLeftY());
 
-        assertEquals(2, r.getHeightZ());
+        assertEquals(2.0, r.getHeightZ());
     }
 
 
@@ -39,9 +41,9 @@ public class Rectangle3DTest {
         int n = 1;
         Rectangle3D r = new Rectangle3D(3, 2, 2);
         r.reduceBase(n);
-        assertEquals(3 - n, r.getBottomRightX() );
-        assertEquals(2 - n, r.getTopLeftY() );
-        assertEquals(2, r.getHeightZ() );
+        assertEquals(3.0 - n, r.getBottomRightX() );
+        assertEquals(2.0 - n, r.getTopLeftY() );
+        assertEquals(2.0, r.getHeightZ() );
 
     }
 
@@ -50,7 +52,7 @@ public class Rectangle3DTest {
     @Test
     public void areaBase() throws Exception {
         Rectangle3D r = new Rectangle3D(3, 2, 2);
-        assertEquals(6, Rectangle3D.areaBase(r));
+        assertEquals(6.0, Rectangle3D.areaBase(r));
     }
 
 
@@ -58,21 +60,17 @@ public class Rectangle3DTest {
     @Test
     public void volume() throws Exception {
         Rectangle3D r = new Rectangle3D(3, 2, 2);
-        //assertEquals(12, Rectangle3D.volume(r));
-        //assertEquals(1, r.getVolume1());
-
+        assertEquals(12.0, Rectangle3D.volume(r));
     }
 
     @Test
     public void isPoint3DInRectangle() throws Exception {
         Point3D point3D = new Point3D(1, 1 ,1);
         Rectangle3D r = new Rectangle3D(3, 2, 2);
-        assertTrue(Rectangle3D.isPoint3DInRectagle(point3D, r));
+        assertTrue(Rectangle3D.isPoint3DInRectangle(point3D, r));
         assertTrue(Rectangle3D.isPoint3DInRectagle(1,1,1, r));
     }
 
-    private void assertTrue(boolean point3DInRectagle) {
-    }
 
 
     @Test
