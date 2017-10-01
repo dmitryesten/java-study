@@ -1,5 +1,8 @@
 package net.thumbtack.denisenko.trainee.geometry3D;
 
+import net.thumbtack.denisenko.trainee.geometry2D.Circle;
+import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
+
 public class AnonymousRectangle3D {
 
     public static void main (String [] args){
@@ -17,6 +20,18 @@ public class AnonymousRectangle3D {
         }.volume();
 
         System.out.println(volume);
+
+
+
+        Rectangle rectangle = new Rectangle3D(2, 5 , 6);
+        Circle circle = new Cylinder(5,5, 10, 2 );
+        System.out.println(rectangle.getClass().getName());
+        System.out.println(circle.getClass().getName());
+
+        //Error
+        //Rectangle3D rectangle3D = new Rectangle(2, 4);
+        //Rectangle3D rectangle3D = (Rectangle3D) new Rectangle(2, 4);
+
     }
 
 }

@@ -1,11 +1,12 @@
 package net.thumbtack.denisenko.trainee.geometry3D;
 
+import net.thumbtack.denisenko.trainee.Colored;
 import net.thumbtack.denisenko.trainee.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
 
 import java.util.Objects;
 
-public class Cylinder extends Circle {
+public class Cylinder extends Circle implements Colored{
 
     private double height;
 

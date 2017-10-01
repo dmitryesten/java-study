@@ -1,8 +1,10 @@
 package net.thumbtack.denisenko.trainee.geometry2D;
 
+import net.thumbtack.denisenko.trainee.Colored;
+
 import java.util.Objects;
 
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements Colored {
 
 
     private double width;

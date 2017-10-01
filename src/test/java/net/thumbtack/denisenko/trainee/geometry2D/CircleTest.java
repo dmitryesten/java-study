@@ -2,6 +2,8 @@ package net.thumbtack.denisenko.trainee.geometry2D;
 
 import net.thumbtack.denisenko.trainee.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -16,7 +18,7 @@ public class CircleTest {
     @Test
     public void printCoordinats() throws Exception {
         assertEquals(
-                "Координаты ("+4+"; "+5+ "), радиус = "+2,
+                "Координаты ("+4.0+"; "+5.0+ "), радиус = "+2.0,
                 circle.printCoordinates()
         );
     }

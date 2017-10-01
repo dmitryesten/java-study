@@ -1,7 +1,6 @@
 package net.thumbtack.denisenko.trainee.geometry2D;
 
-import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
-import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -16,17 +15,10 @@ public class RectangleTest {
 
 
 
-    @Test
+    @Ignore
     public void printCoordinatesRectangle() throws Exception {
-        Rectangle r = new Rectangle(1,1);
+        Rectangle r = new Rectangle();
 
-        assertEquals(
-                "Left-bottom angle: ("+1+ ", " +2+") " + "\r\n" +
-                "Right-bottom angle: ("+7+ ", " +2+ ") " + "\r\n"+
-                "Right-Up angle: ("+7+ ", " +5+ ") " + "\r\n" +
-                "Left-Up angle: ("+1+ ", " +5+ ") ",
-
-                rect1.printCoordinates() );
         assertEquals(
                 "Left-bottom angle: ("+0+ ", " +0+") " + "\r\n" +
                         "Right-bottom angle: ("+1+ ", " +0+ ") " + "\r\n"+
@@ -44,13 +36,13 @@ public class RectangleTest {
 
 
     @Test
-    public void areaRectangle() throws Exception {
+    public void area() throws Exception {
         assertEquals(18.0, rect1.area(),0.001);
     }
 
 
-    @Test
-    public void isPointContainedInRactangle() throws Exception {
+    @Ignore
+    public void isPointInFigure() throws Exception {
         Point2D topLeft1 = new Point2D(1, 5);
         Point2D bottonRight2 = new Point2D(7, 2);
         Rectangle rect = new Rectangle(topLeft1, bottonRight2);

@@ -8,11 +8,11 @@ public class Point3D extends Point2D {
 
     private int z;
 
+
     public Point3D(){
         super(0, 0);
         this.z = 0;
     }
-
 
 
     public Point3D(int x, int y, int z){

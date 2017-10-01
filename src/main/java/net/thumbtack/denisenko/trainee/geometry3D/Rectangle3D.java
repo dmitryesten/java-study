@@ -1,11 +1,12 @@
 package net.thumbtack.denisenko.trainee.geometry3D;
 
+import net.thumbtack.denisenko.trainee.Colored;
 import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
 import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
 
 import java.util.Objects;
 
-public class Rectangle3D extends Rectangle {
+public class Rectangle3D extends Rectangle implements Colored {
 
     private double widthX;
     private double lengthY;

@@ -1,8 +1,10 @@
 package net.thumbtack.denisenko.trainee.geometry2D;
 
+import net.thumbtack.denisenko.trainee.Colored;
+
 import java.util.Objects;
 
-public class Circle extends Figure {
+public class Circle extends Figure implements Colored {
 
     private double x;
     private double y;

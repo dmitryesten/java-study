@@ -1,10 +1,11 @@
 package net.thumbtack.denisenko.trainee.geometry2D;
 
+import net.thumbtack.denisenko.trainee.Colored;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 import java.util.Objects;
 
-public class Triangle extends Figure {
+public class Triangle extends Figure implements Colored {
 
     private double x1;
     private double y1;
