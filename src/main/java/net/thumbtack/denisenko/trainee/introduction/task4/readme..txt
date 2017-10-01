@@ -1,1 +1,0 @@
-//The task№4 is solved in Task№8

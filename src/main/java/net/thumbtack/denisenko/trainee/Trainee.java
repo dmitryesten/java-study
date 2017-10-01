@@ -1,12 +1,12 @@
 package net.thumbtack.denisenko.trainee;
 
-import net.thumbtack.denisenko.trainee.introduction.helloworld.HelloWorld;
-import net.thumbtack.denisenko.trainee.introduction.mathoperation.MathOperation;
-import net.thumbtack.denisenko.trainee.introduction.floatingoperation.FloatingOperations;
-import net.thumbtack.denisenko.trainee.introduction.arrayoperation.ArrayOperations;
-import net.thumbtack.denisenko.trainee.introduction.checksortingarray.CheckSortingArray;
-import net.thumbtack.denisenko.trainee.introduction.point2d.Point2D;
-import net.thumbtack.denisenko.trainee.introduction.rectangle.Rectangle;
+
+import net.thumbtack.denisenko.trainee.mathoperation.MathOperation;
+import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
+import net.thumbtack.denisenko.trainee.mathoperation.ArrayOperations;
+import net.thumbtack.denisenko.trainee.mathoperation.CheckSortingArray;
+import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
+import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -22,7 +22,6 @@ public class Trainee
 
     public static void main( String[] args ) throws Throwable {
 
-        HelloWorld stringHelloWorld = new HelloWorld();
         MathOperation elementaryMathOperation = new MathOperation();
         ArrayOperations operationsAboveElementsOfArray = new ArrayOperations();
         CheckSortingArray checkSortingArray = new CheckSortingArray();
@@ -34,11 +33,6 @@ public class Trainee
 
 
         array = new int[random.nextInt(12) + 1];
-
-
-        System.out.println("----------Task_1-----------------------------" );
-        // Task_1 part Intro
-        System.out.println(stringHelloWorld.printStringHelloWorld());
 
 
         System.out.println("\r\n----------Task_2-----------------------------" );
@@ -100,9 +94,9 @@ public class Trainee
         Rectangle rectangle = new Rectangle(4, 2);
         Rectangle rectangle2 = new Rectangle(topLeft3, bottonRight4);
 
-        System.out.println( Rectangle.printCoordinatesRectangle(rectangle) );
-        System.out.println("\r\n"+ Rectangle.printCoordinatesRectangle(rectangle2) );
-        System.out.println("Площадь = " + Rectangle.areaRectangle(rectangle) );
+        System.out.println( rectangle.printCoordinates() );
+        System.out.println("\r\n"+ rectangle2.printCoordinates() );
+        System.out.println("Площадь = " + rectangle.area() );
         //rectangle.move(1,1);
         //System.out.println("Перемещенин треугольника:\r\n"+ Rectangle.printCoordinatesRactangle(rectangle) );
         //rectangle.reduceRectangle(1,1);
@@ -112,7 +106,7 @@ public class Trainee
         System.out.println("Два прямоугольнрка пересекаются:"+Rectangle.isRectangleCrossingWithOtherRectangle(rectangle, rectangle2));
 
 
-        System.out.println(Rectangle.printCoordinatesRectangle(rectangle) );
+        System.out.println(rectangle.printCoordinates() );
 
         /*
         System.out.println("\r\n----------Task_11-----------------------------" );
