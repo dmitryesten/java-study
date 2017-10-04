@@ -15,6 +15,14 @@ public class Box <T extends Rectangle> {
         return new Rectangle();
     }
 
+    public T getContent() {
+        return content;
+    }
+
+    public void setContent(T content) {
+        this.content = content;
+    }
+
     public Rectangle create(Point2D leftTop, Point2D bottomRight){
         return new Rectangle(leftTop, bottomRight);
     }
@@ -23,12 +31,8 @@ public class Box <T extends Rectangle> {
         return new Rectangle(wight, height);
     }
 
-    public T getContent() {
-        return content;
-    }
-
-    public void setContent(T content) {
-        this.content = content;
+    public double square(){
+        return content.area();
     }
 
 }
