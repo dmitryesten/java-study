@@ -1,6 +1,8 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
-public class Box <T> {
+import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
+
+public class Box <T extends Rectangle> {
 
     private T content;
 
