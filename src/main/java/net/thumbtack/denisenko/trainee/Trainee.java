@@ -5,8 +5,8 @@ import net.thumbtack.denisenko.trainee.mathoperation.MathOperation;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 import net.thumbtack.denisenko.trainee.mathoperation.ArrayOperations;
 import net.thumbtack.denisenko.trainee.mathoperation.CheckSortingArray;
-import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
-import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry2D.Point2D;
+import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -55,7 +55,7 @@ public class Trainee
         System.out.println("----------Task_5-----------------------------" );
         randomValue(array);
         String valuesArray = "";
-        for(int i = 0; i < array.length; i++){
+        /*for(int i = 0; i < array.length; i++){
             valuesArray +=  array[i] + ", ";
         }
 
@@ -72,7 +72,7 @@ public class Trainee
         //Task_5
         System.out.println("Массив возрастающий: " + checkSortingArray.checkAscendingArray(array));
         System.out.println("Массив убывающий: " + checkSortingArray.checkDescendingArray(array));
-
+*/
 /*
         System.out.println("\r\n----------Task_7-----------------------------" );
         Point2D point2D = new Point2D(1, 2);

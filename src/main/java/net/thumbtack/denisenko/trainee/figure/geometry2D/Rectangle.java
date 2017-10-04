@@ -1,6 +1,4 @@
-package net.thumbtack.denisenko.trainee.geometry2D;
-
-import net.thumbtack.denisenko.trainee.Colored;
+package net.thumbtack.denisenko.trainee.figure.geometry2D;
 
 import java.util.Objects;
 
@@ -45,7 +43,7 @@ public class Rectangle extends Figure {
     }
 
 
-    public String printCoordinates() {
+    final public String printCoordinates() {
         return  "Left-bottom angle: ("+getTopLeftX()+ ", " + getBottomRightY()+") " + "\r\n" +
                 "Right-bottom angle: ("+getBottomRightX()+ ", " +getBottomRightY()+ ") " + "\r\n"+
                 "Right-Up angle: ("+ getBottomRightX()+ ", " +getTopLeftY()+ ") " + "\r\n" +

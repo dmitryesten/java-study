@@ -3,7 +3,6 @@ package net.thumbtack.denisenko.trainee.stringnumber;
 public class StringMethods {
 
 
-
     public static void main( String[] args ){
 
         char [] arrayStr = new char[10];

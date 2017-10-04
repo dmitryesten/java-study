@@ -1,8 +1,7 @@
-package net.thumbtack.denisenko.trainee.geometry3D;
+package net.thumbtack.denisenko.trainee.figure.geometry3D;
 
-import net.thumbtack.denisenko.trainee.Colored;
-import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
-import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry2D.Point2D;
+import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
 
 import java.util.Objects;
 
@@ -17,6 +16,12 @@ public class Rectangle3D extends Rectangle {
         this(1, 1, 1);
     }
 
+    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase){
+        super(topLeftBase, bottomRightBase);
+        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
+        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
+        this.heightZ = topLeftBase.getZ();
+    }
 
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height){
         super(topLeftBase, bottomRightBase);

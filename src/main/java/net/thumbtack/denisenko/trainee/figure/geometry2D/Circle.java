@@ -1,6 +1,4 @@
-package net.thumbtack.denisenko.trainee.geometry2D;
-
-import net.thumbtack.denisenko.trainee.Colored;
+package net.thumbtack.denisenko.trainee.figure.geometry2D;
 
 import java.util.Objects;
 
@@ -22,7 +20,7 @@ public class Circle extends Figure {
         this.radius = radius;
     }
 
-    public String printCoordinates(){
+    final public String printCoordinates(){
         return "Координаты ("+ getX()+"; "+ getY()+ "), радиус = "+getRadius();
     }
 
@@ -43,7 +41,7 @@ public class Circle extends Figure {
 
 
 
-    public  double length(){
+    public double length(){
         return 2 * Math.PI * getRadius();
     }
 
@@ -59,7 +57,7 @@ public class Circle extends Figure {
         return x;
     }
 
-    public void setX(double x) {
+    private void setX(double x) {
         this.x = x;
     }
 
@@ -67,7 +65,7 @@ public class Circle extends Figure {
         return y;
     }
 
-    public void setY(double y) {
+    private void setY(double y) {
         this.y = y;
     }
 

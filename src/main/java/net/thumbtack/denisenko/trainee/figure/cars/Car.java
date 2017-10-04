@@ -1,15 +1,15 @@
-package net.thumbtack.denisenko.trainee.car;
+package net.thumbtack.denisenko.trainee.figure.cars;
 
-import net.thumbtack.denisenko.trainee.Colored;
+import net.thumbtack.denisenko.trainee.figure.Colored;
 import java.util.Objects;
 
 public class Car implements Colored {
 
-    String mark;
-    int weight;
-    int maxSpeed;
+    private String mark;
+    private int weight;
+    private int maxSpeed;
 
-    Car(String mark, int weight, int maxSpeed){
+    public Car(String mark, int weight, int maxSpeed){
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;

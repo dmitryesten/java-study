@@ -1,9 +1,5 @@
-package net.thumbtack.denisenko.trainee.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry2D;
 
-import net.thumbtack.denisenko.trainee.geometry2D.Circle;
-import net.thumbtack.denisenko.trainee.geometry2D.Point2D;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 

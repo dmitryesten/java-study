@@ -1,6 +1,6 @@
-package net.thumbtack.denisenko.trainee.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry2D;
 
-import net.thumbtack.denisenko.trainee.Colored;
+import net.thumbtack.denisenko.trainee.figure.Colored;
 
 public abstract class Figure implements Colored {
 

@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry2D;
 
 
 import java.util.Objects;
@@ -7,7 +7,7 @@ public class Point2D {
 
 
     private int x;
-    private  int y;
+    private int y;
 
     public Point2D(){
         this(0, 0);

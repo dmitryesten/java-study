@@ -1,6 +1,5 @@
-package net.thumbtack.denisenko.trainee.geometry3D;
+package net.thumbtack.denisenko.trainee.figure.geometry3D;
 
-import net.thumbtack.denisenko.trainee.geometry3D.Point3D;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
