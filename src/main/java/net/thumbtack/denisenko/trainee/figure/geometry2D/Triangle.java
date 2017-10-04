@@ -5,7 +5,7 @@ import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 import java.util.Objects;
 
-public class Triangle extends Figure implements Colored {
+public class Triangle extends Figure {
 
     private double x1;
     private double y1;

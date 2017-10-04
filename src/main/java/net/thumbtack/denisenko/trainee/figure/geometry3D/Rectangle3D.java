@@ -6,7 +6,7 @@ import net.thumbtack.denisenko.trainee.geometry2D.Rectangle;
 
 import java.util.Objects;
 
-public class Rectangle3D extends Rectangle implements Colored {
+public class Rectangle3D extends Rectangle {
 
     private double widthX;
     private double lengthY;

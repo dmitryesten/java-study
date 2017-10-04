@@ -4,7 +4,7 @@ import net.thumbtack.denisenko.trainee.Colored;
 
 import java.util.Objects;
 
-public class Circle extends Figure implements Colored {
+public class Circle extends Figure {
 
     private double x;
     private double y;

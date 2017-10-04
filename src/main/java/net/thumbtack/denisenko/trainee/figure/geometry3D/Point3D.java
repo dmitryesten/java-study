@@ -41,6 +41,7 @@ public class Point3D extends Point2D {
         this.z = z;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -4,7 +4,7 @@ import net.thumbtack.denisenko.trainee.Colored;
 
 import java.util.Objects;
 
-public class Rectangle extends Figure implements Colored {
+public class Rectangle extends Figure {
 
 
     private double width;
