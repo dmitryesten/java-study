@@ -5,8 +5,8 @@ import net.thumbtack.denisenko.trainee.mathoperation.MathOperation;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 import net.thumbtack.denisenko.trainee.mathoperation.ArrayOperations;
 import net.thumbtack.denisenko.trainee.mathoperation.CheckSortingArray;
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Point2D;
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -23,9 +23,9 @@ public class Trainee
     public static void main( String[] args ) throws Throwable {
 
         MathOperation elementaryMathOperation = new MathOperation();
-        ArrayOperations operationsAboveElementsOfArray = new ArrayOperations();
-        CheckSortingArray checkSortingArray = new CheckSortingArray();
-        FloatingOperations floatingOperations = new FloatingOperations();
+        //ArrayOperations operationsAboveElementsOfArray = new ArrayOperations();
+        //CheckSortingArray checkSortingArray = new CheckSortingArray();
+        //FloatingOperations floatingOperations = new FloatingOperations();
 
 
         Scanner in = new Scanner(System.in);
