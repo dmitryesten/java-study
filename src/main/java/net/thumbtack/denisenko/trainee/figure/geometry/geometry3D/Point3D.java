@@ -1,6 +1,6 @@
-package net.thumbtack.denisenko.trainee.figure.geometry3D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Point2D;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import java.util.Objects;
 
 public class Point3D extends Point2D {
