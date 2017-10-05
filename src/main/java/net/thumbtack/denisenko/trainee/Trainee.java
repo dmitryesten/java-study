@@ -3,8 +3,6 @@ package net.thumbtack.denisenko.trainee;
 
 import net.thumbtack.denisenko.trainee.mathoperation.MathOperation;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
-import net.thumbtack.denisenko.trainee.mathoperation.ArrayOperations;
-import net.thumbtack.denisenko.trainee.mathoperation.CheckSortingArray;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
