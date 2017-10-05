@@ -1,11 +1,11 @@
-package net.thumbtack.denisenko.trainee.figure.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 class CircleFactory {
 
     private static int numberInstances = 0;
 
 
-    CircleFactory(Point2D center, int radius){
+    public CircleFactory(Point2D center, int radius){
         createCircle(center, radius);
     }
 

@@ -1,5 +1,6 @@
-package net.thumbtack.denisenko.trainee.figure.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 import java.util.Objects;
@@ -93,8 +94,6 @@ public class Triangle extends Figure {
 
 
 
-
-
     public double getX1() {
         return x1;
     }
@@ -157,8 +156,11 @@ public class Triangle extends Figure {
                 y3 == triangle.y3;
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(x1, y1, x2, y2, x3, y3);
     }
+
+
 }

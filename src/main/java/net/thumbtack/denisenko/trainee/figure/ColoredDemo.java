@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure;
 
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Circle;
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
 public class ColoredDemo {
 
@@ -10,7 +10,6 @@ public class ColoredDemo {
         Rectangle r = new Rectangle();
         System.out.println("Painting circle: "+ c.paint());
         System.out.println("Painting rectangle: "+ r.paint());
-
 
     }
 

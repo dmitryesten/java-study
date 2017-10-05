@@ -1,7 +1,7 @@
-package net.thumbtack.denisenko.trainee.figure.geometry3D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Circle;
-import net.thumbtack.denisenko.trainee.figure.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
 public class AnonymousRectangle3D {
 
