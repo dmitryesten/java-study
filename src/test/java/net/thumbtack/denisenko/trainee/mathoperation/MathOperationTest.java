@@ -2,7 +2,6 @@ package net.thumbtack.denisenko.trainee.mathoperation;
 
 
 import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -40,7 +39,7 @@ public class MathOperationTest {
         assertEquals(0, elementaryMathOperation.devision(0,-2));
         assertEquals(0, elementaryMathOperation.devision(0,2));
 
-        //assertEquals("На 0 делить нельзя", elementaryMathOperation.devision(4,0));
+
 
     }
 

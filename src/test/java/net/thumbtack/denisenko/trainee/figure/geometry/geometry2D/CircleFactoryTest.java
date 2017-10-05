@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.figure.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 import org.junit.Test;
 

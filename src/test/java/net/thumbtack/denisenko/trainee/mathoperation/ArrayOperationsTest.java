@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.mathoperation;
 
-import net.thumbtack.denisenko.trainee.mathoperation.ArrayOperations;
+
 import org.junit.Ignore;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.mathoperation;
 
-import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
