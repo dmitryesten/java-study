@@ -1,6 +1,9 @@
-package net.thumbtack.denisenko.trainee.figure.geometry2D;
+package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+
+import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
+
 
 public class Rectangle extends Figure {
 
