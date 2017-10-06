@@ -8,8 +8,8 @@ public class ColoredDemo {
     public static void main(String [] args) {
         Circle c = new Circle(2, 2, 3);
         Rectangle r = new Rectangle();
-        System.out.println("Painting circle: "+ c.paint());
-        System.out.println("Painting rectangle: "+ r.paint());
+        System.out.println("Painting circle: "+ c.paint(Color.GREEN));
+        System.out.println("Painting rectangle: "+ r.paint(Color.BLACK));
 
     }
 
