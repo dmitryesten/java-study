@@ -14,31 +14,12 @@ public class Box <T extends Rectangle & Square> implements Square{
     }
 
 
-    public Rectangle create(){
-        return new Rectangle();
+    public T create(Box<?> b) throws IllegalAccessException, InstantiationException {
+        Class c = b.getClass();
+        return (T) c.newInstance();
     }
 
 
-    public T getContent() {
-        return content;
-    }
-
-
-    public void setContent(T content) {
-        this.content = content;
-    }
-
-
-    public Rectangle create(Point2D leftTop, Point2D bottomRight){
-        return new Rectangle(leftTop, bottomRight);
-    }
-
-
-    public Rectangle create(int wight, int height){
-        return new Rectangle(wight, height);
-    }
-
-    @Override
     public double square() {
        return content.area();
     }
@@ -52,5 +33,13 @@ public class Box <T extends Rectangle & Square> implements Square{
     }
 
 
+    public T getContent() {
+        return content;
+    }
+
+
+    public void setContent(T content) {
+        this.content = content;
+    }
 
 }
