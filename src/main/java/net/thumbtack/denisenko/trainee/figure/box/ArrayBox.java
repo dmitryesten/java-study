@@ -1,6 +1,8 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
-public class ArrayBox<T> {
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
+
+public class ArrayBox<T extends Rectangle> {
 
     private T [] content;
 
@@ -8,4 +10,16 @@ public class ArrayBox<T> {
         this.content = content;
     }
 
+    public T[] getContent() {
+        return content;
+    }
+
+    public void setContent(T[] content) {
+        this.content = content;
+    }
+
+    public T[] create(ArrayBox<?>[] arrayBoxes) throws IllegalAccessException, InstantiationException {
+        Class c = arrayBoxes.getClass();
+        return (T[]) c.newInstance();
+    }
 }
