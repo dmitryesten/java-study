@@ -1,7 +1,9 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
 
+
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry3D.Rectangle3D;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 public class BoxDemo {
@@ -13,10 +15,14 @@ public class BoxDemo {
         //Box<Circle> box1 = new Box<>();
         //Box <Circle> box2 = new Box<>(new Circle(1,1, 2) );
 
-        //System.out.println("прямоугольник "+box.getContent());
-        //System.out.println("CUBE "+box1.getContent());
-        //System.out.println("Круг "+box2.getContent());
         System.out.println(isSameSquareStatic(new Box(new Rectangle()), new Box(new Rectangle(2,3))));
+
+        ArrayBox<Rectangle> arrayBox = new ArrayBox<>(new Rectangle[0]);
+        ArrayBox<Rectangle3D> arrayBox1 = new ArrayBox<>(new Rectangle3D[1]);
+        //ArrayBox<String> arrayBox2 = new ArrayBox<>(new String[2]); //generic limited Rectangle
+
+
+
 
     }
 
