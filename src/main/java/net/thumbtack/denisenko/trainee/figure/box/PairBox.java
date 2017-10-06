@@ -1,9 +1,11 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
+import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
-public class PairBox<T extends Rectangle, V extends Circle> {
+public class PairBox<T extends Figure, V extends Figure>{
 
     private T contentRect;
     private V contentCircle;
@@ -12,6 +14,11 @@ public class PairBox<T extends Rectangle, V extends Circle> {
         this.contentRect = contentRect;
         this.contentCircle = contentCircle;
     }
+
+    public boolean isSameSquare(T contentRect, V contentCircle){
+        return FloatingOperations.compareValues(contentRect.area(), contentCircle.area());
+    }
+
 
     public T getContentRect() {
         return contentRect;
