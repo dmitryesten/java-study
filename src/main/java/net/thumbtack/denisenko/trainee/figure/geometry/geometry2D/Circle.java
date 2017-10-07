@@ -1,14 +1,17 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
-
 import java.util.Objects;
+
 
 public class Circle extends Figure {
 
-    private double x;
+	private double x;
     private double y;
     private double radius;
+    private String color;
+
 
     public Circle (Point2D point, double radius) {
         this.x = point.getX();
@@ -16,10 +19,35 @@ public class Circle extends Figure {
         this.radius = radius;
     }
 
+    public Circle (Point2D point, double radius, Color color) {
+        this.x = point.getX();
+        this.y = point.getY();
+        this.radius = radius;
+        this.color = color.toString();
+    }
+    public Circle (Point2D point, double radius, String color) {
+        this.x = point.getX();
+        this.y = point.getY();
+        this.radius = radius;
+        this.color = color;
+    }
+
     public Circle(double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
+    }
+    public Circle(double x, double y, double radius, String color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+    }
+    public Circle(double x, double y, double radius, Color color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color.toString();
     }
 
     final public String printCoordinates(){
@@ -48,9 +76,8 @@ public class Circle extends Figure {
     }
 
 
-
     public void move(int newX, int newY){
-        setX(getX()+ newX);
+        setX(getX() + newX);
         setY(getY() + newY);
     }
 
@@ -75,20 +102,35 @@ public class Circle extends Figure {
         return radius;
     }
 
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color.toString();
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Circle)) return false;
         Circle circle = (Circle) o;
-        return x == circle.x &&
-                y == circle.y &&
-                radius == circle.radius;
+        return Double.compare(circle.x, x) == 0 &&
+                Double.compare(circle.y, y) == 0 &&
+                Double.compare(circle.radius, radius) == 0 &&
+                Objects.equals(color, circle.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, radius);
+        return Objects.hash(x, y, radius, color);
     }
-
-
 }

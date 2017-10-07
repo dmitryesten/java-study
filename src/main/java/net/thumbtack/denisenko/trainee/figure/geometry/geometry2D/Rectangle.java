@@ -1,15 +1,12 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
 
 
 public class Rectangle extends Figure {
-
-
-    private double width;
-    private double height;
 
     private double topLeftX;
     private double topLeftY;
@@ -17,6 +14,7 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
+    private String color;
 
 
     public Rectangle(){
@@ -26,23 +24,44 @@ public class Rectangle extends Figure {
     }
 
 
-    public Rectangle(Point2D topLeft, Point2D bottomRight){
-        this.width = bottomRight.getX() - topLeft.getX();
-        this.height = topLeft.getY() - bottomRight.getY();
 
+    public Rectangle(Point2D topLeft, Point2D bottomRight){
         this.topLeftX = topLeft.getX();
         this.topLeftY = topLeft.getY();
         this.bottomRightX = bottomRight.getX();
         this.bottomRightY = bottomRight.getY();
     }
 
+    public Rectangle(Point2D topLeft, Point2D bottomRight, Color color){
+        this.topLeftX = topLeft.getX();
+        this.topLeftY = topLeft.getY();
+        this.bottomRightX = bottomRight.getX();
+        this.bottomRightY = bottomRight.getY();
+        this.color = color.toString();
+    }
+    public Rectangle(Point2D topLeft, Point2D bottomRight, String color){
+        this.topLeftX = topLeft.getX();
+        this.topLeftY = topLeft.getY();
+        this.bottomRightX = bottomRight.getX();
+        this.bottomRightY = bottomRight.getY();
+        this.color = color;
+    }
 
 
     public Rectangle(double width, double height) {
-        this.width = width;
         this.bottomRightX = width;
-        this.height = height;
         this.topLeftY = height;
+    }
+
+    public Rectangle(double width, double height, Color color) {
+        this.bottomRightX = width;
+        this.topLeftY = height;
+        this.color = color.toString();
+    }
+    public Rectangle(double width, double height, String color) {
+        this.bottomRightX = width;
+        this.topLeftY = height;
+        this.color = color;
     }
 
 
@@ -54,7 +73,9 @@ public class Rectangle extends Figure {
     }
 
 
-    public static Rectangle large (int n, Rectangle rectangle){
+
+    public static Rectangle large (int n){
+        Rectangle rectangle = new Rectangle();
         rectangle.setTopLeftY(rectangle.getTopLeftY() * n);
         rectangle.setBottomRightX(rectangle.getBottomRightX() * n);
         return rectangle;
@@ -133,12 +154,6 @@ public class Rectangle extends Figure {
     }
 
 
-
-
-
-
-
-
     public void reduceRectangle(int valueReduceX, int valueReduceY ){
         setBottomRightX(getBottomRightX() - valueReduceX);
         setTopLeftY(getTopLeftY() - valueReduceY);
@@ -179,21 +194,35 @@ public class Rectangle extends Figure {
     }
 
     @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color.toString();
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Rectangle)) return false;
         Rectangle rectangle = (Rectangle) o;
-        return width == rectangle.width &&
-                height == rectangle.height &&
-                topLeftX == rectangle.topLeftX &&
-                topLeftY == rectangle.topLeftY &&
-                bottomRightX == rectangle.bottomRightX &&
-                bottomRightY == rectangle.bottomRightY;
+        return Double.compare(rectangle.topLeftX, topLeftX) == 0 &&
+                Double.compare(rectangle.topLeftY, topLeftY) == 0 &&
+                Double.compare(rectangle.bottomRightX, bottomRightX) == 0 &&
+                Double.compare(rectangle.bottomRightY, bottomRightY) == 0 &&
+                Objects.equals(color, rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, height, topLeftX, topLeftY, bottomRightX, bottomRightY);
+        return Objects.hash(topLeftX, topLeftY, bottomRightX, bottomRightY, color);
     }
 
     //-------------------------------------------------------------

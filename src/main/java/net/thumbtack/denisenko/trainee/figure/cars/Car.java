@@ -6,10 +6,13 @@ import java.util.Objects;
 
 public class Car implements Colored {
 
+
     private String mark;
+    private String color;
     private int weight;
     private int maxSpeed;
-    private String color;
+
+
 
     public Car(String mark, int weight, int maxSpeed){
         this.mark = mark;
@@ -22,6 +25,13 @@ public class Car implements Colored {
         this.weight = weight;
         this.maxSpeed = maxSpeed;
         this.color = color;
+    }
+
+    public Car(String mark, int weight, int maxSpeed, Color color){
+        this.mark = mark;
+        this.weight = weight;
+        this.maxSpeed = maxSpeed;
+        this.color = color.toString();
     }
 
 
@@ -74,5 +84,20 @@ public class Car implements Colored {
     @Override
     public int hashCode() {
         return Objects.hash(mark, weight, maxSpeed);
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color.toString();
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
     }
 }

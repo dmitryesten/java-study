@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 
@@ -7,6 +8,7 @@ import java.util.Objects;
 
 public class Cylinder extends Circle{
 
+    private String color;
     private double height;
 
 
@@ -15,15 +17,51 @@ public class Cylinder extends Circle{
         this.height = p.getZ();
     }
 
+    public Cylinder(Point3D p, int radius, String color){
+        super(p,radius);
+        this.height = p.getZ();
+        this.color = color;
+    }
+
+    public Cylinder(Point3D p, int radius, Color color){
+        super(p,radius);
+        this.height = p.getZ();
+        this.color = color.toString();
+    }
+
     public Cylinder(Point2D p, double radius, double height){
         super(p, radius);
         this.height = height;
+    }
+
+    public Cylinder(Point2D p, double radius, double height, Color color){
+        super(p, radius);
+        this.height = height;
+        this.color = color.toString();
+    }
+
+    public Cylinder(Point2D p, double radius, double height, String color){
+        super(p, radius);
+        this.height = height;
+        this.color = color;
     }
 
 
     public Cylinder(double x, double y, double radius, double height) {
         super(x, y, radius);
         this.height = height;
+    }
+
+    public Cylinder(double x, double y, double radius, double height, Color color) {
+        super(x, y, radius);
+        this.height = height;
+        this.color = color.toString();
+    }
+
+    public Cylinder(double x, double y, double radius, double height, String color) {
+        super(x, y, radius);
+        this.height = height;
+        this.color = color;
     }
 
 
@@ -64,18 +102,21 @@ public class Cylinder extends Circle{
         return height;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Cylinder)) return false;
         if (!super.equals(o)) return false;
         Cylinder cylinder = (Cylinder) o;
-        return height == cylinder.height;
+        return Double.compare(cylinder.height, height) == 0 &&
+                Objects.equals(color, cylinder.color);
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), height);
+        return Objects.hash(super.hashCode(), color, height);
     }
+
 }

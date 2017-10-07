@@ -7,26 +7,26 @@ public class Point3D extends Point2D {
 
     private int z;
 
-
     public Point3D(){
         super(0, 0);
         this.z = 0;
     }
-
 
     public Point3D(int x, int y, int z){
         super(x, y);
         this.z = z;
     }
 
-    public String printCoordinates(){
+    final public String printCoordinates(){
         return "X: "+super.getX()+"; Y: "+super.getY()+"; Z: "+getZ();
     }
 
-    public String printCoordinates(Point3D p){
-        return super.printCoordinates() +" Z: "+ p.getZ();
-    }
 
+    /*
+    public String printCoordinates(){
+        return super.printCoordinates() +" Z: "+ getZ();
+    }
+*/
     public void move(int x, int y, int z){
         super.move(x, y);
         setZ(getZ() + z);
@@ -49,7 +49,6 @@ public class Point3D extends Point2D {
         Point3D point3D = (Point3D) o;
         return super.equals(o) && z == point3D.z ;
     }
-
 
     @Override
     public int hashCode() {

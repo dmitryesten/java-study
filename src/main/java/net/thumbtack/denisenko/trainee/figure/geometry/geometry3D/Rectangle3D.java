@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
@@ -10,6 +11,8 @@ public class Rectangle3D extends Rectangle {
     private double widthX;
     private double lengthY;
     private double heightZ;
+
+    private String color;
 
 
     public Rectangle3D(){
@@ -23,11 +26,43 @@ public class Rectangle3D extends Rectangle {
         this.heightZ = topLeftBase.getZ();
     }
 
+    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, String color){
+        super(topLeftBase, bottomRightBase);
+        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
+        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
+        this.heightZ = topLeftBase.getZ();
+        this.color = color;
+    }
+
+    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, Color color){
+        super(topLeftBase, bottomRightBase);
+        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
+        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
+        this.heightZ = topLeftBase.getZ();
+        this.color = color.toString();
+    }
+
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height){
         super(topLeftBase, bottomRightBase);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = height;
+    }
+
+    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, String color){
+        super(topLeftBase, bottomRightBase);
+        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
+        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
+        this.heightZ = height;
+        this.color = color;
+    }
+
+    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, Color color){
+        super(topLeftBase, bottomRightBase);
+        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
+        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
+        this.heightZ = height;
+        this.color = color.toString();
     }
 
 
@@ -36,6 +71,22 @@ public class Rectangle3D extends Rectangle {
         this.widthX = width;
         this.lengthY = length;
         this.heightZ = height;
+    }
+
+    public Rectangle3D(int width, int length, int height, String color){
+        super(width, length);
+        this.widthX = width;
+        this.lengthY = length;
+        this.heightZ = height;
+        this.color = color;
+    }
+
+    public Rectangle3D(int width, int length, int height, Color color){
+        super(width, length);
+        this.widthX = width;
+        this.lengthY = length;
+        this.heightZ = height;
+        this.color = color.toString();
     }
 
 
@@ -98,14 +149,14 @@ public class Rectangle3D extends Rectangle {
         if (!(o instanceof Rectangle3D)) return false;
         if (!super.equals(o)) return false;
         Rectangle3D that = (Rectangle3D) o;
-        return widthX == that.widthX &&
-                lengthY == that.lengthY &&
-                heightZ == that.heightZ;
+        return Double.compare(that.widthX, widthX) == 0 &&
+                Double.compare(that.lengthY, lengthY) == 0 &&
+                Double.compare(that.heightZ, heightZ) == 0 &&
+                Objects.equals(color, that.color);
     }
-
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), widthX, lengthY, heightZ);
+        return Objects.hash(super.hashCode(), widthX, lengthY, heightZ, color);
     }
 }

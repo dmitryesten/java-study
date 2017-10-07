@@ -1,8 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
-import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
-import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 public class PairBox<T extends Figure, V extends Figure>{

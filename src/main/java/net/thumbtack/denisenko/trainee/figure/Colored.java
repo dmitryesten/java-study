@@ -2,9 +2,9 @@ package net.thumbtack.denisenko.trainee.figure;
 
 public interface Colored {
 
-    default Color paint(Color color){
-        return color;
-    }
+    String getColor();
 
+    void setColor(Color color);
+    void setColor(String color);
 
 }

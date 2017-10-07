@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
@@ -16,6 +17,8 @@ public class Triangle extends Figure {
     private double x3;
     private double y3;
 
+    private String color;
+
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
         this.x1 = point1.getX();
@@ -26,6 +29,30 @@ public class Triangle extends Figure {
 
         this.x3 = point3.getX();
         this.y3 = point3.getY();
+    }
+
+    public Triangle(Point2D point1, Point2D point2, Point2D point3, String color){
+        this.x1 = point1.getX();
+        this.y1 = point1.getY();
+
+        this.x2 = point2.getX();
+        this.y2 = point2.getY();
+
+        this.x3 = point3.getX();
+        this.y3 = point3.getY();
+        this.color = color;
+    }
+
+    public Triangle(Point2D point1, Point2D point2, Point2D point3, Color color){
+        this.x1 = point1.getX();
+        this.y1 = point1.getY();
+
+        this.x2 = point2.getX();
+        this.y2 = point2.getY();
+
+        this.x3 = point3.getX();
+        this.y3 = point3.getY();
+        this.color = color.toString();
     }
 
 
@@ -163,4 +190,18 @@ public class Triangle extends Figure {
     }
 
 
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color.toString();
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
