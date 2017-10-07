@@ -6,4 +6,5 @@ public interface Colored {
         return color;
     }
 
+
 }

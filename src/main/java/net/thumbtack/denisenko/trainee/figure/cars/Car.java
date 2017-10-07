@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.cars;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.Colored;
 import java.util.Objects;
 
@@ -8,12 +9,21 @@ public class Car implements Colored {
     private String mark;
     private int weight;
     private int maxSpeed;
+    private String color;
 
     public Car(String mark, int weight, int maxSpeed){
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;
     }
+
+    public Car(String mark, int weight, int maxSpeed, String color){
+        this.mark = mark;
+        this.weight = weight;
+        this.maxSpeed = maxSpeed;
+        this.color = color;
+    }
+
 
     public String printInfoCar(){
         return "Марка: "+ getMark() + "; Вес: "+getWeight()+"кг; MaxСкорость: "+getMaxSpeed() +"км/ч";

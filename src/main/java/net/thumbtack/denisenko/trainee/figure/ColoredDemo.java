@@ -11,6 +11,17 @@ public class ColoredDemo {
         System.out.println("Painting circle: "+ c.paint(Color.GREEN));
         System.out.println("Painting rectangle: "+ r.paint(Color.BLACK));
 
+        colorFromString("black");
+
     }
+
+    public static String colorFromString(String strColor){
+        Color color = null;
+        while(strColor.toUpperCase().equals(color.toString())){
+
+        }
+        return color.toString();
+    }
+
 
 }
