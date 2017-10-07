@@ -9,7 +9,7 @@ public class Cylinder extends Circle{
 
     private double height;
 
-
+// REVU color ?
     public Cylinder(Point3D p, int radius){
         super(p,radius);
         this.height = p.getZ();

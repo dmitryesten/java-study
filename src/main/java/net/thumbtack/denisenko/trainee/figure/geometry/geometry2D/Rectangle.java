@@ -8,6 +8,7 @@ import java.util.Objects;
 public class Rectangle extends Figure {
 
 
+	// REVU remove next 2 fields, you do not need in them
     private double width;
     private double height;
 
@@ -25,6 +26,7 @@ public class Rectangle extends Figure {
         this.bottomRightY = 0;
     }
 
+    // REVU color ?
 
     public Rectangle(Point2D topLeft, Point2D bottomRight){
         this.width = bottomRight.getX() - topLeft.getX();
@@ -54,6 +56,8 @@ public class Rectangle extends Figure {
     }
 
 
+    // REVU You do not need to pass Rectangle rectangle as parameter
+    // instead, create it inside "large"
     public static Rectangle large (int n, Rectangle rectangle){
         rectangle.setTopLeftY(rectangle.getTopLeftY() * n);
         rectangle.setBottomRightX(rectangle.getBottomRightX() * n);

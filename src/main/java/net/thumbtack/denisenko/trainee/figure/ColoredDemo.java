@@ -1,3 +1,4 @@
+// REVU remove, use tests
 package net.thumbtack.denisenko.trainee.figure;
 
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;

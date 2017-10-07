@@ -3,6 +3,7 @@ package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
+// REVU move to tests
 public class AnonymousRectangle3D {
 
     public static void main (String [] args){

@@ -9,6 +9,7 @@ public class Car implements Colored {
     private int weight;
     private int maxSpeed;
 
+    // REVU color ?
     public Car(String mark, int weight, int maxSpeed){
         this.mark = mark;
         this.weight = weight;

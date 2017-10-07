@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Circle extends Figure {
 
-    private double x;
+	private double x;
     private double y;
     private double radius;
 
