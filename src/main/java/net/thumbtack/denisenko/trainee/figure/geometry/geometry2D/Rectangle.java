@@ -1,6 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 
+import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
@@ -39,12 +40,16 @@ public class Rectangle extends Figure {
         this.bottomRightY = bottomRight.getY();
         this.color = color.toString();
     }
-    public Rectangle(Point2D topLeft, Point2D bottomRight, String color){
+    public Rectangle(Point2D topLeft, Point2D bottomRight, String color) throws ColorException{
         this.topLeftX = topLeft.getX();
         this.topLeftY = topLeft.getY();
         this.bottomRightX = bottomRight.getX();
         this.bottomRightY = bottomRight.getY();
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
 
@@ -58,10 +63,14 @@ public class Rectangle extends Figure {
         this.topLeftY = height;
         this.color = color.toString();
     }
-    public Rectangle(double width, double height, String color) {
+    public Rectangle(double width, double height, String color) throws ColorException {
         this.bottomRightX = width;
         this.topLeftY = height;
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
 
