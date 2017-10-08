@@ -99,7 +99,7 @@ public class Car implements Colored {
     }
 
     @Override
-    public void setColor(Color color) throws ColorException {
+    public void setColor(Color color) {
         this.color = color.toString();
     }
 
