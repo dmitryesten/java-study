@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
@@ -31,7 +32,7 @@ public class Triangle extends Figure {
         this.y3 = point3.getY();
     }
 
-    public Triangle(Point2D point1, Point2D point2, Point2D point3, String color){
+    public Triangle(Point2D point1, Point2D point2, Point2D point3, String color) throws ColorException{
         this.x1 = point1.getX();
         this.y1 = point1.getY();
 
@@ -40,7 +41,12 @@ public class Triangle extends Figure {
 
         this.x3 = point3.getX();
         this.y3 = point3.getY();
-        this.color = color;
+
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3, Color color){
@@ -56,7 +62,7 @@ public class Triangle extends Figure {
     }
 
 
-    public String printCoordinates(){
+    final public String printCoordinates(){
         return "Angle_№1: ("+getX1()+ ", " +getY1()+") " + "\r\n" +
                 "Angle_№2: ("+getX2()+ ", " +getY2()+ ") " + "\r\n"+
                 "Angle_№3: ("+getX3()+ ", " +getY3()+ ") " + "\r\n";
