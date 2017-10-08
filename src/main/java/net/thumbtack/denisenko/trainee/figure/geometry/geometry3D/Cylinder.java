@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
+import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
@@ -17,10 +18,14 @@ public class Cylinder extends Circle{
         this.height = p.getZ();
     }
 
-    public Cylinder(Point3D p, int radius, String color){
+    public Cylinder(Point3D p, int radius, String color) throws ColorException{
         super(p,radius);
         this.height = p.getZ();
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color: ", color);
+        }
     }
 
     public Cylinder(Point3D p, int radius, Color color){
@@ -40,10 +45,14 @@ public class Cylinder extends Circle{
         this.color = color.toString();
     }
 
-    public Cylinder(Point2D p, double radius, double height, String color){
+    public Cylinder(Point2D p, double radius, double height, String color) throws ColorException{
         super(p, radius);
         this.height = height;
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
 
@@ -58,10 +67,14 @@ public class Cylinder extends Circle{
         this.color = color.toString();
     }
 
-    public Cylinder(double x, double y, double radius, double height, String color) {
+    public Cylinder(double x, double y, double radius, double height, String color) throws ColorException {
         super(x, y, radius);
         this.height = height;
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
 
