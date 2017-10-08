@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
@@ -25,11 +26,15 @@ public class Circle extends Figure {
         this.radius = radius;
         this.color = color.toString();
     }
-    public Circle (Point2D point, double radius, String color) {
+    public Circle (Point2D point, double radius, String color) throws ColorException {
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
 
     public Circle(double x, double y, double radius) {
@@ -37,12 +42,17 @@ public class Circle extends Figure {
         this.y = y;
         this.radius = radius;
     }
-    public Circle(double x, double y, double radius, String color) {
+    public Circle(double x, double y, double radius, String color) throws ColorException {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.color = color;
+        try {
+            this.color = color;
+        }catch (IllegalArgumentException ex){
+            throw new ColorException("Error print color:", color);
+        }
     }
+
     public Circle(double x, double y, double radius, Color color) {
         this.x = x;
         this.y = y;
