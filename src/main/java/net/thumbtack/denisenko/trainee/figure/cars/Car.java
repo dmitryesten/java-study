@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.cars;
 
+import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.Colored;
 import java.util.Objects;
@@ -13,18 +14,24 @@ public class Car implements Colored {
     private int maxSpeed;
 
 
-
     public Car(String mark, int weight, int maxSpeed){
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;
     }
 
-    public Car(String mark, int weight, int maxSpeed, String color){
+
+    public Car(String mark, int weight, int maxSpeed, String color) throws ColorException{
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;
-        this.color = color;
+        try {
+            this.color = color;
+        }
+        catch (IllegalArgumentException e){
+            throw new ColorException("Error print color:", color);
+        }
+
     }
 
     public Car(String mark, int weight, int maxSpeed, Color color){
@@ -92,7 +99,7 @@ public class Car implements Colored {
     }
 
     @Override
-    public void setColor(Color color) {
+    public void setColor(Color color) throws ColorException {
         this.color = color.toString();
     }
 
@@ -100,4 +107,6 @@ public class Car implements Colored {
     public void setColor(String color) {
         this.color = color;
     }
+
+
 }
