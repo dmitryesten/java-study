@@ -1,9 +1,12 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
+import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.interfaces.Square;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
-public class Box <T extends Rectangle & Square> implements Square{
+public class Box <T extends Figure> implements Square {
 
     private T content;
 
@@ -12,7 +15,7 @@ public class Box <T extends Rectangle & Square> implements Square{
     }
 
 
-    public T create(Box<?> b) throws IllegalAccessException, InstantiationException {
+    public T create(T b) throws IllegalAccessException, InstantiationException {
         Class c = b.getClass();
         return (T) c.newInstance();
     }
@@ -24,7 +27,7 @@ public class Box <T extends Rectangle & Square> implements Square{
     }
 
 
-    public <T extends Rectangle & Square>  boolean isSameSquare(T box2){
+    public <T extends Rectangle & Square>  boolean isSameSquare(Box<Circle> box2){
         return FloatingOperations.compareValues(square(), box2.square());
     }
 

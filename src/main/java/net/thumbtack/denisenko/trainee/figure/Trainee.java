@@ -12,28 +12,37 @@ public class Trainee {
 
 
     public Trainee(String name, String surname, int rating) throws TraineeException {
-        if(name.equals(""))
+
+        if( name == null && "".equals(name.trim()))
             throw new TraineeException();
-        else
-            this.name = name;
+        else { this.name = name; }
 
-        this.surname = surname;
 
-        this.rating = rating;
+        if( surname == null && "".equals(surname.trim()))
+            throw new TraineeException("String is empty or null");
+        else { this.surname = surname; }
+
+
+        if(rating >= 1 && rating <= 5)
+            this.rating = rating;
+        else throw new TraineeException();
     }
+
+
 
     public String getName() {
         return name;
     }
 
+
+
     public void setName(String name) throws TraineeException {
         try {
             this.name = name;
         }catch (IllegalArgumentException ex){
-            if(name.equals(null) && name.equals(""))
+            if(name == null && "".equals(name.trim()) )
                 throw new TraineeException();
         }
-
     }
 
 
@@ -41,8 +50,15 @@ public class Trainee {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+
+    public void setSurname(String surname) throws TraineeException {
+        try {
+            this.surname = surname;
+        }catch (IllegalArgumentException ex){
+            if(surname == null && "".equals(surname.trim()))
+                throw new TraineeException(surname);
+        }
+
     }
 
 
@@ -50,8 +66,33 @@ public class Trainee {
         return rating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+
+    public void setRating(int rating) throws TraineeException {
+        try {
+            this.rating = rating;
+        }catch (IllegalArgumentException ex){
+            if(rating >= 1 && rating <= 5)
+                throw new TraineeException(rating);
+        }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Trainee trainee = (Trainee) o;
+
+        if (rating != trainee.rating) return false;
+        if (!name.equals(trainee.name)) return false;
+        return surname.equals(trainee.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + surname.hashCode();
+        result = 31 * result + rating;
+        return result;
+    }
 }

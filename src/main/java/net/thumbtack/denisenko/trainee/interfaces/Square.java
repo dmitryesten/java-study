@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.figure.box;
+package net.thumbtack.denisenko.trainee.interfaces;
 
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 

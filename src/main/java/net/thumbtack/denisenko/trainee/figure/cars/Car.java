@@ -2,7 +2,7 @@ package net.thumbtack.denisenko.trainee.figure.cars;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
-import net.thumbtack.denisenko.trainee.figure.Colored;
+import net.thumbtack.denisenko.trainee.interfaces.Colored;
 import java.util.Objects;
 
 public class Car implements Colored {

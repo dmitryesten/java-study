@@ -6,15 +6,16 @@ import static org.junit.Assert.*;
 
 public class CircleFactoryTest {
 
-    Point2D p =new Point2D(1, 2);
-
     @Test
-    public void getNumberInstances() throws Exception {
-        CircleFactory circleFactory = new CircleFactory(p, 3);
-        assertEquals(1, CircleFactory.getNumberInstances());
+    public void createCircle() throws Exception {
+        //assertEquals();
+        Circle circle = new Circle(2,2,1);
+        assertEquals(0, CircleFactory.getNumberInstances());
+        assertEquals(circle, CircleFactory.createCircle(new Point2D(2,2),1));
 
-        CircleFactory circleFactory2 = new CircleFactory(p, 3);
-        assertEquals(2, CircleFactory.getNumberInstances());
+
+        CircleFactory circleFactory2 = new CircleFactory();
+        assertEquals(1, CircleFactory.getNumberInstances());
     }
 
 }

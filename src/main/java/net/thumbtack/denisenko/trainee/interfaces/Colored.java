@@ -1,6 +1,7 @@
-package net.thumbtack.denisenko.trainee.figure;
+package net.thumbtack.denisenko.trainee.interfaces;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
+import net.thumbtack.denisenko.trainee.figure.Color;
 
 public interface Colored {
 

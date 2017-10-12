@@ -10,6 +10,7 @@ public class ArrayBox<T extends Rectangle> {
         this.content = content;
     }
 
+
     public T[] getContent() {
         return content;
     }
