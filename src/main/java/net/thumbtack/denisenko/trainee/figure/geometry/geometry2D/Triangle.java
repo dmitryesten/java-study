@@ -20,6 +20,7 @@ public class Triangle extends Figure {
 
     private String color;
 
+    // REVU see Circle
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
         this.x1 = point1.getX();

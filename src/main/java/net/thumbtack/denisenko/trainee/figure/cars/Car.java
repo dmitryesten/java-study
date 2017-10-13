@@ -9,6 +9,7 @@ public class Car implements Colored {
 
 
     private String mark;
+    // REVU Why String ? You have Color
     private String color;
     private int weight;
     private int maxSpeed;
@@ -25,6 +26,7 @@ public class Car implements Colored {
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;
+        // REVU you can't get IllegalArgumentException here
         try {
             this.color = color;
         }

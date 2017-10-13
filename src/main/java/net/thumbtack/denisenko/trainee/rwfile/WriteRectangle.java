@@ -6,6 +6,8 @@ import java.io.*;
 
 public class WriteRectangle {
 
+	// REVU pass filenaem and Rectangle to this method as parameters
+	// use try-with-resource
     public void writeRectangle() throws IOException {
         Rectangle r = new Rectangle();
         FileOutputStream fout = new FileOutputStream("byte_rect.bin");

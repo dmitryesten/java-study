@@ -17,7 +17,7 @@ public class Rectangle extends Figure {
 
     private String color;
 
-
+// REVU see Circle 
     public Rectangle(){
         this(1, 1);
         this.topLeftX = 0;

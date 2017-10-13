@@ -3,7 +3,7 @@ package net.thumbtack.denisenko.trainee.figure;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 
-
+// REVU why trainee in "figure" package ?
 public class Trainee {
 
     private String name;
@@ -13,8 +13,10 @@ public class Trainee {
 
     public Trainee(String name, String surname, int rating) throws TraineeException {
 
+    	// REVU call setName
         if( name == null && "".equals(name.trim()))
             throw new TraineeException();
+        // REVU else is unnecessary here
         else { this.name = name; }
 
 
@@ -39,6 +41,8 @@ public class Trainee {
     public void setName(String name) throws TraineeException {
         try {
             this.name = name;
+            // REVU you can't get IllegalArgumentException here. 
+            // You must check before assignment
         }catch (IllegalArgumentException ex){
             if(name == null && "".equals(name.trim()) )
                 throw new TraineeException();
@@ -54,6 +58,8 @@ public class Trainee {
     public void setSurname(String surname) throws TraineeException {
         try {
             this.surname = surname;
+            // REVU you can't get IllegalArgumentException here. 
+            // You must check before assignment
         }catch (IllegalArgumentException ex){
             if(surname == null && "".equals(surname.trim()))
                 throw new TraineeException(surname);
@@ -70,6 +76,8 @@ public class Trainee {
     public void setRating(int rating) throws TraineeException {
         try {
             this.rating = rating;
+            // REVU you can't get IllegalArgumentException here. 
+            // You must check before assignment
         }catch (IllegalArgumentException ex){
             if(rating >= 1 && rating <= 5)
                 throw new TraineeException(rating);

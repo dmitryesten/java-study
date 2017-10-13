@@ -11,10 +11,13 @@ public class Circle extends Figure {
 	private double x;
     private double y;
     private double radius;
+    // REVU Color color;
+    // Also, move to Figure
     private String color;
 
 
     public Circle (Point2D point, double radius) {
+    	// REVU copy/paste. Call next constructor
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;
@@ -27,6 +30,7 @@ public class Circle extends Figure {
         this.color = color.toString();
     }
     public Circle (Point2D point, double radius, String color) throws ColorException {
+    	// REVU copy/paste. Call previous constructor
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;

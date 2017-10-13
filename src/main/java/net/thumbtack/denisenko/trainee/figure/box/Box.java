@@ -6,6 +6,7 @@ import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.interfaces.Square;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
+// REVU Square is a raw type. References to generic type Square<T> should be parameterized
 public class Box <T extends Figure> implements Square {
 
     private T content;
