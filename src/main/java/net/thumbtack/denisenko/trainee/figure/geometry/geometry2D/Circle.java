@@ -11,57 +11,25 @@ public class Circle extends Figure {
 	private double x;
     private double y;
     private double radius;
-    // REVU Color color;
-    // Also, move to Figure
-    private String color;
+    private Color color;
 
-
-    public Circle (Point2D point, double radius) {
-    	// REVU copy/paste. Call next constructor
-        this.x = point.getX();
-        this.y = point.getY();
-        this.radius = radius;
+    public Circle (){
+        this( new Point2D(1,1), 1, (Color) null);
     }
 
     public Circle (Point2D point, double radius, Color color) {
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;
-        this.color = color.toString();
-    }
-    public Circle (Point2D point, double radius, String color) throws ColorException {
-    	// REVU copy/paste. Call previous constructor
-        this.x = point.getX();
-        this.y = point.getY();
-        this.radius = radius;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
+        this.color = color;
     }
 
-    public Circle(double x, double y, double radius) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-    }
-    public Circle(double x, double y, double radius, String color) throws ColorException {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
 
     public Circle(double x, double y, double radius, Color color) {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.color = color.toString();
+        this.color = color;
     }
 
     final public String printCoordinates(){
@@ -118,18 +86,18 @@ public class Circle extends Figure {
 
 
     @Override
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
     @Override
     public void setColor(Color color) {
-        this.color = color.toString();
+        this.color = color;
     }
 
     @Override
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color) throws ColorException {
+        this.color = Color.colorFromString(color);
     }
 
     @Override

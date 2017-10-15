@@ -3,6 +3,7 @@ package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
+import net.thumbtack.denisenko.trainee.figure.geometry.geometry3D.Point3D;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 import java.util.Objects;
@@ -18,9 +19,12 @@ public class Triangle extends Figure {
     private double x3;
     private double y3;
 
-    private String color;
+    private Color color;
 
-    // REVU see Circle
+
+    public Triangle(){
+        this(new Point2D(1,1), new Point2D(3, 1), new Point2D(3, 2), null);
+    }
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
         this.x1 = point1.getX();
@@ -33,22 +37,7 @@ public class Triangle extends Figure {
         this.y3 = point3.getY();
     }
 
-    public Triangle(Point2D point1, Point2D point2, Point2D point3, String color) throws ColorException{
-        this.x1 = point1.getX();
-        this.y1 = point1.getY();
 
-        this.x2 = point2.getX();
-        this.y2 = point2.getY();
-
-        this.x3 = point3.getX();
-        this.y3 = point3.getY();
-
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3, Color color){
         this.x1 = point1.getX();
@@ -59,7 +48,7 @@ public class Triangle extends Figure {
 
         this.x3 = point3.getX();
         this.y3 = point3.getY();
-        this.color = color.toString();
+        this.color = color;
     }
 
 
@@ -198,17 +187,19 @@ public class Triangle extends Figure {
 
 
     @Override
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
     @Override
     public void setColor(Color color) {
-        this.color = color.toString();
+        this.color = color;
     }
 
     @Override
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color) throws ColorException {
+        this.color = Color.colorFromString(color);
     }
+
+
 }

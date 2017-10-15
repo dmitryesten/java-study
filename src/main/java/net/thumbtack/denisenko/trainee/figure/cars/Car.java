@@ -7,45 +7,22 @@ import java.util.Objects;
 
 public class Car implements Colored {
 
-
     private String mark;
-    // REVU Why String ? You have Color
-    private String color;
+    private Color color;
     private int weight;
     private int maxSpeed;
 
-
-    public Car(String mark, int weight, int maxSpeed){
-        this.mark = mark;
-        this.weight = weight;
-        this.maxSpeed = maxSpeed;
-    }
-
-
-    public Car(String mark, int weight, int maxSpeed, String color) throws ColorException{
-        this.mark = mark;
-        this.weight = weight;
-        this.maxSpeed = maxSpeed;
-        // REVU you can't get IllegalArgumentException here
-        try {
-            this.color = color;
-        }
-        catch (IllegalArgumentException e){
-            throw new ColorException("Error print color:", color);
-        }
-
-    }
 
     public Car(String mark, int weight, int maxSpeed, Color color){
         this.mark = mark;
         this.weight = weight;
         this.maxSpeed = maxSpeed;
-        this.color = color.toString();
+        this.color = color;
     }
 
 
     public String printInfoCar(){
-        return "Марка: "+ getMark() + "; Вес: "+getWeight()+"кг; MaxСкорость: "+getMaxSpeed() +"км/ч";
+        return "Марка: "+ getMark() + "; Вес: "+getWeight()+"кг; MaxСкорость: "+getMaxSpeed() +"км/ч" + " Цвет:"+color;
     }
 
 
@@ -96,18 +73,18 @@ public class Car implements Colored {
     }
 
     @Override
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
     @Override
     public void setColor(Color color) {
-        this.color = color.toString();
+        this.color = color;
     }
 
     @Override
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color) throws ColorException {
+        this.color = Color.colorFromString(color);
     }
 
 

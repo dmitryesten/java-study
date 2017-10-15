@@ -13,89 +13,38 @@ public class Rectangle3D extends Rectangle {
     private double lengthY;
     private double heightZ;
 
-    private String color;
+    private Color color;
 
 
     public Rectangle3D(){
-        this(1, 1, 1);
+        this(1, 1, 1, (Color) null);
     }
 
-    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase){
-        super(topLeftBase, bottomRightBase);
-        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
-        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
-        this.heightZ = topLeftBase.getZ();
-    }
-
-    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, String color) throws ColorException{
-        super(topLeftBase, bottomRightBase);
-        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
-        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
-        this.heightZ = topLeftBase.getZ();
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
 
     public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, Color color){
-        super(topLeftBase, bottomRightBase);
+        super(topLeftBase, bottomRightBase, color);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = topLeftBase.getZ();
-        this.color = color.toString();
+        this.color = color;
     }
 
-    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height){
-        super(topLeftBase, bottomRightBase);
-        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
-        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
-        this.heightZ = height;
-    }
-
-    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, String color) throws ColorException{
-        super(topLeftBase, bottomRightBase);
-        this.widthX = bottomRightBase.getX() - topLeftBase.getX();
-        this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
-        this.heightZ = height;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
 
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, Color color){
-        super(topLeftBase, bottomRightBase);
+        super(topLeftBase, bottomRightBase, color);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
-        this.heightZ = height;
-        this.color = color.toString();
-    }
-
-
-    public Rectangle3D(int width, int length, int height){
-        super(width, length);
-        this.widthX = width;
-        this.lengthY = length;
-        this.heightZ = height;
-    }
-
-    public Rectangle3D(int width, int length, int height, String color){
-        super(width, length);
-        this.widthX = width;
-        this.lengthY = length;
         this.heightZ = height;
         this.color = color;
     }
 
+
     public Rectangle3D(int width, int length, int height, Color color){
-        super(width, length);
+        super(width, length, color);
         this.widthX = width;
         this.lengthY = length;
         this.heightZ = height;
-        this.color = color.toString();
+        this.color = color;
     }
 
 

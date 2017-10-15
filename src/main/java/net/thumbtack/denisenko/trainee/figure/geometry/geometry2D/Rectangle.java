@@ -15,22 +15,12 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
-    private String color;
+    private Color color;
 
-// REVU see Circle 
     public Rectangle(){
-        this(1, 1);
+        this(1, 1, (Color) null);
         this.topLeftX = 0;
         this.bottomRightY = 0;
-    }
-
-
-
-    public Rectangle(Point2D topLeft, Point2D bottomRight){
-        this.topLeftX = topLeft.getX();
-        this.topLeftY = topLeft.getY();
-        this.bottomRightX = bottomRight.getX();
-        this.bottomRightY = bottomRight.getY();
     }
 
     public Rectangle(Point2D topLeft, Point2D bottomRight, Color color){
@@ -38,40 +28,16 @@ public class Rectangle extends Figure {
         this.topLeftY = topLeft.getY();
         this.bottomRightX = bottomRight.getX();
         this.bottomRightY = bottomRight.getY();
-        this.color = color.toString();
-    }
-    public Rectangle(Point2D topLeft, Point2D bottomRight, String color) throws ColorException{
-        this.topLeftX = topLeft.getX();
-        this.topLeftY = topLeft.getY();
-        this.bottomRightX = bottomRight.getX();
-        this.bottomRightY = bottomRight.getY();
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
-
-
-    public Rectangle(double width, double height) {
-        this.bottomRightX = width;
-        this.topLeftY = height;
+        this.color = color;
     }
 
     public Rectangle(double width, double height, Color color) {
         this.bottomRightX = width;
         this.topLeftY = height;
-        this.color = color.toString();
+        this.color = color;
     }
-    public Rectangle(double width, double height, String color) throws ColorException {
-        this.bottomRightX = width;
-        this.topLeftY = height;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
+
+
 
 
     final public String printCoordinates() {
@@ -203,18 +169,18 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
     @Override
     public void setColor(Color color) {
-        this.color = color.toString();
+        this.color = color;
     }
 
     @Override
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color) throws ColorException {
+        this.color = Color.colorFromString(color);
     }
 
     @Override

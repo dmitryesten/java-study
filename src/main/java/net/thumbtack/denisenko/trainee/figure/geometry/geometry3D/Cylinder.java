@@ -9,73 +9,30 @@ import java.util.Objects;
 
 public class Cylinder extends Circle{
 
-    private String color;
+    private Color color;
     private double height;
 
 
-    public Cylinder(Point3D p, int radius){
-        super(p,radius);
-        this.height = p.getZ();
-    }
-
-    public Cylinder(Point3D p, int radius, String color) throws ColorException{
-        super(p,radius);
-        this.height = p.getZ();
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color: ", color);
-        }
-    }
-
     public Cylinder(Point3D p, int radius, Color color){
-        super(p,radius);
+        super(p,radius, color);
         this.height = p.getZ();
-        this.color = color.toString();
+        this.color = color;
     }
 
-    public Cylinder(Point2D p, double radius, double height){
-        super(p, radius);
-        this.height = height;
-    }
 
     public Cylinder(Point2D p, double radius, double height, Color color){
-        super(p, radius);
+        super(p, radius, color);
         this.height = height;
-        this.color = color.toString();
+        this.color = color;
     }
 
-    public Cylinder(Point2D p, double radius, double height, String color) throws ColorException{
-        super(p, radius);
-        this.height = height;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
-
-
-    public Cylinder(double x, double y, double radius, double height) {
-        super(x, y, radius);
-        this.height = height;
-    }
 
     public Cylinder(double x, double y, double radius, double height, Color color) {
-        super(x, y, radius);
+        super(x, y, radius,color);
         this.height = height;
-        this.color = color.toString();
+        this.color = color;
     }
 
-    public Cylinder(double x, double y, double radius, double height, String color) throws ColorException {
-        super(x, y, radius);
-        this.height = height;
-        try {
-            this.color = color;
-        }catch (IllegalArgumentException ex){
-            throw new ColorException("Error print color:", color);
-        }
-    }
 
 
     final public String printCoordinates(Cylinder c){
