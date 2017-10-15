@@ -5,7 +5,7 @@ import net.thumbtack.denisenko.trainee.figure.Color;
 
 public interface Colored {
 
-    String getColor();
+    Color getColor();
 
     void setColor(Color color);
     void setColor(String color) throws ColorException;
