@@ -12,8 +12,9 @@ public class CarTest {
         String mark = "s";
         int  w = 1234;
         int ms = 120;
-        Car car = new Car(mark, w, ms);
-        assertEquals("Марка: "+ mark + "; Вес: "+w+"кг; MaxСкорость: "+ms+"км/ч",
+        Color color = Color.GREEN;
+        Car car = new Car(mark, w, ms, Color.GREEN);
+        assertEquals("Марка: "+ mark + "; Вес: "+w+"кг; MaxСкорость: "+ms+"км/ч"+" Цвет:" + color,
                 car.printInfoCar());
 
         assertEquals(mark, car.getMark());
@@ -21,7 +22,7 @@ public class CarTest {
         assertEquals(ms, car.getMaxSpeed());
 
         Car car2 = new Car(mark,w,ms, Color.BLACK);
-        assertEquals(Color.BLACK.toString(), car2.getColor());
+        assertEquals(Color.BLACK, car2.getColor());
 
     }
 

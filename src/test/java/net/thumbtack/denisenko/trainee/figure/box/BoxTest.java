@@ -28,8 +28,8 @@ public class BoxTest {
     @Test
     public void isSameSquare() throws Exception {
         Box<Rectangle> b = new Box<>(new Rectangle());
-        Box<Circle> b2 = new Box<Circle>(new Circle(2,2,1));
-        assertEquals(true, b2.isSameSquare(new Box<Circle>( new Circle(2,2,1)) ) );
+        Box<Circle> b2 = new Box<Circle>(new Circle(2,2,1, null));
+        assertEquals(true, b2.isSameSquare(new Box<Circle>( new Circle(2,2,1, null)) ) );
     }
 
 
