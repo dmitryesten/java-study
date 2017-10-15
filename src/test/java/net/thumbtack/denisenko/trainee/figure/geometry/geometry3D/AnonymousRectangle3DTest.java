@@ -11,7 +11,7 @@ public class AnonymousRectangle3DTest {
         int b = 3;
         int c = 4;
 
-        assertEquals(24.00, (int) new Rectangle3D(a, b, c){
+        assertEquals(24.00, (int) new Rectangle3D(a, b, c,null){
             private int x = a;
             private int y = b;
             private int z = c;

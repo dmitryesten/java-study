@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class CircleTest {
 
     Point2D center = new Point2D(4, 5);
-    Circle circle = new Circle(center, 2);
+    Circle circle = new Circle(center, 2, null);
 
 
     @Test
