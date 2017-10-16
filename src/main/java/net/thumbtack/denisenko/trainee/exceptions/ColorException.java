@@ -4,38 +4,32 @@ import net.thumbtack.denisenko.trainee.figure.Color;
 
 public class ColorException extends Exception {
 
-    private String color = "";
+    private Color color;
 
-
-    public ColorException(String message, String color){
+    public ColorException(String message, Color color){
         super(message);
         this.color = color;
     }
 
-
     public ColorException(String message){
         super(message);
-        this.color = color.toString();
+        this.color = color;
     }
 
-
-    public ColorException(String message, Throwable cause, String color) {
+    public ColorException(String message, Throwable cause, Color color) {
         super(message, cause);
         this.color = color;
     }
 
-    public ColorException(Throwable cause, String color) {
+    public ColorException(Throwable cause, Color color) {
         super(cause);
         this.color = color;
     }
 
-    public ColorException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, String color) {
-        super(message, cause, enableSuppression, writableStackTrace);
-        this.color = color;
-    }
 
 
-    public String getColor() {
+
+    public Color getColor() {
         return color;
     }
 
