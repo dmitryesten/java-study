@@ -29,6 +29,9 @@ public class Rectangle3D extends Rectangle {
         this.color = color;
     }
 
+    public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, String color) throws ColorException {
+        this(topLeftBase, bottomRightBase, Color.colorFromString(color));
+    }
 
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, Color color){
         super(topLeftBase, bottomRightBase, color);
@@ -38,6 +41,9 @@ public class Rectangle3D extends Rectangle {
         this.color = color;
     }
 
+    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, String color) throws ColorException {
+        this(topLeftBase, bottomRightBase, height, Color.colorFromString(color));
+    }
 
     public Rectangle3D(int width, int length, int height, Color color){
         super(width, length, color);
@@ -45,6 +51,10 @@ public class Rectangle3D extends Rectangle {
         this.lengthY = length;
         this.heightZ = height;
         this.color = color;
+    }
+
+    public Rectangle3D(int width, int length, int height, String color) throws ColorException {
+        this(width, length, height, Color.colorFromString(color));
     }
 
 

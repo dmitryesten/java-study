@@ -22,10 +22,6 @@ public class Triangle extends Figure {
     private Color color;
 
 
-    public Triangle(){
-        this(new Point2D(1,1), new Point2D(3, 1), new Point2D(3, 2), null);
-    }
-
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
         this.x1 = point1.getX();
         this.y1 = point1.getY();
@@ -37,8 +33,6 @@ public class Triangle extends Figure {
         this.y3 = point3.getY();
     }
 
-
-
     public Triangle(Point2D point1, Point2D point2, Point2D point3, Color color){
         this.x1 = point1.getX();
         this.y1 = point1.getY();
@@ -49,6 +43,10 @@ public class Triangle extends Figure {
         this.x3 = point3.getX();
         this.y3 = point3.getY();
         this.color = color;
+    }
+
+    public Triangle(Point2D point1, Point2D point2, Point2D point3, String color) throws ColorException {
+        this(point1, point2, point3, Color.colorFromString(color));
     }
 
 

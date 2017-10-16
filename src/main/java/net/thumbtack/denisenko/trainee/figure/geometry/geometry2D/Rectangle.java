@@ -30,11 +30,17 @@ public class Rectangle extends Figure {
         this.bottomRightY = bottomRight.getY();
         this.color = color;
     }
+    public Rectangle(Point2D topLeft, Point2D bottomRight, String color) throws ColorException {
+        this(topLeft, bottomRight, Color.colorFromString(color));
+    }
 
     public Rectangle(double width, double height, Color color) {
         this.bottomRightX = width;
         this.topLeftY = height;
         this.color = color;
+    }
+    public Rectangle(double width, double height, String color) throws ColorException {
+        this(width, height, Color.colorFromString(color));
     }
 
 

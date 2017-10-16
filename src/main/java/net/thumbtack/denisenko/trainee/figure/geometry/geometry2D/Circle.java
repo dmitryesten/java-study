@@ -23,6 +23,9 @@ public class Circle extends Figure {
         this.radius = radius;
         this.color = color;
     }
+    public Circle (Point2D point, double radius, String color) throws ColorException{
+        this( point, radius, Color.colorFromString(color));
+    }
 
 
     public Circle(double x, double y, double radius, Color color) {
@@ -30,6 +33,9 @@ public class Circle extends Figure {
         this.y = y;
         this.radius = radius;
         this.color = color;
+    }
+    public Circle(double x, double y, double radius, String color) throws ColorException {
+        this( x, y, radius, Color.colorFromString(color));
     }
 
     final public String printCoordinates(){
