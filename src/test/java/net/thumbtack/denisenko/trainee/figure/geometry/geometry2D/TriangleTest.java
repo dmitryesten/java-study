@@ -42,8 +42,8 @@ public class TriangleTest {
 
     @Ignore
     public void isIsosceles() throws Exception {
-        Triangle triangleIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(5,1));
-        Triangle triangleNotIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
+        final Triangle triangleIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(5,1));
+        final Triangle triangleNotIso = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
         assertFalse(triangleNotIso.isIsosceles());
         assertFalse(triangleIso.isIsosceles());
     }
@@ -55,12 +55,11 @@ public class TriangleTest {
         //assertEquals(11.1178, triangle.area(), 0.001);
     }
 
-    @Ignore
+    @Test
     public void move() throws Exception {
-        Triangle triangle = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
+        final Triangle triangle = new Triangle(new Point2D(1,1),new Point2D(3,5),new Point2D(6,1));
         triangle.move(1,1);
         assertEquals(2.0, triangle.getX1(),0.1);
-
     }
 
 }

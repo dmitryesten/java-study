@@ -1,6 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ public class RectangleTest {
 
     Point2D topLeft1 = new Point2D(1, 5);
     Point2D bottonRight2 = new Point2D(7, 2);
-    Rectangle rect1 = new Rectangle(topLeft1, bottonRight2, null);
+    Rectangle rect1 = new Rectangle(topLeft1, bottonRight2, (Color)null);
 
 
 
@@ -45,7 +46,7 @@ public class RectangleTest {
     public void isPointInFigure() throws Exception {
         Point2D topLeft1 = new Point2D(1, 5);
         Point2D bottonRight2 = new Point2D(7, 2);
-        Rectangle rect = new Rectangle(topLeft1, bottonRight2, null);
+        Rectangle rect = new Rectangle(topLeft1, bottonRight2, (Color)null);
 
         Point2D point1 = new Point2D(2,3);
         Point2D point2 = new Point2D(2,1);
@@ -58,11 +59,11 @@ public class RectangleTest {
     public void isRectangleContainedInOtherRectangle() throws Exception {
         Point2D topLeft1 = new Point2D(1, 5);
         Point2D bottonRight2 = new Point2D(7, 2);
-        Rectangle rect = new Rectangle(topLeft1, bottonRight2, null);
+        Rectangle rect = new Rectangle(topLeft1, bottonRight2, (Color)null);
 
         Point2D topLeft3 = new Point2D(2, 4);
         Point2D bottonRight4 = new Point2D(6, 3);
-        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4, null);
+        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4,(Color) null);
 
         assertFalse(Rectangle.isRectangleContainedInOtherRectangle(rect2, rect));
         assertTrue(Rectangle.isRectangleContainedInOtherRectangle(rect, rect2));
@@ -72,11 +73,11 @@ public class RectangleTest {
     public void isRectangleCrossingWithOtherRectangle() throws Exception {
         Point2D topLeft1 = new Point2D(1, 5);
         Point2D bottonRight2 = new Point2D(7, 2);
-        Rectangle rect = new Rectangle(topLeft1, bottonRight2, null);
+        Rectangle rect = new Rectangle(topLeft1, bottonRight2, (Color)null);
 
         Point2D topLeft3 = new Point2D(4, 6);
         Point2D bottonRight4 = new Point2D(5, 1);
-        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4, null);
+        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4,(Color) null);
 
         assertFalse(Rectangle.isRectangleContainedInOtherRectangle(rect2, rect));
         assertTrue(Rectangle.isRectangleContainedInOtherRectangle(rect, rect2));
@@ -87,7 +88,7 @@ public class RectangleTest {
     public void move() throws Exception {
         Point2D topLeft3 = new Point2D(4, 6);
         Point2D bottonRight4 = new Point2D(5, 1);
-        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4, null);
+        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4,(Color) null);
 
         rect2.move(1, 0);
         assertEquals(5.0, rect2.getTopLeftX(), 0.001);
@@ -101,7 +102,7 @@ public class RectangleTest {
     public void reduceRectangle() throws Exception {
         Point2D topLeft3 = new Point2D(4, 6);
         Point2D bottonRight4 = new Point2D(5, 1);
-        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4, null);
+        Rectangle rect2 = new Rectangle(topLeft3, bottonRight4, (Color) null);
         rect2.reduceRectangle(0, 2);
 
         assertEquals(4, rect2.getTopLeftY(), 0.001);

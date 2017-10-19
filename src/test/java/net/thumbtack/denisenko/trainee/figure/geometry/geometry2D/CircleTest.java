@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ import static org.junit.Assert.*;
 public class CircleTest {
 
     Point2D center = new Point2D(4, 5);
-    Circle circle = new Circle(center, 2, null);
+    Circle circle = new Circle(center, 2, (Color) null);
 
 
     @Test

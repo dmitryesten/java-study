@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class Rectangle3DTest {
 
     @Test
     public void printCoordinates() throws Exception {
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         assertEquals(0.0, r.getTopLeftX() );
         assertEquals(2.0, r.getTopLeftY() );
 
@@ -23,7 +24,7 @@ public class Rectangle3DTest {
     @Test
     public void move() throws Exception {
         int n = 1;
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         r.move(n, n);
         assertEquals(3.0 + n, r.getBottomRightX());
         assertEquals(0.0 + n, r.getBottomRightY());
@@ -38,7 +39,7 @@ public class Rectangle3DTest {
     @Test
     public void reduceBase() throws Exception {
         int n = 1;
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         r.reduceBase(n);
         assertEquals(3.0 - n, r.getBottomRightX() );
         assertEquals(2.0 - n, r.getTopLeftY() );
@@ -50,7 +51,7 @@ public class Rectangle3DTest {
 
     @Test
     public void areaBase() throws Exception {
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         assertEquals(6.0, r.area());
     }
 
@@ -58,14 +59,14 @@ public class Rectangle3DTest {
 
     @Test
     public void volume() throws Exception {
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         assertEquals(12.0, r.volume());
     }
 
     @Test
     public void isPoint3DInRectangle() throws Exception {
         Point3D point3D = new Point3D(1, 1 ,1);
-        Rectangle3D r = new Rectangle3D(3, 2, 2,null);
+        Rectangle3D r = new Rectangle3D(3, 2, 2,(Color)null);
         assertTrue(r.isPointInFigure(point3D));
         assertTrue(r.isPointInFigure(1,1,1));
     }
@@ -74,15 +75,15 @@ public class Rectangle3DTest {
 
     @Test
     public void isRect3DCrossingWithOtherRect3D() throws Exception {
-        Rectangle3D r1 = new Rectangle3D(3, 3, 3, null);
-        Rectangle3D r2 = new Rectangle3D(new Point2D(2,4), new Point2D(5,2),2, null );
+        Rectangle3D r1 = new Rectangle3D(3, 3, 3,(Color) null);
+        Rectangle3D r2 = new Rectangle3D(new Point2D(2,4), new Point2D(5,2),2,(Color) null );
         assertTrue(Rectangle3D.isRect3DCrossingWithOtherRect3D(r1, r2));
     }
 
     @Test
     public void isRectangleContainedInOtherRectangle() throws Exception {
-        Rectangle3D r1 = new Rectangle3D(2, 1, 1, null);
-        Rectangle3D r2 = new Rectangle3D(3, 3, 3, null);
+        Rectangle3D r1 = new Rectangle3D(2, 1, 1, (Color)null);
+        Rectangle3D r2 = new Rectangle3D(3, 3, 3,(Color) null);
 
         assertTrue(Rectangle3D.isRectangleContainedInOtherRectangle(r1, r2));
     }

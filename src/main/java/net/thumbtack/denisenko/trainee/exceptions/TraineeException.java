@@ -1,5 +1,7 @@
 package net.thumbtack.denisenko.trainee.exceptions;
 
+import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
+
 public class TraineeException extends Exception {
 
     private String fieldTrainee;
@@ -14,9 +16,9 @@ public class TraineeException extends Exception {
         this.fieldTrainee = filedTrainee;
     }
 
-    public TraineeException(int number){
+    public TraineeException(TraineeErrorCodes number){
         super("The number is not correct");
-        this.number = number;
+        //this.number = number;
     }
 
 
