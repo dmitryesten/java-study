@@ -15,7 +15,8 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
-    private Color color;
+    // REVU move Color to Figure
+   private Color color;
 
     public Rectangle(){
         this(1, 1, (Color) null);

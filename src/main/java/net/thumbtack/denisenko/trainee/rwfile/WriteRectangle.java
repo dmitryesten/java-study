@@ -6,6 +6,7 @@ import java.io.*;
 
 public class WriteRectangle {
 
+	// let us discuss at Sunday
     public static void writeRectangle(Rectangle r, File file) throws IOException {
         try(DataOutputStream dout = new DataOutputStream( new FileOutputStream(file.getAbsoluteFile()))) {
             String binaryString = WriteRectangle.stringToBinary(r.toString());

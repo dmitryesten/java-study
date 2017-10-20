@@ -9,7 +9,8 @@ import java.util.Objects;
 
 public class Cylinder extends Circle{
 
-    private Color color;
+ // REVU remove
+	private Color color;
     private double height;
 
 

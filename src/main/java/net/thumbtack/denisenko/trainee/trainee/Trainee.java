@@ -26,6 +26,8 @@ public class Trainee {
         try {
             if (name != null && !name.isEmpty())
                 this.name = name;
+            // let us discuss at Sunday
+
         }catch (IllegalArgumentException e){
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         }
