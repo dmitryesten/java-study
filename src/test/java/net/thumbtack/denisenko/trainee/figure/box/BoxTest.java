@@ -1,6 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import org.junit.Test;
@@ -21,15 +22,15 @@ public class BoxTest {
 
     @Test
     public void square() throws Exception {
-        Box<Rectangle> box = new Box <Rectangle> (new Rectangle());
+        Box<Rectangle> box = new Box <> (new Rectangle());
         assertEquals(1, box.square(), 0.001);
     }
 
     @Test
     public void isSameSquare() throws Exception {
         Box<Rectangle> b = new Box<>(new Rectangle());
-        Box<Circle> b2 = new Box<Circle>(new Circle(2,2,1, null));
-        assertEquals(true, b2.isSameSquare(new Box<Circle>( new Circle(2,2,1, null)) ) );
+        Box<Circle> b2 = new Box<>(new Circle(2,2,1, (Color) null));
+        assertEquals(true, b2.isSameSquare(new Box<Circle>( new Circle(2,2,1, (Color) null)) ) );
     }
 
 

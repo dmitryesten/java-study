@@ -21,14 +21,12 @@ public class TraineeTest {
         String surname = null;
         int number = 4;
 
-        try {
-            trainee = new Trainee(name, surname, number);
-        }catch(NullPointerException e){
-            throw new TraineeException();
-        }
+
+        trainee = new Trainee(name, surname, number);
+
 
         try {
-            assertEquals("", trainee.getName());
+            assertEquals(null, trainee.getName());
             assertEquals(null, trainee.getName());
         }
         catch(NullPointerException np){

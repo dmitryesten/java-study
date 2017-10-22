@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
+import net.thumbtack.denisenko.trainee.figure.Color;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,7 +12,7 @@ public class AnonymousRectangle3DTest {
         int b = 3;
         int c = 4;
 
-        assertEquals(24.00, (int) new Rectangle3D(a, b, c,null){
+        assertEquals(24.00, (int) new Rectangle3D(a, b, c, (Color) null){
             private int x = a;
             private int y = b;
             private int z = c;
