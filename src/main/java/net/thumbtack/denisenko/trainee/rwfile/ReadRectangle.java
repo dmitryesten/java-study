@@ -8,8 +8,8 @@ public class ReadRectangle {
         try(DataInputStream dinput = new DataInputStream(new FileInputStream(file.getAbsoluteFile()))) {
             while(dinput.available() > 0) {
                 System.out.print((char)dinput.read());
+                //System.out.print( dinput.read() );
             }
-            dinput.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
