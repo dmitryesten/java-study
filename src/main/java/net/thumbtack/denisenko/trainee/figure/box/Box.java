@@ -6,8 +6,8 @@ import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.interfaces.Square;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
-// REVU Square is a raw type. References to generic type Square<T> should be parameterized
-public class Box <T extends Figure> implements Square {
+
+public class Box <T extends Figure> implements Square<Rectangle> {
 
     private T content;
 
@@ -28,7 +28,7 @@ public class Box <T extends Figure> implements Square {
     }
 
 
-    public <T extends Rectangle & Square>  boolean isSameSquare(Box<Circle> box2){
+    public <T extends Figure>  boolean isSameSquare(Box<Circle> box2){
         return FloatingOperations.compareValues(square(), box2.square());
     }
 
@@ -43,7 +43,7 @@ public class Box <T extends Figure> implements Square {
     }
 
 
-    public static <T extends Rectangle & Square>  boolean isSameSquareStatic(Box box1, Box box2){
+    public static <T extends Figure>  boolean isSameSquareStatic(Box box1, Box box2){
         return FloatingOperations.compareValues(box1.square(), box2.square());
     }
 
