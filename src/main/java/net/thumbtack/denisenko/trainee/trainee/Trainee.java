@@ -2,8 +2,10 @@ package net.thumbtack.denisenko.trainee.trainee;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 
+import java.io.Serializable;
 
-public class Trainee {
+
+public class Trainee implements Serializable {
 
     private String name;
     private String surname;
@@ -22,13 +24,10 @@ public class Trainee {
     }
 
 
-    public void setName(String name) throws NullPointerException, TraineeException {
-        try {
-            if (name != null && !name.isEmpty())
-                this.name = name;
-        }catch (IllegalArgumentException e){
+    public void setName(String name) throws TraineeException {
+        if (name == null && name.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
-        }
+        this.name = name;
     }
 
 
@@ -38,12 +37,9 @@ public class Trainee {
 
 
     public void setSurname(String surname) throws TraineeException {
-        try {
-            if (name != null && !name.isEmpty())
-                this.surname = surname;
-        }catch (IllegalArgumentException e){
+        if (surname == null && surname.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
-        }
+        this.surname = surname;
     }
 
 
@@ -53,13 +49,9 @@ public class Trainee {
 
 
     public void setRating(int rating) throws TraineeException {
-        try {
-            if(rating >= 1 && rating <= 5)
-                this.rating = rating;
-        }catch (IllegalArgumentException e){
-            throw new TraineeException(TraineeErrorCodes.ERROR_NUMBER_IS_NOT_CORRECT);
-        }
-
+        if(rating >= 1 && rating <= 5)
+            this.rating = rating;
+        else throw new TraineeException(TraineeErrorCodes.ERROR_NUMBER_IS_NOT_CORRECT);
     }
 
     @Override
