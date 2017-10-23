@@ -1,6 +1,5 @@
 package net.thumbtack.denisenko.trainee.rwfile;
 
-import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.File;
@@ -24,7 +23,7 @@ public class FileWriterTrainee {
     }
 
 
-    public static void writerOneLine(Trainee t, File file) throws IllegalAccessException {
+    public static void writerMonoLine(Trainee t, File file) throws IllegalAccessException {
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
         try (FileWriter fileWriter = new FileWriter(file)) {
