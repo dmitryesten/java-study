@@ -21,15 +21,4 @@ public class FileReaderTrainee {
         }
     }
 
-    public static void fileReaderOneLine(Trainee t, File file) throws IOException, IllegalAccessException {
-        FileWriterTrainee.writerOneLine(t,file);
-        try(FileReader fileReader = new FileReader(file)){
-            int c;
-            while((c=fileReader.read())!=-1){
-                System.out.print((char)c);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 }
