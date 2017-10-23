@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.figure.cars;
+package net.thumbtack.denisenko.trainee.cars;
 
 import net.thumbtack.denisenko.trainee.figure.Color;
 import org.junit.Test;

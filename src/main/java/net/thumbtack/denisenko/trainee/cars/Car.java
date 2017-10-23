@@ -1,3 +1,4 @@
+// REVU why Car is in figure package ?
 package net.thumbtack.denisenko.trainee.figure.cars;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
@@ -19,6 +20,8 @@ public class Car implements Colored {
         this.maxSpeed = maxSpeed;
         this.color = color;
     }
+    
+    // REVU please add Car(String mark, int weight, int maxSpeed, String color)
 
 
     public String printInfoCar(){

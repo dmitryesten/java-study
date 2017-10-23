@@ -11,6 +11,7 @@ public class Circle extends Figure {
 	private double x;
     private double y;
     private double radius;
+    // REVU move Color to Figure
     private Color color;
 
     public Circle (){

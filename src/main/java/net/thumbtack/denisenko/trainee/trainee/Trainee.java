@@ -24,6 +24,7 @@ public class Trainee implements Serializable {
     }
 
 
+
     public void setName(String name) throws TraineeException {
         if (name == null && name.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
@@ -53,6 +54,7 @@ public class Trainee implements Serializable {
             this.rating = rating;
         else throw new TraineeException(TraineeErrorCodes.ERROR_NUMBER_IS_NOT_CORRECT);
     }
+
 
     @Override
     public boolean equals(Object o) {

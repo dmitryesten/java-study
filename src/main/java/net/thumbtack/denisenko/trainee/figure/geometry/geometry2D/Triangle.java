@@ -19,6 +19,7 @@ public class Triangle extends Figure {
     private double x3;
     private double y3;
 
+    // REVU move Color to Figure
     private Color color;
 
 

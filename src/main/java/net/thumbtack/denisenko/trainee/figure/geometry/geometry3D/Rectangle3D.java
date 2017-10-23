@@ -13,6 +13,7 @@ public class Rectangle3D extends Rectangle {
     private double lengthY;
     private double heightZ;
 
+ // REVU remove
     private Color color;
 
 
