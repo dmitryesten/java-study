@@ -4,7 +4,7 @@ import java.io.*;
 
 public class SerializableTrainee {
 
-    public static void serialize(Trainee t, File file) throws IOException {
+    public static void serializeToFile(Trainee t, File file) throws IOException {
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
             oos.writeObject(t);
         } catch (FileNotFoundException e) {
@@ -13,7 +13,7 @@ public class SerializableTrainee {
     }
 
 
-    public static void deserialize(File file) throws IOException, ClassNotFoundException {
+    public static void deserializeOfFile(File file) throws IOException, ClassNotFoundException {
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             Trainee t = (Trainee) ois.readObject();
         } catch (FileNotFoundException e) {
@@ -21,9 +21,22 @@ public class SerializableTrainee {
         }
     }
 
-    public static void serializeToByteArray(Trainee t, File file) throws FileNotFoundException {
-
+    public static byte[] serializeToBytes(Trainee trainee) throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try (ObjectOutput out = new ObjectOutputStream(bos)) {
+                out.writeObject(trainee);
+                bos.close();
+                return bos.toByteArray();
+        }
     }
+
+    public Trainee deserializeOfBytes(byte[] bytes) throws IOException, ClassNotFoundException {
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+             ObjectInput in = new ObjectInputStream(bis)) {
+            return (Trainee) in.readObject();
+        }
+    }
+
 
 
 }
