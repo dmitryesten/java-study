@@ -11,8 +11,7 @@ public class Circle extends Figure {
 	private double x;
     private double y;
     private double radius;
-    // REVU move Color to Figure
-    private Color color;
+
 
     public Circle (){
         this( new Point2D(1,1), 1, (Color) null);
@@ -114,12 +113,11 @@ public class Circle extends Figure {
         Circle circle = (Circle) o;
         return Double.compare(circle.x, x) == 0 &&
                 Double.compare(circle.y, y) == 0 &&
-                Double.compare(circle.radius, radius) == 0 &&
-                Objects.equals(color, circle.color);
+                Double.compare(circle.radius, radius) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, radius, color);
+        return Objects.hash(x, y, radius);
     }
 }

@@ -9,6 +9,8 @@ import java.io.Serializable;
 
 public abstract class Figure implements Colored, Serializable{
 
+    public Color color;
+
     public abstract void move(int newX, int newY);
     public abstract double area();
     public abstract String printCoordinates();

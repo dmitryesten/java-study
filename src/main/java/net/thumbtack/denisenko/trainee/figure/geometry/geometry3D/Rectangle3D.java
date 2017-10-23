@@ -13,10 +13,6 @@ public class Rectangle3D extends Rectangle {
     private double lengthY;
     private double heightZ;
 
- // REVU remove
-    private Color color;
-
-
     public Rectangle3D(){
         this(1, 1, 1, (Color) null);
     }
@@ -120,12 +116,11 @@ public class Rectangle3D extends Rectangle {
         Rectangle3D that = (Rectangle3D) o;
         return Double.compare(that.widthX, widthX) == 0 &&
                 Double.compare(that.lengthY, lengthY) == 0 &&
-                Double.compare(that.heightZ, heightZ) == 0 &&
-                Objects.equals(color, that.color);
+                Double.compare(that.heightZ, heightZ) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), widthX, lengthY, heightZ, color);
+        return Objects.hash(super.hashCode(), widthX, lengthY, heightZ);
     }
 }

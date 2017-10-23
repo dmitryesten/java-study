@@ -9,10 +9,7 @@ import java.util.Objects;
 
 public class Cylinder extends Circle{
 
- // REVU remove
-	private Color color;
     private double height;
-
 
     public Cylinder(Point3D p, int radius, Color color){
         super(p,radius, color);
@@ -91,14 +88,11 @@ public class Cylinder extends Circle{
         if (!(o instanceof Cylinder)) return false;
         if (!super.equals(o)) return false;
         Cylinder cylinder = (Cylinder) o;
-        return Double.compare(cylinder.height, height) == 0 &&
-                Objects.equals(color, cylinder.color);
+        return Double.compare(cylinder.height, height) == 0;
     }
-
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), color, height);
+        return Objects.hash(super.hashCode(), height);
     }
-
 }

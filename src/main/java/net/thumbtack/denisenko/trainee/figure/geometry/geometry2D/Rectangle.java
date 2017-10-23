@@ -15,8 +15,6 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
-    // REVU move Color to Figure
-   private Color color;
 
     public Rectangle(){
         this(1, 1, (Color) null);
@@ -198,14 +196,14 @@ public class Rectangle extends Figure {
         return Double.compare(rectangle.topLeftX, topLeftX) == 0 &&
                 Double.compare(rectangle.topLeftY, topLeftY) == 0 &&
                 Double.compare(rectangle.bottomRightX, bottomRightX) == 0 &&
-                Double.compare(rectangle.bottomRightY, bottomRightY) == 0 &&
-                Objects.equals(color, rectangle.color);
+                Double.compare(rectangle.bottomRightY, bottomRightY) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topLeftX, topLeftY, bottomRightX, bottomRightY, color);
+        return Objects.hash(topLeftX, topLeftY, bottomRightX, bottomRightY);
     }
+
 
     //-------------------------------------------------------------
 
