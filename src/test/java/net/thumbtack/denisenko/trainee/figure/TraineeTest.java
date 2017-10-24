@@ -8,35 +8,25 @@ import static org.junit.Assert.*;
 
 public class TraineeTest {
 
-    Trainee trainee;
+    private Trainee trainee = new Trainee("Ivan", "Ivanov", 3);
 
     public TraineeTest() throws TraineeException {
 
     }
 
+    @Test
+    public void getName() throws Exception {
+        assertEquals("Ivan", trainee.getName());
+    }
 
     @Test
-    public void set() throws Exception {
-        String name = null;
-        String surname = null;
-        int number = 4;
+    public void getSurname() throws Exception {
+        assertEquals("Ivanov", trainee.getSurname());
+    }
 
-
-        trainee = new Trainee(name, surname, number);
-
-
-        try {
-            assertEquals(null, trainee.getName());
-            assertEquals(null, trainee.getName());
-        }
-        catch(NullPointerException np){
-            np.printStackTrace();
-            //throw new TraineeException ();
-        }
-        catch(IllegalArgumentException ex){
-            throw new TraineeException ();
-        }
-
+    @Test
+    public void getRating() throws Exception {
+        assertEquals(3, trainee.getRating());
     }
 
 

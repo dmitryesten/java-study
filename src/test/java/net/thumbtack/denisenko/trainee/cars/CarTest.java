@@ -7,23 +7,35 @@ import static org.junit.Assert.*;
 
 public class CarTest {
 
+    private String mark = "BMW";
+    private int weight = 1234;
+    private int maxSpeed = 120;
+    private Color color = Color.GREEN;
+
+    private Car car = new Car(mark, weight, maxSpeed, Color.GREEN);
+
     @Test
     public void printInfoCar() throws Exception {
-        String mark = "s";
-        int  w = 1234;
-        int ms = 120;
-        Color color = Color.GREEN;
-        Car car = new Car(mark, w, ms, Color.GREEN);
-        assertEquals("Марка: "+ mark + "; Вес: "+w+"кг; MaxСкорость: "+ms+"км/ч"+" Цвет:" + color,
+        assertEquals("Марка: "+ mark +
+                              "; Вес: "+weight+
+                              "кг; MaxСкорость: "+maxSpeed+"км/ч"+
+                              " Цвет:" + color,
                 car.printInfoCar());
-
-        assertEquals(mark, car.getMark());
-        assertEquals(w,car.getWeight());
-        assertEquals(ms, car.getMaxSpeed());
-
-        Car car2 = new Car(mark,w,ms, Color.BLACK);
-        assertEquals(Color.BLACK, car2.getColor());
-
     }
+
+    @Test
+    public void testGet(){
+        assertEquals(mark, car.getMark());
+        assertEquals(weight,car.getWeight());
+        assertEquals(maxSpeed, car.getMaxSpeed());
+    }
+
+    @Test
+    public void testColor(){
+        assertEquals(Color.GREEN, car.getColor());
+        assertNotEquals(Color.RED, car.getColor());
+    }
+
+
 
 }
