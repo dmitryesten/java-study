@@ -1,8 +1,8 @@
 package net.thumbtack.denisenko.trainee.trainee;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
-
 import java.io.Serializable;
+import java.util.Objects;
 
 
 public class Trainee implements Serializable {
@@ -59,20 +59,15 @@ public class Trainee implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (!(o instanceof Trainee)) return false;
         Trainee trainee = (Trainee) o;
-
-        if (rating != trainee.rating) return false;
-        if (!name.equals(trainee.name)) return false;
-        return surname.equals(trainee.surname);
+        return rating == trainee.rating &&
+                Objects.equals(name, trainee.name) &&
+                Objects.equals(surname, trainee.surname);
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + surname.hashCode();
-        result = 31 * result + rating;
-        return result;
+        return Objects.hash(name, surname, rating);
     }
 }
