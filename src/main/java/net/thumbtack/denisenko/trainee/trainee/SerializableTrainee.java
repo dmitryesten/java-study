@@ -30,7 +30,7 @@ public class SerializableTrainee {
         }
     }
 
-    public Trainee deserializeOfBytes(byte[] bytes) throws IOException, ClassNotFoundException {
+    public static Trainee deserializeOfBytes(byte[] bytes) throws IOException, ClassNotFoundException {
         try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
              ObjectInput in = new ObjectInputStream(bis)) {
             return (Trainee) in.readObject();
