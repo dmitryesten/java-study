@@ -5,6 +5,7 @@ import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.lang.reflect.Field;
 
 public class FileWriterTrainee {
@@ -12,7 +13,7 @@ public class FileWriterTrainee {
     public static void fileWriter(Trainee t, File file) throws IllegalAccessException {
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
-        try (FileWriter fileWriter = new FileWriter(file)) {
+        try (Writer fileWriter = new FileWriter(file)) {
             for (Field field : publicFields) {
                 field.setAccessible(true);
                 fileWriter.write(String.valueOf(field.get(t)) + "\r\n");
@@ -26,7 +27,7 @@ public class FileWriterTrainee {
     public static void writerMonoLine(Trainee t, File file) throws IllegalAccessException {
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
-        try (FileWriter fileWriter = new FileWriter(file)) {
+        try (Writer fileWriter = new FileWriter(file)) {
             for (Field field : publicFields) {
                 field.setAccessible(true);
                 fileWriter.write(String.valueOf(field.get(t)) + ' ');
