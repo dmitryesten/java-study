@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.rwfile;
+package net.thumbtack.denisenko.trainee.io.rwfile;
 
 
 import org.junit.Ignore;
@@ -23,14 +23,15 @@ public class FileTest {
     public void testCreate() throws IOException {
         File create = new File("create.txt");
         assertTrue(create.createNewFile());
+
+        assertTrue(create.isFile());
+
+        boolean exists = create.exists();
+        assertTrue(exists);
+
         create.delete();
     }
 
-    @Test
-    public void testExists(){
-        boolean exists = test.exists();
-        assertTrue(exists);
-    }
 
     @Test
     public void testDelete() throws IOException {
@@ -45,11 +46,6 @@ public class FileTest {
         //File rename = new File("recreate.txt");
         name.renameTo(new File("rename.txt"));
         assertEquals("rename.txt", name.getName());
-    }
-
-    @Test
-    public void testIsFile() throws IOException {
-        assertTrue(test.isFile());
     }
 
 
