@@ -1,4 +1,6 @@
-package net.thumbtack.denisenko.trainee.trainee;
+package net.thumbtack.denisenko.trainee.io.serializable;
+
+import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.*;
 
@@ -21,6 +23,7 @@ public class SerializableTrainee {
         }
     }
 
+
     public static byte[] serializeToBytes(Trainee trainee) throws IOException {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try (ObjectOutput out = new ObjectOutputStream(bos)) {
@@ -30,13 +33,12 @@ public class SerializableTrainee {
         }
     }
 
+
     public static Trainee deserializeOfBytes(byte[] bytes) throws IOException, ClassNotFoundException {
         try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
              ObjectInput in = new ObjectInputStream(bis)) {
             return (Trainee) in.readObject();
         }
     }
-
-
 
 }

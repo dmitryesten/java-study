@@ -1,11 +1,11 @@
-package net.thumbtack.denisenko.trainee.rwfile;
+package net.thumbtack.denisenko.trainee.io.rwfile;
 
 import java.io.*;
 
 public class ReadRectangle {
 
     public static void read(File file) throws IOException {
-        try(InputStream dinput = new DataInputStream(new FileInputStream(file))) {
+        try(InputStream dinput = new FileInputStream(file)) {
             while(dinput.available() > 0) {
                 System.out.print((char)dinput.read());
                 //System.out.print( dinput.read() );

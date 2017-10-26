@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.rwfile;
+package net.thumbtack.denisenko.trainee.io.rwfile;
 
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
