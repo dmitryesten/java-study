@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Trainee implements Serializable {
+public class Trainee implements Serializable, Comparable<Trainee> {
 
     private String name;
     private String surname;
@@ -22,7 +22,6 @@ public class Trainee implements Serializable {
     public String getName() {
         return name;
     }
-
 
 
     public void setName(String name) throws TraineeException {
@@ -70,4 +69,10 @@ public class Trainee implements Serializable {
     public int hashCode() {
         return Objects.hash(name, surname, rating);
     }
+
+    @Override
+    public int compareTo(Trainee t2) {
+        return getName().compareTo(t2.getName());
+    }
+
 }
