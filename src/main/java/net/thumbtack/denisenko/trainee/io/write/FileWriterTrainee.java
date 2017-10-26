@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.io.rwfile;
+package net.thumbtack.denisenko.trainee.io.write;
 
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 

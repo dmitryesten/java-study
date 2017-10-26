@@ -1,7 +1,8 @@
-package net.thumbtack.denisenko.trainee.trainee;
+package net.thumbtack.denisenko.trainee.io.serializable;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.io.serializable.SerializableTrainee;
+import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.Test;
 
 import java.io.*;

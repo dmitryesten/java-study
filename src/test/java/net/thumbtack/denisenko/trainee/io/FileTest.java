@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.io.rwfile;
+package net.thumbtack.denisenko.trainee.io;
 
 
 import org.junit.Ignore;

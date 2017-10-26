@@ -1,5 +1,6 @@
-package net.thumbtack.denisenko.trainee.io.rwfile;
+package net.thumbtack.denisenko.trainee.io.read;
 
+import net.thumbtack.denisenko.trainee.io.write.FileWriterTrainee;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.*;
