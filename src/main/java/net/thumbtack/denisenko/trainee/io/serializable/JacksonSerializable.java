@@ -31,8 +31,10 @@ public class JacksonSerializable {
     public static void read(File file){
         ObjectMapper objectMapper = new ObjectMapper();
         try {
+        	// REVU JsonParseException, JsonMappingException
             objectMapper.readValue(file, Trainee.class);
         } catch (IOException e) {
+        	// REVU do not call printStackTrace, throw your own exception 
             e.printStackTrace();
         }
     }

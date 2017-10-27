@@ -15,6 +15,7 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
+    // REVU color ?
 
     public Rectangle(){
         this(1, 1, (Color) null);

@@ -15,6 +15,7 @@ public class GsonSerializable {
 
     public static Trainee deserialize(String objectSerialized){
         Gson gson = new Gson();
+        // REVU JsonSyntaxException, JsonIOException
         return gson.fromJson(objectSerialized, Trainee.class);
     }
 
@@ -29,6 +30,7 @@ public class GsonSerializable {
     public static void read(File file) throws IOException {
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
+            // REVU JsonSyntaxException, JsonIOException
             Trainee t = gson.fromJson(reader, Trainee.class);
         }
     }

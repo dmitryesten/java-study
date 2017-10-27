@@ -6,6 +6,7 @@ import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
 
 public class Group {
 
+	// REVU simply "name"
     private String nameGroup;
     private Trainee [] trainees;
 
@@ -21,6 +22,7 @@ public class Group {
     }
 
     public void setNameGroup(String nameGroup) throws TraineeException {
+    	// REVU ||, not &&
         if (nameGroup == null && nameGroup.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.nameGroup = nameGroup;

@@ -2,6 +2,7 @@ package net.thumbtack.denisenko.trainee.figure;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 
+// REVU move to another package
 public enum Color {
     RED, GREEN, BLUE, YELLOW, WHITE, BLACK;
 

@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 public abstract class Figure implements Colored, Serializable{
 
+	// REVU private
     public Color color;
 
     public abstract void move(int newX, int newY);

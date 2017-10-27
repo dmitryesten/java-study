@@ -18,6 +18,8 @@ public class Institute {
     }
 
     public void setName(String name) throws TraineeException {
+    	// REVU ||, not &&
+    	// why city ? copy/paste ? 
         if (city == null && city.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.name = name;
@@ -28,6 +30,7 @@ public class Institute {
     }
 
     public void setCity(String city) throws TraineeException {
+    	// REVU ||, not &&
         if (city == null && city.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.city = city;

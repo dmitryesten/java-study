@@ -19,6 +19,7 @@ public class Triangle extends Figure {
     private double x3;
     private double y3;
 
+    // REVU color ?
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
         this.x1 = point1.getX();

@@ -9,12 +9,15 @@ public class FileReaderTrainee {
 
     public static void fileReader(Trainee t, File file) throws IOException, IllegalAccessException {
         FileWriterTrainee.fileWriter(t,file);
+        // REVU you do not need to read bytes
+        // Use BufferedReader and read full line
         try(Reader fileReader = new FileReader(file)){
             int c;
             while((c=fileReader.read())!=-1){
                 System.out.print((char)c);
             }
         } catch (FileNotFoundException e) {
+        	// REVU do not call printStackTrace, throw your exception 
             e.printStackTrace();
         }
     }

@@ -7,6 +7,8 @@ public class WriteRectangle {
 
     public static void write(Rectangle r, File file) throws IOException {
         try(OutputStream dout = new FileOutputStream(file)) {
+        	
+        	// REVU you do not need convert to bytes.
             byte [] bytes = r.toString().getBytes();
             for (byte i : bytes) {
                 dout.write(i);

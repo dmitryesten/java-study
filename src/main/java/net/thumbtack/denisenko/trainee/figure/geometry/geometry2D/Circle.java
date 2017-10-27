@@ -18,6 +18,7 @@ public class Circle extends Figure {
     }
 
     public Circle (Point2D point, double radius, Color color) {
+    	// REVU call constructor public Circle(double x, double y, double radius, Color color) {
         this.x = point.getX();
         this.y = point.getY();
         this.radius = radius;
@@ -32,6 +33,7 @@ public class Circle extends Figure {
         this.x = x;
         this.y = y;
         this.radius = radius;
+        // REVU do not set color here, let superclass Figure sets it
         this.color = color;
     }
     public Circle(double x, double y, double radius, String color) throws ColorException {
