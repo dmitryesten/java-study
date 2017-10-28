@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
 
@@ -18,11 +18,7 @@ public class Circle extends Figure {
     }
 
     public Circle (Point2D point, double radius, Color color) {
-    	// REVU call constructor public Circle(double x, double y, double radius, Color color) {
-        this.x = point.getX();
-        this.y = point.getY();
-        this.radius = radius;
-        this.color = color;
+        this(point.getX(), point.getY(),radius,color);
     }
     public Circle (Point2D point, double radius, String color) throws ColorException{
         this( point, radius, Color.colorFromString(color));
@@ -30,11 +26,10 @@ public class Circle extends Figure {
 
 
     public Circle(double x, double y, double radius, Color color) {
+        super(color);
         this.x = x;
         this.y = y;
         this.radius = radius;
-        // REVU do not set color here, let superclass Figure sets it
-        this.color = color;
     }
     public Circle(double x, double y, double radius, String color) throws ColorException {
         this( x, y, radius, Color.colorFromString(color));
@@ -58,7 +53,6 @@ public class Circle extends Figure {
     public double area(){
         return Math.PI * getRadius() * getRadius();
     }
-
 
 
     public double length(){
@@ -93,20 +87,6 @@ public class Circle extends Figure {
     }
 
 
-    @Override
-    public Color getColor() {
-        return color;
-    }
-
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    @Override
-    public void setColor(String color) throws ColorException {
-        this.color = Color.colorFromString(color);
-    }
 
     @Override
     public boolean equals(Object o) {

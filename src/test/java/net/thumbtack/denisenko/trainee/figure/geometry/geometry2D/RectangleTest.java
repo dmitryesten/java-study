@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import org.junit.Ignore;
 import org.junit.Test;
 

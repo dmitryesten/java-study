@@ -8,31 +8,32 @@ public class Institute {
     private String name;
     private String city;
 
-    public Institute(String name, String city) throws TraineeException {
-        setName(name);
-        setCity(city);
+    public Institute(String name, String city) {
+        try {
+            setName(name);  setCity(city);
+        } catch (TraineeException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) throws TraineeException {
-    	// REVU ||, not &&
-    	// why city ? copy/paste ? 
-        if (city == null && city.isEmpty())
-            throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
-        this.name = name;
-    }
-
     public String getCity() {
         return city;
     }
 
+    public void setName(String name) throws TraineeException {
+        if (name == null || name.isEmpty())
+                throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
+        this.name = name;
+    }
+
     public void setCity(String city) throws TraineeException {
-    	// REVU ||, not &&
-        if (city == null && city.isEmpty())
-            throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
+        if (city == null || city.isEmpty())
+                throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.city = city;
     }
 

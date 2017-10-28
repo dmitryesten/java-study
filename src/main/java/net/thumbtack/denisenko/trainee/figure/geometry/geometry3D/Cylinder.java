@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 
@@ -14,7 +14,6 @@ public class Cylinder extends Circle{
     public Cylinder(Point3D p, int radius, Color color){
         super(p,radius, color);
         this.height = p.getZ();
-        this.color = color;
     }
 
     public Cylinder(Point3D p, int radius, String color) throws ColorException {
@@ -25,7 +24,6 @@ public class Cylinder extends Circle{
     public Cylinder(Point2D p, double radius, double height, Color color){
         super(p, radius, color);
         this.height = height;
-        this.color = color;
     }
 
     public Cylinder(Point2D p, double radius, double height, String color) throws ColorException {
@@ -35,7 +33,6 @@ public class Cylinder extends Circle{
     public Cylinder(double x, double y, double radius, double height, Color color) {
         super(x, y, radius,color);
         this.height = height;
-        this.color = color;
     }
 
     public Cylinder(double x, double y, double radius, double height, String color) throws ColorException {

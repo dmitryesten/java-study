@@ -12,10 +12,15 @@ public class Trainee implements Serializable, Comparable<Trainee> {
     private int rating;
 
 
-    public Trainee(String name, String surname, int rating) throws TraineeException {
-       setName(name);
-       setSurname(surname);
-       setRating(rating);
+    public Trainee(String name, String surname, int rating)  {
+        try {
+            setName(name);
+            setSurname(surname);
+            setRating(rating);
+        } catch (TraineeException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -25,7 +30,7 @@ public class Trainee implements Serializable, Comparable<Trainee> {
 
 
     public void setName(String name) throws TraineeException {
-        if (name == null && name.isEmpty())
+        if (name == null || name.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.name = name;
     }
@@ -37,7 +42,7 @@ public class Trainee implements Serializable, Comparable<Trainee> {
 
 
     public void setSurname(String surname) throws TraineeException {
-        if (surname == null && surname.isEmpty())
+        if (surname == null || surname.isEmpty())
             throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
         this.surname = surname;
     }

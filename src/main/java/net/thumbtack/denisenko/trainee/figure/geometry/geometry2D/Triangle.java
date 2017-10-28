@@ -1,9 +1,8 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
-import net.thumbtack.denisenko.trainee.figure.geometry.geometry3D.Point3D;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
 
 import java.util.Objects;
@@ -19,9 +18,9 @@ public class Triangle extends Figure {
     private double x3;
     private double y3;
 
-    // REVU color ?
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
+        super((Color) null);
         this.x1 = point1.getX();
         this.y1 = point1.getY();
 
@@ -33,6 +32,7 @@ public class Triangle extends Figure {
     }
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3, Color color){
+        super(color);
         this.x1 = point1.getX();
         this.y1 = point1.getY();
 
@@ -41,7 +41,6 @@ public class Triangle extends Figure {
 
         this.x3 = point3.getX();
         this.y3 = point3.getY();
-        this.color = color;
     }
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3, String color) throws ColorException {
@@ -181,22 +180,5 @@ public class Triangle extends Figure {
     public int hashCode() {
         return Objects.hash(x1, y1, x2, y2, x3, y3);
     }
-
-
-    @Override
-    public Color getColor() {
-        return color;
-    }
-
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    @Override
-    public void setColor(String color) throws ColorException {
-        this.color = Color.colorFromString(color);
-    }
-
 
 }

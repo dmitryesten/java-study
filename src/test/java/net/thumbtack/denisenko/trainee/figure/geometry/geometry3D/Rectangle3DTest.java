@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import org.junit.Test;
 

@@ -5,7 +5,7 @@ import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
 
 public class TraineeException extends Exception {
 
-    private String fieldTrainee;
+    private String field;
     private int number;
     private Trainee [] trainees;
 
@@ -13,14 +13,18 @@ public class TraineeException extends Exception {
         super("The parametres instance is not correct");
     }
 
-    public TraineeException(String filedTrainee){
+    public TraineeException(String filed){
         super("String is empty or null");
-        this.fieldTrainee = filedTrainee;
+        this.field = filed;
     }
 
-    public TraineeException(TraineeErrorCodes number){
+    public TraineeException(TraineeErrorCodes traineeExc){
+        super(traineeExc.toString());
+    }
+
+    public TraineeException(int number){
         super("The number is not correct");
-        //this.number = number;
+        this.number = number;
     }
 
     public TraineeException(Trainee [] trainees){

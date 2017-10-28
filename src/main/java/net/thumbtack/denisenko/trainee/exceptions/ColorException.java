@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.exceptions;
 
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 
 public class ColorException extends Exception {
 

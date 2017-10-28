@@ -11,23 +11,34 @@ public class TraineeTest {
 
     public TraineeTest() throws TraineeException {}
 
-    @Test(expected = NullPointerException.class)
-    public void getName() throws Exception {
+    @Test(expected = TraineeException.class)
+    public void getNullName() throws Exception {
         assertEquals("Vasia", source.getName());
-        source.setName("");
-        assertEquals("", source.getName());
         source.setName(null);
         assertEquals(null, source.getName());
     }
 
+    @Test(expected = TraineeException.class)
+    public void getEmptyName() throws Exception {
+        assertEquals("Vasia", source.getName());
+            source.setName("");
+        assertEquals("", source.getName());
 
-    @Test(expected = NullPointerException.class)
-    public void getSurname() throws Exception {
+    }
+
+
+    @Test(expected = TraineeException.class)
+    public void getNullSurname() throws Exception {
         assertEquals("Pupkin", source.getSurname());
-        source.setSurname("");
-        assertEquals("", source.getSurname());
-        source.setSurname(null);
+            source.setSurname(null);
         assertEquals(null, source.getSurname());
+    }
+
+    @Test(expected = TraineeException.class)
+    public void getEmptySurname() throws Exception {
+        assertEquals("Pupkin", source.getSurname());
+            source.setSurname("");
+        assertEquals("", source.getSurname());
     }
 
 

@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 
 class CircleFactory {
 

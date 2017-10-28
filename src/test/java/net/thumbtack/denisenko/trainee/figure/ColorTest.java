@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure;
 
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import org.junit.Test;

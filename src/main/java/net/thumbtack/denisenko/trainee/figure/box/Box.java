@@ -28,7 +28,7 @@ public class Box <T extends Figure> implements Square<Rectangle> {
     }
 
 
-    public <T extends Figure>  boolean isSameSquare(Box<Circle> box2){
+    public <T extends Figure>  boolean isSameSquare(Box<Figure> box2){
         return FloatingOperations.compareValues(square(), box2.square());
     }
 
@@ -44,7 +44,7 @@ public class Box <T extends Figure> implements Square<Rectangle> {
 
 
     // REVU Box is a raw type. References to generic type Box<T> should be parameterized
-    public static <T extends Figure>  boolean isSameSquareStatic(Box box1, Box box2){
+    public static <T extends Figure>  boolean isSameSquareStatic(Box<Figure> box1, Box<Figure> box2){
         return FloatingOperations.compareValues(box1.square(), box2.square());
     }
 

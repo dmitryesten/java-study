@@ -6,30 +6,33 @@ import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
 
 public class Group {
 
-	// REVU simply "name"
-    private String nameGroup;
+    private String name;
     private Trainee [] trainees;
 
 
-    public Group(String nameGroup, Trainee [] trainee) throws TraineeException {
-        setNameGroup(nameGroup);
-        setTrainees(trainee);
+    public Group(String nameGroup, Trainee [] trainee) {
+        try {
+            setName(nameGroup); setTrainees(trainee);
+        } catch (TraineeException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
-    public String getNameGroup() {
-        return nameGroup;
-    }
-
-    public void setNameGroup(String nameGroup) throws TraineeException {
-    	// REVU ||, not &&
-        if (nameGroup == null && nameGroup.isEmpty())
-            throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
-        this.nameGroup = nameGroup;
+    public String getName() {
+        return name;
     }
 
     public Trainee[] getTrainees() {
         return trainees;
+    }
+
+
+    public void setName(String name) throws TraineeException {
+        if (name == null || name.isEmpty())
+            throw new TraineeException(TraineeErrorCodes.ERROR_STRING_IS_NULL_OR_EMTRY);
+        this.name = name;
     }
 
     public void setTrainees(Trainee[] trainees) throws TraineeException {

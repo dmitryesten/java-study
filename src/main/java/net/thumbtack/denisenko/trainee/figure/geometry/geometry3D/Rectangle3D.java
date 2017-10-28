@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.figure.geometry.geometry3D;
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Point2D;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
@@ -23,7 +23,6 @@ public class Rectangle3D extends Rectangle {
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = topLeftBase.getZ();
-        this.color = color;
     }
 
     public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, String color) throws ColorException {
@@ -35,7 +34,6 @@ public class Rectangle3D extends Rectangle {
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = height;
-        this.color = color;
     }
 
     public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, String color) throws ColorException {
@@ -47,7 +45,6 @@ public class Rectangle3D extends Rectangle {
         this.widthX = width;
         this.lengthY = length;
         this.heightZ = height;
-        this.color = color;
     }
 
     public Rectangle3D(int width, int length, int height, String color) throws ColorException {

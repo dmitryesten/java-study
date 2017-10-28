@@ -1,6 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry3D.Rectangle3D;

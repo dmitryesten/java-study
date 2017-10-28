@@ -2,7 +2,7 @@ package net.thumbtack.denisenko.trainee.figure.geometry.geometry2D;
 
 
 import net.thumbtack.denisenko.trainee.exceptions.ColorException;
-import net.thumbtack.denisenko.trainee.figure.Color;
+import net.thumbtack.denisenko.trainee.enums.Color;
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
 import java.util.Objects;
 
@@ -15,7 +15,6 @@ public class Rectangle extends Figure {
     private double bottomRightX;
     private double bottomRightY;
 
-    // REVU color ?
 
     public Rectangle(){
         this(1, 1, (Color) null);
@@ -24,26 +23,25 @@ public class Rectangle extends Figure {
     }
 
     public Rectangle(Point2D topLeft, Point2D bottomRight, Color color){
+        super(color);
         this.topLeftX = topLeft.getX();
         this.topLeftY = topLeft.getY();
         this.bottomRightX = bottomRight.getX();
         this.bottomRightY = bottomRight.getY();
-        this.color = color;
     }
+
     public Rectangle(Point2D topLeft, Point2D bottomRight, String color) throws ColorException {
         this(topLeft, bottomRight, Color.colorFromString(color));
     }
 
     public Rectangle(double width, double height, Color color) {
+        super(color);
         this.bottomRightX = width;
         this.topLeftY = height;
-        this.color = color;
     }
     public Rectangle(double width, double height, String color) throws ColorException {
         this(width, height, Color.colorFromString(color));
     }
-
-
 
 
     final public String printCoordinates() {
@@ -75,7 +73,7 @@ public class Rectangle extends Figure {
     /**
      * @param point(x, y)
      * @return true if point is contained in rect and false if point isn't contained in rect
-     */
+     * */
     @Override
     public boolean isPointInFigure(Point2D point) {
         return ((point.getX() >= getTopLeftX() && point.getX() <= getBottomRightX()) &&
@@ -174,20 +172,6 @@ public class Rectangle extends Figure {
         this.bottomRightY = bottonRightY;
     }
 
-    @Override
-    public Color getColor() {
-        return color;
-    }
-
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    @Override
-    public void setColor(String color) throws ColorException {
-        this.color = Color.colorFromString(color);
-    }
 
     @Override
     public boolean equals(Object o) {
