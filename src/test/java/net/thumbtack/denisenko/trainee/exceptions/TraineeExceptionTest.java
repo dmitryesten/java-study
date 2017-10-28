@@ -12,12 +12,12 @@ public class TraineeExceptionTest {
         Trainee trainee = new Trainee("Vasia", "Ivanov", 7);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = TraineeException.class)
     public void testName() throws TraineeException {
         Trainee trainee = new Trainee(null, "Ivanov", 7);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = TraineeException.class)
     public void testSurname() throws TraineeException {
         Trainee trainee = new Trainee("Petro", null, 7);
     }

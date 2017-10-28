@@ -23,16 +23,22 @@ public class GroupTest {
         assertEquals(null, group.getName());
     }
 
-    @Test
+    @Test(expected = TraineeException.class)
     public void getNullTrainees() throws Exception {
-        Group group = new Group("PIN131",new Trainee[5]);
-        assertEquals("PIN131", group.getTrainees());
-        //group.setTrainees(null);
-        //assertEquals(null, group.getTrainees());
+        Trainee [] trainees = new Trainee[5];
+        Group group = new Group("PIN131",trainees);
+        assertEquals(5, group.getTrainees().length);
+            group.setTrainees(null);
+        assertEquals(null, group.getTrainees().length);
     }
 
     @Test(expected = TraineeException.class)
     public void getEmptyTrainees() throws Exception {
+        Trainee [] trainees = new Trainee[5];
+        Group group = new Group("PIN131",trainees);
+        group.setTrainees(new Trainee[0]);
+        assertEquals(0, group.getTrainees().length);
+
     }
 
 }

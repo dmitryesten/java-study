@@ -8,13 +8,9 @@ public class Institute {
     private String name;
     private String city;
 
-    public Institute(String name, String city) {
-        try {
-            setName(name);  setCity(city);
-        } catch (TraineeException e) {
-            e.printStackTrace();
-        }
-
+    public Institute(String name, String city) throws TraineeException {
+            setName(name);
+            setCity(city);
     }
 
     public String getName() {

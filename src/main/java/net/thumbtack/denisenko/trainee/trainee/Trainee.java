@@ -12,15 +12,10 @@ public class Trainee implements Serializable, Comparable<Trainee> {
     private int rating;
 
 
-    public Trainee(String name, String surname, int rating)  {
-        try {
+    public Trainee(String name, String surname, int rating) throws TraineeException {
             setName(name);
             setSurname(surname);
             setRating(rating);
-        } catch (TraineeException e) {
-            e.printStackTrace();
-        }
-
     }
 
 

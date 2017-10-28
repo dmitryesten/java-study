@@ -10,13 +10,9 @@ public class Group {
     private Trainee [] trainees;
 
 
-    public Group(String nameGroup, Trainee [] trainee) {
-        try {
-            setName(nameGroup); setTrainees(trainee);
-        } catch (TraineeException e) {
-            e.printStackTrace();
-        }
-
+    public Group(String nameGroup, Trainee [] trainee) throws TraineeException {
+            setName(nameGroup);
+            setTrainees(trainee);
     }
 
 
