@@ -1,6 +1,6 @@
 var readlineSync = require('readline-sync');
-console.log("Игра крестики нолики");
-console.log("Игра "+"крестики "+"нолики");
+console.log("Tik-tok play");
+console.log("Tik-tok "+"play "+ " ");
 
 var userName;
 var matrix = [];
@@ -12,7 +12,6 @@ var statusElementMatrix = {
 
 userName = readlineSync.question('Enter your name: ');
     console.log('Hi ' + userName + '!');
-
 
 
 
