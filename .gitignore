@@ -5,6 +5,7 @@
 
 */target
 /bin
+/node_modules
 
 *.log.*
 *.log
@@ -15,7 +16,6 @@
 *.idea*
 *.project
 *.iml
-
 *.class
 /*/.classpath
 /target/
