@@ -33,5 +33,10 @@ public class Institute {
         this.city = city;
     }
 
+    @Override
+    public String toString() {
+        return "name = " + this.name + ", city = " + this.city + "\r\n";
+    }
+
 
 }

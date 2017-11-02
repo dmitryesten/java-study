@@ -4,7 +4,7 @@ import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import net.thumbtack.denisenko.trainee.enums.TraineeErrorCodes;
 
-public class Group {
+public class Group  {
 
     private String name;
     private Trainee [] trainees;
@@ -15,7 +15,6 @@ public class Group {
             setTrainees(trainee);
     }
 
-
     public String getName() {
         return name;
     }
@@ -23,7 +22,6 @@ public class Group {
     public Trainee[] getTrainees() {
         return trainees;
     }
-
 
     public void setName(String name) throws TraineeException {
         if (name == null || name.isEmpty())
@@ -36,4 +34,12 @@ public class Group {
             throw new TraineeException(trainees);
         this.trainees = trainees;
     }
+
+    @Override
+    public String toString() {
+        return "name=" + this.name + ", trainees=" + this.trainees + "\r\n";
+    }
+
+
+
 }

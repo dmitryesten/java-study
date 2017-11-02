@@ -3,10 +3,11 @@ package net.thumbtack.denisenko.trainee.trainee;
 import net.thumbtack.denisenko.trainee.enums.TraineeErrorCodes;
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Objects;
 
 
-public class Trainee implements Serializable, Comparable<Trainee> {
+public class Trainee implements Serializable, Comparable<Trainee>{
 
     private String name;
     private String surname;
@@ -71,9 +72,36 @@ public class Trainee implements Serializable, Comparable<Trainee> {
         return Objects.hash(name, surname, rating);
     }
 
+    //@Override
+    //public int compareTo(Trainee t2) {
+    //    return getName().compareTo(t2.getName());
+    //}
+
+    @Override
+    public String toString() {
+        return "name=" + this.name + ", surname=" + this.surname + ", rating = " + this.rating + "\r\n";
+    }
+
+
     @Override
     public int compareTo(Trainee t2) {
         return getName().compareTo(t2.getName());
     }
+
+
+    public static Comparator<Trainee> ratingComparator = new Comparator<Trainee>() {
+        @Override
+        public int compare(Trainee e1, Trainee e2) {
+            return e1.getRating() - e2.getRating();
+        }
+    };
+
+
+    public static Comparator<Trainee> surnameComparator = new Comparator<Trainee>() {
+        @Override
+        public int compare(Trainee e1, Trainee e2) {
+            return e1.getSurname().compareTo(e2.getSurname());
+        }
+    };
 
 }
