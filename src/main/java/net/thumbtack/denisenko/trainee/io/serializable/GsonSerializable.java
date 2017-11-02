@@ -2,6 +2,8 @@ package net.thumbtack.denisenko.trainee.io.serializable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.*;
@@ -13,9 +15,8 @@ public class GsonSerializable {
         return gson.toJson(t);
     }
 
-    public static Trainee deserialize(String objectSerialized){
+    public static Trainee deserialize(String objectSerialized) throws JsonIOException, JsonSyntaxException{
         Gson gson = new Gson();
-        // REVU JsonSyntaxException, JsonIOException
         return gson.fromJson(objectSerialized, Trainee.class);
     }
 
@@ -27,7 +28,7 @@ public class GsonSerializable {
 
     }
 
-    public static void read(File file) throws IOException {
+    public static void read(File file) throws IOException, JsonIOException, JsonSyntaxException {
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
             // REVU JsonSyntaxException, JsonIOException

@@ -1,21 +1,18 @@
 package net.thumbtack.denisenko.trainee.io.write;
 
+import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import java.io.*;
 
 public class WriteRectangle {
 
-    public static void write(Rectangle r, File file) throws IOException {
-        try(OutputStream dout = new FileOutputStream(file)) {
-        	
-        	// REVU you do not need convert to bytes.
-            byte [] bytes = r.toString().getBytes();
-            for (byte i : bytes) {
-                dout.write(i);
-            }
+    public static void write(Rectangle r, File file) throws IOException, FileException {
+        try(DataOutputStream dout = new DataOutputStream(new FileOutputStream(file))) {
+            dout.writeUTF(r.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+           throw new FileException();
         }
+
     }
 
 

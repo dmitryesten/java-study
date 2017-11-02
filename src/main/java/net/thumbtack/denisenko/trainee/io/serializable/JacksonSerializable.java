@@ -1,7 +1,10 @@
 package net.thumbtack.denisenko.trainee.io.serializable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonParseException;
+import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.File;
@@ -28,15 +31,14 @@ public class JacksonSerializable {
         }
     }
 
-    public static void read(File file){
+    public static void read(File file) throws FileException, JsonParseException, JsonMappingException {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-        	// REVU JsonParseException, JsonMappingException
             objectMapper.readValue(file, Trainee.class);
         } catch (IOException e) {
-        	// REVU do not call printStackTrace, throw your own exception 
-            e.printStackTrace();
+            throw new FileException();
         }
+
     }
 
 }

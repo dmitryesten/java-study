@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.io.write;
 
+import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 
 import java.io.File;
@@ -9,11 +10,11 @@ import java.io.PrintStream;
 
 public class PrintStreamRectangle {
 
-    public static void printStream(Rectangle r, File file){
+    public static void printStream(Rectangle r, File file) throws FileException {
         try(PrintStream ps = new PrintStream(new FileOutputStream(file))){
-            ps.println(r);
+            ps.println(r.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new FileException();
         }
     }
 

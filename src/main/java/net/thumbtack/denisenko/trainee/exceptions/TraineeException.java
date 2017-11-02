@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.exceptions;
 
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
-import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
+import net.thumbtack.denisenko.trainee.enums.TraineeErrorCodes;
 
 public class TraineeException extends Exception {
 

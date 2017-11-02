@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.collections;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
-import net.thumbtack.denisenko.trainee.trainee.TraineeErrorCodes;
+import net.thumbtack.denisenko.trainee.enums.TraineeErrorCodes;
 
 public class Institute {
 
