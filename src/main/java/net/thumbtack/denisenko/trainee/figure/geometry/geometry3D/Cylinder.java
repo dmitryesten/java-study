@@ -22,6 +22,7 @@ public class Cylinder extends Circle{
 
 
     public Cylinder(Point2D p, double radius, double height, Color color){
+    	// REVU copy/paste. Call next constructor
         super(p, radius, color);
         this.height = height;
     }
@@ -31,6 +32,7 @@ public class Cylinder extends Circle{
     }
 
     public Cylinder(double x, double y, double radius, double height, Color color) {
+    	// REVU copy/paste. Call next constructor
         super(x, y, radius,color);
         this.height = height;
     }

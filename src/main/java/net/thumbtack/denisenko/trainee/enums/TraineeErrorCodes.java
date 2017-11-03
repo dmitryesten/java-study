@@ -10,6 +10,7 @@ public enum TraineeErrorCodes {
     private String privateMessage;
 
     TraineeErrorCodes(String privateMes){
+    	// REVU fix
         this.privateMessage = privateMessage;
     }
 }

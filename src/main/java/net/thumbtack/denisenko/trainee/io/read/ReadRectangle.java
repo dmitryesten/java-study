@@ -6,7 +6,8 @@ import java.io.*;
 
 public class ReadRectangle {
 
-    public static void read(File file) throws IOException, FileException {
+	// REVU what this method must do ?
+   public static void read(File file) throws IOException, FileException {
         try(DataInputStream dinput = new DataInputStream(new FileInputStream(file))) {
             while(dinput.available() > 0) {
                 System.out.print( dinput.read() );

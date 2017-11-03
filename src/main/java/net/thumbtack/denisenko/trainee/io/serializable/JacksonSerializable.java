@@ -27,6 +27,7 @@ public class JacksonSerializable {
         try {
             objectMapper.writeValue(file, trainee);
         } catch (IOException e) {
+        	// REVU never call printStackTrace, throw exception
             e.printStackTrace();
         }
     }
@@ -36,6 +37,8 @@ public class JacksonSerializable {
         try {
             objectMapper.readValue(file, Trainee.class);
         } catch (IOException e) {
+        	// REVU it is not a good idea to throw new FileException() using default constructor
+        	// add constructor with inner exception and pass e to it
             throw new FileException();
         }
 

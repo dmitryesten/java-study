@@ -20,6 +20,7 @@ public class Triangle extends Figure {
 
 
     public Triangle(Point2D point1, Point2D point2, Point2D point3){
+    	// REVU copy/paste. Call next constructor
         super((Color) null);
         this.x1 = point1.getX();
         this.y1 = point1.getY();

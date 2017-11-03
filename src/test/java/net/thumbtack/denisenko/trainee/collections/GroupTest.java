@@ -1,6 +1,5 @@
 package net.thumbtack.denisenko.trainee.collections;
 
-import net.thumbtack.denisenko.trainee.collections.comparator.TraineeNameComparator;
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.Test;

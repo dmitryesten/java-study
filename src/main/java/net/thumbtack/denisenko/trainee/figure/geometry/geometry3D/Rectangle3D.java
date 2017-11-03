@@ -18,6 +18,7 @@ public class Rectangle3D extends Rectangle {
     }
 
 
+    // REVU you do not need in this constructor
     public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, Color color){
         super(topLeftBase, bottomRightBase, color);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
@@ -25,6 +26,7 @@ public class Rectangle3D extends Rectangle {
         this.heightZ = topLeftBase.getZ();
     }
 
+    // REVU you do not need in this constructor
     public Rectangle3D(Point3D topLeftBase, Point3D bottomRightBase, String color) throws ColorException {
         this(topLeftBase, bottomRightBase, Color.colorFromString(color));
     }

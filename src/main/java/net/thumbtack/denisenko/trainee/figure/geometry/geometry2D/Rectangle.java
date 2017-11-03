@@ -17,6 +17,7 @@ public class Rectangle extends Figure {
 
 
     public Rectangle(){
+    	// REVU copy/paste. Call next constructor
         this(1, 1, (Color) null);
         this.topLeftX = 0;
         this.bottomRightY = 0;
@@ -35,6 +36,7 @@ public class Rectangle extends Figure {
     }
 
     public Rectangle(double width, double height, Color color) {
+    	// REVU copy/paste. Call previous constructor
         super(color);
         this.bottomRightX = width;
         this.topLeftY = height;

@@ -26,6 +26,7 @@ public class Circle extends Figure {
 
 
     public Circle(double x, double y, double radius, Color color) {
+    	// REVU copy/paste. Call previous constructor
         super(color);
         this.x = x;
         this.y = y;

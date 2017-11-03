@@ -19,6 +19,7 @@ public class FileWriterTrainee {
                 fileWriter.write(String.valueOf(field.get(t)) + "\r\n");
             }
         } catch (IOException e) {
+        	// REVU never call printStackTrace
             e.printStackTrace();
         }
     }
@@ -33,6 +34,7 @@ public class FileWriterTrainee {
                 fileWriter.write(String.valueOf(field.get(t)) + ' ');
             }
         } catch (IOException e) {
+        	// REVU never call printStackTrace
             e.printStackTrace();
         }
     }

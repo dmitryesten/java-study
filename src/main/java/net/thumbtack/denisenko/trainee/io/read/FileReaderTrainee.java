@@ -8,11 +8,13 @@ import java.io.*;
 
 public class FileReaderTrainee {
 
+	// REVU what this method must do ?
     public static void fileReader(Trainee t, File file) throws IOException, FileException, IllegalAccessException {
         FileWriterTrainee.fileWriter(t,file);
         try(BufferedReader fileReader = new BufferedReader(new FileReader(file))){
             String s;
             while((s=fileReader.readLine())!=null){
+            	// REVU never call print
                 System.out.println(s);
             }
         } catch (FileNotFoundException e) {

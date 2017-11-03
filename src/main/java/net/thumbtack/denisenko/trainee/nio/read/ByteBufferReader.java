@@ -13,9 +13,12 @@ public class ByteBufferReader {
 
 
     public static void read(File file) throws IOException, FileException {
+    	// REVU you do not close FileInputStream
+    	// write two elements in try-with-resource
         try(ReadableByteChannel channel = new FileInputStream(file).getChannel()) {
             ByteBuffer byteBuffer = ByteBuffer.allocate((int)file.length());
             int bytesRead = 0;
+            // REVU I do not understand why you use "while" loop
             while (bytesRead >= 0) {
                 byteBuffer.rewind();
                 bytesRead = channel.read(byteBuffer);
