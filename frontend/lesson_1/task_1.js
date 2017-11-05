@@ -1,55 +1,105 @@
 var readlineSync = require('readline-sync');
-console.log("Tik-tok play");
-console.log("Tik-tok "+"play "+ " ");
 
-var userName;
-var matrix = new Array(3);
+printNameGame();
+
+
+var row, col;
+var userName = enterNamePlayer();
+var matrix;
 var statusElementMatrix = {
-    e : ' ',
-    x : 'x',
-    o : 'o'
+    simbolEmpty : ' ',
+    simbolX : 'x',
+    simbolO : 'o'
 };
 
-//userName = readlineSync.question('Enter your name: ');
-  //  console.log('Hi ' + userName + '!');
+matrix = create2DArray();
 
-matrix = createArray();
-    console.log(print(matrix));
-    matrix = set(1, 2);
-    console.log(matrix);
+//row = getValue1();
+//col = getValue2();
+//console.log("set("+ row +";"+col+")" );
+matrix = set(row, col, matrix);
+console.log(print(matrix));
 
+//start();
 
 
 function start(){
     var stepUser;
-    readlineSync.promptLoop(function(input, input2) {
-      console.log('-- You said "' + input + '" '+ input2+' sad');
-      return input === 'q';
-    });
-    console.log('It\'s exited from loop.'); };
+    readlineSync.promptCLLoop({
+        set: function(row, col) {
+            checkException(row); checkException(col);
+        },
+        exit: function() { return true; }
+      });
+      console.log('Exited');
+};
 
 
-function createArray (){
-    for(var i = 0; i < 3; i++){
-        matrix[i] = new Array(3);
-        for(var j = 0; j < 3; j++)
-            matrix[i] = statusElementMatrix.e;
-    }
-        return matrix; };
+function create2DArray(){
+        return new Array(new Array(' ', ' ',' '), new Array(' ', ' ',' '),new Array(' ', ' ',' '));
+};
 
 function print(matrix){
-    for(var i = 0; i < matrix.length; i++)
-            console.log(matrix);    };
-
-function set(x, y){
-    if(!(+x >= 1 && +x <= 3) && !(+y >= 1 && +y <= 3))
-            throw new SyntaxError("Параметр 'x'or'y' некорректны");
-    
+    var str = '';
     for(var i = 0; i < matrix.length; i++){
         for(var j = 0; j < matrix[i].length; j++){
-                matrix[i][j] = statusElementMatrix.x;
+            str += matrix[i][j] + "_|";
+        }
+        str += "\r\n";
+    } 
+    return str; 
+};
+
+function printNameGame(){
+    console.log("Tik-tok game");
+};
+
+function enterNamePlayer(){
+    var userName = readlineSync.question('Enter your name: ');
+     console.log('Hi ' + userName + '!' + 'your step is first');
+     return userName;
+};
+
+function getValue1(){
+    var value = readlineSync.question('Enter number row: ');
+    if(!(+value >= 1 && +value<= 3))
+        throw new SyntaxError("Параметр некорректный");
+    return parseInt(value);
+};
+
+function checkException(x){
+    if(!(+x >= 1 && +x<= 3))
+        throw new SyntaxError("Параметр некорректный");
+    return x;
+}
+
+
+function set(x, y, test){
+    var row = minus(x); var col = minus(y);
+    if(checkSimbol(row,col, test)===false)
+        throw new SyntaxError("Поле уже занято");
+    else{
+        for(var i = 0; i < test.length; i++){
+            for(var j = 0; j < test[i].length; j++){
+                if(i===row && j===col){
+                    test[i][j]=statusElementMatrix.simbolX;
+                }
+            }
         }
     }
-
-    return matrix;
+    return test; 
 };
+
+function checkSimbol(x, y, test){
+    if(statusElementMatrix.simbolX===test[x][y] || statusElementMatrix.simbolO===test[x][y])    
+     return false;
+    else true;
+}
+
+function minus(value){
+    return +value - 1;
+}
+
+function isWinner(array){
+
+}
