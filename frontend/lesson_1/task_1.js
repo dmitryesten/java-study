@@ -1,5 +1,5 @@
+'use strict';
 var readlineSync = require('readline-sync');
-
 printNameGame();
 
 
@@ -12,24 +12,63 @@ var statusElementMatrix = {
     simbolO : 'o'
 };
 
-matrix = create2DArray();
+var User = {
+    name : this.userName,
+    simbol : statusElementMatrix.simbolX,
+    set : function(x, y, matrix){
+        var row = minus(x); 
+        var col = minus(y);
+            for(var i = 0; i < test.length; i++){
+                for(var j = 0; j < test[i].length; j++){
+                    if(i===row && j===col){
+                        test[i][j]=statusElementMatrix.simbolX;
+                    }
+                }
+            }
+        return test; 
+    }  
+};
+
+var PC = {
+    name : 'PC',
+    simbol : statusElementMatrix.simbolO
+};
+
 
 //row = getValue1();
 //col = getValue2();
 //console.log("set("+ row +";"+col+")" );
-matrix = set(row, col, matrix);
-console.log(print(matrix));
+//matrix = set(row, col, matrix);
+//console.log(print(matrix));
 
 //start();
+
+matrix = create2DArray();
+//step1 
+matrix = set(1, 1, matrix);
+console.log(print(matrix));
+console.log(checkSimbol(1, 1, matrix));
+console.log("Ход PC:");
+matrix = setPC(matrix);
+console.log(print(matrix));
 
 
 function start(){
     var stepUser;
+    
     readlineSync.promptCLLoop({
         set: function(row, col) {
             checkException(row); checkException(col);
+            matrix = create2DArray();
+            //step1 
+            matrix = set(row, col, matrix);
+            console.log(print(matrix));
+            console.log("Ход PC:");
+            matrix = set(getRandomIndexArray(), getRandomIndexArray(), matrix);
+            console.log(print(matrix));
+
         },
-        exit: function() { return true; }
+        ex: function() { return true; }
       });
       console.log('Exited');
 };
@@ -60,25 +99,17 @@ function enterNamePlayer(){
      return userName;
 };
 
-function getValue1(){
-    var value = readlineSync.question('Enter number row: ');
-    if(!(+value >= 1 && +value<= 3))
-        throw new SyntaxError("Параметр некорректный");
-    return parseInt(value);
-};
 
 function checkException(x){
     if(!(+x >= 1 && +x<= 3))
-        throw new SyntaxError("Параметр некорректный");
+        throw new SyntaxError("Value is not correct");
     return x;
 }
 
 
 function set(x, y, test){
-    var row = minus(x); var col = minus(y);
-    if(checkSimbol(row,col, test)===false)
-        throw new SyntaxError("Поле уже занято");
-    else{
+    var row = minus(x); 
+    var col = minus(y);
         for(var i = 0; i < test.length; i++){
             for(var j = 0; j < test[i].length; j++){
                 if(i===row && j===col){
@@ -86,20 +117,48 @@ function set(x, y, test){
                 }
             }
         }
+    return test; 
+};
+
+function setPC(test){
+    var row = getRandomIndexArray();
+    var col = getRandomIndexArray();
+    for(var i = 0; i < test.length; i++){
+        for(var j = 0; j < test[i].length; j++){
+            if(i===row && j===col){
+                test[i][j]=statusElementMatrix.simbolO;
+            }
+        }
     }
     return test; 
 };
 
+
+
 function checkSimbol(x, y, test){
-    if(statusElementMatrix.simbolX===test[x][y] || statusElementMatrix.simbolO===test[x][y])    
-     return false;
-    else true;
-}
+    for(var i = 0; i < test.length; i++){
+        for(var j = 0; j < test[i].length; j++){
+            if(i===row && j===col && (statusElementMatrix.simbolX===test[i][j] || statusElementMatrix.simbolO===test[i][j])){   
+                return true;
+            }
+        }
+    }
+   
+};
 
 function minus(value){
     return +value - 1;
-}
+};
 
-function isWinner(array){
 
-}
+function getRandomIndexArray(){
+    return Math.floor(Math.random() * (2)) + 0;
+};
+
+
+function getArrayEmptyElements(array){
+    return array.filter(' ');
+};
+
+
+function isWinner(array){};
