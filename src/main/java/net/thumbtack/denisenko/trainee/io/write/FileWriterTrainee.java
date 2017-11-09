@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.io.write;
 
+import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.File;
@@ -10,7 +11,7 @@ import java.lang.reflect.Field;
 
 public class FileWriterTrainee {
 
-    public static void fileWriter(Trainee t, File file) throws IllegalAccessException {
+    public static void fileWriter(Trainee t, File file) throws IllegalAccessException, FileException {
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
         try (Writer fileWriter = new FileWriter(file)) {
@@ -19,13 +20,12 @@ public class FileWriterTrainee {
                 fileWriter.write(String.valueOf(field.get(t)) + "\r\n");
             }
         } catch (IOException e) {
-        	// REVU never call printStackTrace
-            e.printStackTrace();
+            throw new FileException("Ops, file is found", e.getCause());
         }
     }
 
 
-    public static void writerMonoLine(Trainee t, File file) throws IllegalAccessException {
+    public static void writerMonoLine(Trainee t, File file) throws IllegalAccessException, FileException {
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
         try (Writer fileWriter = new FileWriter(file)) {
@@ -34,8 +34,7 @@ public class FileWriterTrainee {
                 fileWriter.write(String.valueOf(field.get(t)) + ' ');
             }
         } catch (IOException e) {
-        	// REVU never call printStackTrace
-            e.printStackTrace();
+            throw new FileException("Ops, file is found", e.getCause());
         }
     }
 

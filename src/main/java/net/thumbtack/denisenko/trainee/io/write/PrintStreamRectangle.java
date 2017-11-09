@@ -14,7 +14,7 @@ public class PrintStreamRectangle {
         try(PrintStream ps = new PrintStream(new FileOutputStream(file))){
             ps.println(r.toString());
         } catch (FileNotFoundException e) {
-            throw new FileException();
+            throw new FileException("Ops, file is found", e.getCause());
         }
     }
 

@@ -31,8 +31,11 @@ public class GsonSerializable {
     public static void read(File file) throws IOException, JsonIOException, JsonSyntaxException {
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
-            // REVU JsonSyntaxException, JsonIOException
             Trainee t = gson.fromJson(reader, Trainee.class);
+        }catch (JsonSyntaxException ex){
+            throw new JsonSyntaxException("Json is malformed for read", ex);
+        }catch (JsonIOException ex){
+            throw new JsonIOException("Json is unable for reading", ex);
         }
     }
 }

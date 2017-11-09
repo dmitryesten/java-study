@@ -7,13 +7,24 @@ public class FileException extends Exception {
     private File file;
 
     public FileException(){
-        super("File is not found");
+        super();
     }
 
-    public FileException(File file){
-        super("File "+file+" is not found");
+    public FileException(String message){
+        super(message);
+    }
+
+    public FileException(String message, Throwable throwable){
+        super(message, throwable);
+    }
+
+    public FileException(String message, Throwable throwable, File file){
+        super(message, throwable);
         this.file = file;
     }
 
+    public File getFile() {
+        return file;
+    }
 
 }

@@ -6,15 +6,23 @@ import java.io.*;
 
 public class ReadRectangle {
 
-	// REVU what this method must do ?
+
+    /**
+     * Task_4.9 Read binary file
+     * @param file - source
+     * @return string - result's reader
+     * @throws IOException
+     * @throws FileException
+     */
    public static void read(File file) throws IOException, FileException {
-        try(DataInputStream dinput = new DataInputStream(new FileInputStream(file))) {
+       try(DataInputStream dinput = new DataInputStream(new FileInputStream(file))) {
             while(dinput.available() > 0) {
-                System.out.print( dinput.read() );
+                  dinput.read();
             }
         } catch (FileNotFoundException e) {
-            throw new FileException(file);
+           throw new FileException("Ops, file is found", e.getCause());
         }
+
     }
 
 }

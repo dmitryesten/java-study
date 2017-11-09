@@ -22,7 +22,7 @@ public class Cylinder extends Circle{
 
 
     public Cylinder(Point2D p, double radius, double height, Color color){
-    	// REVU copy/paste. Call next constructor
+        // REVU copy/paste. Call next constructor
         super(p, radius, color);
         this.height = height;
     }
@@ -32,15 +32,15 @@ public class Cylinder extends Circle{
     }
 
     public Cylinder(double x, double y, double radius, double height, Color color) {
-    	// REVU copy/paste. Call next constructor
+
+        // REVU copy/paste. Call next constructor
         super(x, y, radius,color);
         this.height = height;
     }
 
     public Cylinder(double x, double y, double radius, double height, String color) throws ColorException {
-        this(x, y, radius, height,Color.colorFromString(color));
+        this(x, y, radius, height, Color.colorFromString(color));
     }
-
 
 
     final public String printCoordinates(Cylinder c){

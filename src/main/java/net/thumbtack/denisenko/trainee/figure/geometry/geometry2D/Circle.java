@@ -18,23 +18,25 @@ public class Circle extends Figure {
     }
 
     public Circle (Point2D point, double radius, Color color) {
-        this(point.getX(), point.getY(),radius,color);
+        this(point.getX(), point.getY(), radius, color);
     }
+
     public Circle (Point2D point, double radius, String color) throws ColorException{
         this( point, radius, Color.colorFromString(color));
     }
 
-
     public Circle(double x, double y, double radius, Color color) {
-    	// REVU copy/paste. Call previous constructor
+        // REVU copy/paste. Call previous constructor
         super(color);
         this.x = x;
         this.y = y;
         this.radius = radius;
     }
+
     public Circle(double x, double y, double radius, String color) throws ColorException {
         this( x, y, radius, Color.colorFromString(color));
     }
+
 
     final public String printCoordinates(){
         return "Координаты ("+ getX()+"; "+ getY()+ "), радиус = "+getRadius();
@@ -86,8 +88,6 @@ public class Circle extends Figure {
     public double getRadius() {
         return radius;
     }
-
-
 
     @Override
     public boolean equals(Object o) {

@@ -72,10 +72,6 @@ public class Trainee implements Serializable, Comparable<Trainee>{
         return Objects.hash(name, surname, rating);
     }
 
-    //@Override
-    //public int compareTo(Trainee t2) {
-    //    return getName().compareTo(t2.getName());
-    //}
 
     @Override
     public String toString() {

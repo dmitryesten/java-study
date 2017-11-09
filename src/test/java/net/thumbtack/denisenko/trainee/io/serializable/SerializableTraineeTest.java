@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.io.serializable;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
-import net.thumbtack.denisenko.trainee.io.serializable.SerializableTrainee;
+import net.thumbtack.denisenko.trainee.io.serializable.Serializable;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.Test;
 
@@ -32,15 +32,15 @@ public class SerializableTraineeTest {
             out.writeObject(trainee);
             bos.toByteArray();
         }
-        assertEquals(bos.toByteArray().length, SerializableTrainee.serializeToBytes(trainee).length);
+        assertEquals(bos.toByteArray().length, Serializable.serializeToBytes(trainee).length);
     }
 
 
     @Test
     public void deserializeOfBytes() throws Exception {
-        try (ByteArrayInputStream bis = new ByteArrayInputStream(SerializableTrainee.serializeToBytes(trainee));
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(Serializable.serializeToBytes(trainee));
              ObjectInput in = new ObjectInputStream(bis)) {
-            assertEquals( (Trainee) in.readObject(), SerializableTrainee.deserializeOfBytes(SerializableTrainee.serializeToBytes(trainee)) );
+            assertEquals( (Trainee) in.readObject(), Serializable.deserializeOfBytes(Serializable.serializeToBytes(trainee)) );
         }
     }
 

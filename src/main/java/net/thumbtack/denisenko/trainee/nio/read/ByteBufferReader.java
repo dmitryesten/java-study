@@ -11,27 +11,20 @@ import java.nio.channels.ReadableByteChannel;
 
 public class ByteBufferReader {
 
-
-    public static void read(File file) throws IOException, FileException {
+    public static String read(File file) throws IOException, FileException {
     	// REVU you do not close FileInputStream
-    	// write two elements in try-with-resource
+    	// write two elements in try-with-resource\
+        String string = null;
+        /* in dev
         try(ReadableByteChannel channel = new FileInputStream(file).getChannel()) {
             ByteBuffer byteBuffer = ByteBuffer.allocate((int)file.length());
-            int bytesRead = 0;
-            // REVU I do not understand why you use "while" loop
-            while (bytesRead >= 0) {
-                byteBuffer.rewind();
-                bytesRead = channel.read(byteBuffer);
-                byteBuffer.rewind();
-                for (int i=0; i< bytesRead; i++) {
-                    byte b = byteBuffer.get();
-                    System.out.print(b); //System.out.print((char)b);
-                }
-            }
+            byte b = byteBuffer.get();
+            string += b;
         }
         catch (IOException e) {
-            throw new FileException();
-        }
+            throw new FileException("Ops, file is found", e.getCause());
+        }*/
+        return string;
     }
 
 }

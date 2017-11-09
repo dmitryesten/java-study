@@ -1,38 +1,35 @@
 package net.thumbtack.denisenko.trainee.io.serializable;
 
+import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.*;
 
-// REVU bad class name
-public class SerializableTrainee {
 
-    public static void serializeToFile(Trainee t, File file) throws IOException {
+public class Serializable {
+
+    public static void serializeToFile(Trainee t, File file) throws IOException, FileException {
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
             oos.writeObject(t);
         } catch (FileNotFoundException e) {
-        	// REVU never call printStackTrace
-            e.printStackTrace();
+            throw new FileException("Ops, file is found", e.getCause());
         }
     }
 
 
-    public static void deserializeOfFile(File file) throws IOException, ClassNotFoundException {
+    public static void deserializeOfFile(File file) throws IOException, ClassNotFoundException, FileException {
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             Trainee t = (Trainee) ois.readObject();
         } catch (FileNotFoundException e) {
-        	// REVU never call printStackTrace
-            e.printStackTrace();
+            throw new FileException("Ops, file is found", e.getCause());
         }
     }
 
 
     public static byte[] serializeToBytes(Trainee trainee) throws IOException {
-    	// REVU put ByteArrayOutputStream into try-with-resource, it must be closed
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try (ObjectOutput out = new ObjectOutputStream(bos)) {
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+             ObjectOutput out = new ObjectOutputStream(bos) ) {
                 out.writeObject(trainee);
-                bos.close();
                 return bos.toByteArray();
         }
     }

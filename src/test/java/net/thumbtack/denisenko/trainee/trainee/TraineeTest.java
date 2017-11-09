@@ -57,7 +57,7 @@ public class TraineeTest {
         Trainee t2 = new Trainee("Vasia", "q123", 1);
         //assertEquals(0, source.compareTo(t2));
         t2.setName("e12");
-        //( source.compareTo(t2) < 0 ? true : false);
+        //( source.coшеmpareTo(t2) < 0 ? true : false);
     }
 
 }

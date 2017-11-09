@@ -8,18 +8,26 @@ import java.io.*;
 
 public class FileReaderTrainee {
 
-	// REVU what this method must do ?
-    public static void fileReader(Trainee t, File file) throws IOException, FileException, IllegalAccessException {
+    /**
+     * Task_4.13 Create new instance's Trainee and to read its of the file
+     * @param t - new instance's Trainee
+     * @param file - source file
+     * @throws IOException if method has problem input-output stream
+     * @throws FileException if file is found
+     * @throws IllegalAccessException if parameters's method is not correct
+     */
+    public static String readerLines(Trainee t, File file) throws IOException, FileException, IllegalAccessException {
         FileWriterTrainee.fileWriter(t,file);
+        String string = null;
         try(BufferedReader fileReader = new BufferedReader(new FileReader(file))){
             String s;
             while((s=fileReader.readLine())!=null){
-            	// REVU never call print
-                System.out.println(s);
+                string += s;
             }
         } catch (FileNotFoundException e) {
-        	throw new FileException(file);
+        	throw new FileException("Ops, file is found", e.getCause());
         }
+        return string;
     }
 
 }
