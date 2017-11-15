@@ -75,29 +75,35 @@ public class Trainee implements Serializable, Comparable<Trainee>{
 
     @Override
     public String toString() {
-        return "name=" + this.name + ", surname=" + this.surname + ", rating = " + this.rating + "\r\n";
+        return "name=" + this.name + ", surname=" + this.surname + ", rating=" + this.rating + "\r\n";
     }
 
 
-    @Override
-    public int compareTo(Trainee t2) {
-        return getName().compareTo(t2.getName());
-    }
 
-
-    public static Comparator<Trainee> ratingComparator = new Comparator<Trainee>() {
+    public static Comparator<Trainee> RatingComparator = new Comparator<Trainee>() {
         @Override
         public int compare(Trainee e1, Trainee e2) {
             return e1.getRating() - e2.getRating();
         }
     };
 
+    public static Comparator<Trainee> NameComparator = new Comparator<Trainee>() {
+        @Override
+        public int compare(Trainee e1, Trainee e2) {
+            return e1.getName().compareTo(e2.getName());
+        }
+    };
 
-    public static Comparator<Trainee> surnameComparator = new Comparator<Trainee>() {
+    public static Comparator<Trainee> SurnameComparator = new Comparator<Trainee>() {
         @Override
         public int compare(Trainee e1, Trainee e2) {
             return e1.getSurname().compareTo(e2.getSurname());
         }
     };
 
+
+    @Override
+    public int compareTo(Trainee o) {
+        return getName().compareTo(o.getName());
+    }
 }
