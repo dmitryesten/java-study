@@ -33,9 +33,9 @@ public class GsonSerializable {
             Gson gson = new GsonBuilder().create();
             Trainee t = gson.fromJson(reader, Trainee.class);
         }catch (JsonSyntaxException ex){
-            throw new JsonSyntaxException("Json is malformed for read", ex);
+            throw new JsonSyntaxException("Json is malformed for read", ex.getCause());
         }catch (JsonIOException ex){
-            throw new JsonIOException("Json is unable for reading", ex);
+            throw new JsonIOException("Json is unable for reading", ex.getCause());
         }
     }
 }
