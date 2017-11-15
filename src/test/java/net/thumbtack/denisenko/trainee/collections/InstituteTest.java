@@ -7,8 +7,6 @@ import static org.junit.Assert.*;
 
 public class InstituteTest {
 
-
-
     @Test(expected = TraineeException.class)
     public void getNullName() throws Exception {
         Institute institute = new Institute("MSU", "Moscow");
