@@ -10,7 +10,7 @@ public class Point3DTest {
 
     @Test
     public void printCoordinates() throws Exception {
-        assertEquals("X: "+1+"; Y: "+1+"; Z: "+1, point3D.printCoordinates());
+        assertEquals("X: "+1.0+"; Y: "+1.0+"; Z: "+1.0, point3D.printCoordinates());
     }
 
     @Test

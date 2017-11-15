@@ -10,7 +10,6 @@ public class CylinderTest {
     @Test
     public void printCoordinates() throws Exception {
         Cylinder cylinder = new Cylinder(5, 5,3, 4,(Color) null);
-
         assertEquals(5, cylinder.getX(), 0.001);
         assertEquals(5, cylinder.getY(), 0.001);
         assertEquals(3, cylinder.getRadius(), 0.001);
@@ -33,7 +32,7 @@ public class CylinderTest {
     @Test
     public void move() throws Exception {
         Cylinder cylinder = new Cylinder(5, 5,3, 4,(Color) null);
-        cylinder.move(2, 2);
+        cylinder.move(2,2);
         assertEquals(7, cylinder.getX(), 0.001);
         assertEquals(7, cylinder.getY(), 0.001);
     }
