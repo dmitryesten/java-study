@@ -5,38 +5,29 @@ import java.util.Objects;
 
 public class Point3D extends Point2D {
 
-    private int z;
+    private double z;
 
-    public Point3D(){
-        super(0, 0);
-        this.z = 0;
-    }
-
-    public Point3D(int x, int y, int z){
+    public Point3D(double x, double y, double height){
         super(x, y);
-        this.z = z;
+        this.z = height;
     }
+
 
     final public String printCoordinates(){
         return "X: "+super.getX()+"; Y: "+super.getY()+"; Z: "+getZ();
     }
 
 
-    /*
-    public String printCoordinates(){
-        return super.printCoordinates() +" Z: "+ getZ();
-    }
-*/
-    public void move(int x, int y, int z){
+    public void move(double x, double y, double z){
         super.move(x, y);
         setZ(getZ() + z);
     }
 
-    public int getZ() {
+    public double getZ() {
         return z;
     }
 
-    public void setZ(int z) {
+    public void setZ(double z) {
         this.z = z;
     }
 

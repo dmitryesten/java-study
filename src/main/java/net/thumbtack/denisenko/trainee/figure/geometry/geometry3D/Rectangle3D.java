@@ -18,25 +18,22 @@ public class Rectangle3D extends Rectangle {
     }
 
 
-    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, Color color){
+    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, double height, Color color){
         super(topLeftBase, bottomRightBase, color);
         this.widthX = bottomRightBase.getX() - topLeftBase.getX();
         this.lengthY = topLeftBase.getY() -  bottomRightBase.getY();
         this.heightZ = height;
     }
 
-    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, int height, String color) throws ColorException {
+    public Rectangle3D(Point2D topLeftBase, Point2D bottomRightBase, double height, String color) throws ColorException {
         this(topLeftBase, bottomRightBase, height, Color.colorFromString(color));
     }
 
-    public Rectangle3D(int width, int length, int height, Color color){
-        super(width, length, color);
-        this.widthX = width;
-        this.lengthY = length;
-        this.heightZ = height;
+    public Rectangle3D(double width, double length, double height, Color color){
+        this(new Point2D(0, length), new Point2D(width, 0), height, (Color) null);
     }
 
-    public Rectangle3D(int width, int length, int height, String color) throws ColorException {
+    public Rectangle3D(double width, double length, double height, String color) throws ColorException {
         this(width, length, height, Color.colorFromString(color));
     }
 
@@ -61,7 +58,7 @@ public class Rectangle3D extends Rectangle {
     }
 
 
-    public  double volume (){
+    public double volume (){
         return widthX * lengthY * heightZ;
     }
 

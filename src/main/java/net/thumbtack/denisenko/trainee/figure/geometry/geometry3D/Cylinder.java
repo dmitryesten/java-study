@@ -11,20 +11,17 @@ public class Cylinder extends Circle{
 
     private double height;
 
-    public Cylinder(Point3D p, int radius, Color color){
-        super(p,radius, color);
+    public Cylinder(Point3D p, double radius, Color color){
+        super(p, radius, color);
         this.height = p.getZ();
     }
 
-    public Cylinder(Point3D p, int radius, String color) throws ColorException {
+    public Cylinder(Point3D p, double radius, String color) throws ColorException {
         this(p, radius, Color.colorFromString(color));
     }
 
-
     public Cylinder(Point2D p, double radius, double height, Color color){
-        // REVU copy/paste. Call next constructor
-        super(p, radius, color);
-        this.height = height;
+        this(new Point3D(p.getX(), p.getY(),  height),  radius, (Color)null);
     }
 
     public Cylinder(Point2D p, double radius, double height, String color) throws ColorException {
@@ -32,10 +29,7 @@ public class Cylinder extends Circle{
     }
 
     public Cylinder(double x, double y, double radius, double height, Color color) {
-
-        // REVU copy/paste. Call next constructor
-        super(x, y, radius,color);
-        this.height = height;
+        this(new Point3D(x, y, height), radius, (Color) null);
     }
 
     public Cylinder(double x, double y, double radius, double height, String color) throws ColorException {
@@ -61,7 +55,7 @@ public class Cylinder extends Circle{
     }
 
 
-    public void move(int x, int y){
+    public void move(double x, double y){
         super.move(x, y);
     }
 

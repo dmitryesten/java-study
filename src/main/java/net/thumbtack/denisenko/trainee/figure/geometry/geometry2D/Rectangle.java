@@ -17,10 +17,7 @@ public class Rectangle extends Figure {
 
 
     public Rectangle(){
-    	// REVU copy/paste. Call next constructor
-        this(1, 1, (Color) null);
-        this.topLeftX = 0;
-        this.bottomRightY = 0;
+        this(new Point2D(1, 0), new Point2D(0, 1), (Color) null);
     }
 
     public Rectangle(Point2D topLeft, Point2D bottomRight, Color color){
@@ -36,10 +33,7 @@ public class Rectangle extends Figure {
     }
 
     public Rectangle(double width, double height, Color color) {
-    	// REVU copy/paste. Call previous constructor
-        super(color);
-        this.bottomRightX = width;
-        this.topLeftY = height;
+        this(new Point2D(width, 0), new Point2D(0, height), (Color)null);
     }
     public Rectangle(double width, double height, String color) throws ColorException {
         this(width, height, Color.colorFromString(color));
@@ -127,7 +121,7 @@ public class Rectangle extends Figure {
 
 
 
-    public void move(int newX, int newY){
+    public void move(double newX, double newY){
         setTopLeftX(getTopLeftX() + newX);
         setTopLeftY(getTopLeftY() + newY);
         setBottomRightX(getBottomRightX() + newX);
@@ -135,7 +129,7 @@ public class Rectangle extends Figure {
     }
 
 
-    public void reduceRectangle(int valueReduceX, int valueReduceY ){
+    public void reduceRectangle(double valueReduceX, double valueReduceY ){
         setBottomRightX(getBottomRightX() - valueReduceX);
         setTopLeftY(getTopLeftY() - valueReduceY);
     }

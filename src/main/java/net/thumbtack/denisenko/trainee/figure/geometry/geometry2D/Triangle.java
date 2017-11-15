@@ -76,7 +76,6 @@ public class Triangle extends Figure {
     }
 
 
-
     private double lengthA() {
         return Math.sqrt( (getX1()-getX2())*(getX1()-getX2()) + (getY1()-getY2())*(getY1()-getY2()) );
     }
@@ -93,7 +92,7 @@ public class Triangle extends Figure {
         return (lengthA()+ lengthB() + lengthC()) / 2;
     }
 
-    public void move(int x, int y){
+    public void move(double x, double y){
         setX1(getX1() + x);
         setX2(getX2() + x);
         setX3(getX3() + x);

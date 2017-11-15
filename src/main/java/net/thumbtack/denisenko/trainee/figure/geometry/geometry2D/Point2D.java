@@ -5,52 +5,45 @@ import java.util.Objects;
 
 public class Point2D {
 
-
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
     public Point2D(){
         this(0, 0);
     }
 
-
-    public Point2D(int x, int y){
+    public Point2D(double x, double y){
         this.x = x;
         this.y = y;
     }
-
 
     public String printCoordinates(){
         return "OX: "+getX()+"; OY: "+getY();
     }
 
 
-    public  int getX(){
+    public double getX(){
         return x;
     }
 
 
-    public  int setX(int oX){
+    public double setX(double oX){
         return x = oX;
     }
 
 
-    public  int getY(){ return y; }
+    public double getY(){ return y; }
 
 
-    public  int setY(int oY){
+    public double setY(double oY){
         return y = oY;
     }
 
 
-    public void move(int valueMoveOX, int valueMoveOY){
+    public void move(double valueMoveOX, double valueMoveOY){
         x += valueMoveOX;
         y += valueMoveOY;
     }
-
-
-
-
 
     @Override
     public boolean equals(Object o) {

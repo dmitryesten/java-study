@@ -17,6 +17,13 @@ public class Circle extends Figure {
         this( new Point2D(1,1), 1, (Color) null);
     }
 
+    public Circle(double x, double y, double radius, Color color) {
+        super(color);
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
     public Circle (Point2D point, double radius, Color color) {
         this(point.getX(), point.getY(), radius, color);
     }
@@ -25,13 +32,7 @@ public class Circle extends Figure {
         this( point, radius, Color.colorFromString(color));
     }
 
-    public Circle(double x, double y, double radius, Color color) {
-        // REVU copy/paste. Call previous constructor
-        super(color);
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-    }
+
 
     public Circle(double x, double y, double radius, String color) throws ColorException {
         this( x, y, radius, Color.colorFromString(color));
@@ -48,7 +49,7 @@ public class Circle extends Figure {
     }
 
 
-    public boolean isPointInFigure(int pointX, int pointY) {
+    public boolean isPointInFigure(double pointX, double pointY) {
         return ( (pointX*pointX + pointY*pointY) < getRadius() * getRadius());
     }
 
@@ -63,7 +64,7 @@ public class Circle extends Figure {
     }
 
 
-    public void move(int newX, int newY){
+    public void move(double newX, double newY){
         setX(getX() + newX);
         setY(getY() + newY);
     }
