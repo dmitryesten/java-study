@@ -10,9 +10,9 @@ import static org.junit.Assert.*;
 
 public class GroupTest {
 
-    Trainee [] trainees = new Trainee[5];
-    List<Trainee> listTrainee = new ArrayList<>();
-    Group group1 = new Group("PIN", trainees);
+    private Trainee [] trainees = new Trainee[5];
+    private List<Trainee> listTrainee = new ArrayList<>();
+    private Group group1 = new Group("PIN", trainees);
 
     public GroupTest() throws TraineeException {
         this.trainees[0] = new Trainee("Tom","Folk", 5);
@@ -38,7 +38,7 @@ public class GroupTest {
 
     @Test
     public void testSortByName(){
-        Arrays.sort(group1.getTrainees());
+        Arrays.sort(group1.getTrainees(), Trainee.NameComparator);
         String s = Arrays.toString(group1.getTrainees());
         assertEquals(s, Arrays.toString(group1.getTrainees()));
     }
@@ -46,7 +46,7 @@ public class GroupTest {
 
     @Test
     public void testSortByRating(){
-        Arrays.sort(group1.getTrainees(), Trainee.ratingComparator);
+        Arrays.sort(group1.getTrainees(), Trainee.RatingComparator);
         String s = Arrays.toString(group1.getTrainees());
         assertEquals(s, Arrays.toString(group1.getTrainees()));
     }
@@ -54,7 +54,7 @@ public class GroupTest {
 
     @Test
     public void testSortBySurname(){
-        Arrays.sort(group1.getTrainees(), Trainee.surnameComparator);
+        Arrays.sort(group1.getTrainees(), Trainee.SurnameComparator);
         String s = Arrays.toString(group1.getTrainees());
         assertEquals(s, Arrays.toString(group1.getTrainees()));
     }
