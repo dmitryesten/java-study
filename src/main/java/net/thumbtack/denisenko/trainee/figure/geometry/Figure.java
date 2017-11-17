@@ -11,6 +11,7 @@ public abstract class Figure implements Colored, Serializable{
 
     private Color color;
 
+    // REVU add constructor public Figure(String color) for this class and descendants 
     public Figure(Color color) {
         this.color = color;
     }
