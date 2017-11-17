@@ -12,6 +12,7 @@ import java.lang.reflect.Field;
 public class FileWriterTrainee {
 
     public static void fileWriter(Trainee t, File file) throws IllegalAccessException, FileException {
+    	// REVU Class is a raw type. References to generic type Class<T> should be parameterized
         Class reflectionClass = t.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
         try (Writer fileWriter = new FileWriter(file)) {

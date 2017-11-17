@@ -1,3 +1,4 @@
+// REVU better net.thumbtack.denisenko.trainee.io.serialization
 package net.thumbtack.denisenko.trainee.io.serializable;
 
 import com.google.gson.Gson;
@@ -32,6 +33,8 @@ public class GsonSerializable {
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
             Trainee t = gson.fromJson(reader, Trainee.class);
+            // REVU You do not need to JsonSyntaxException and throw your own JsonSyntaxException
+            // simply do nothing, let original JsonSyntaxException will be thrown
         }catch (JsonSyntaxException ex){
             throw new JsonSyntaxException("Json is malformed for read", ex.getCause());
         }catch (JsonIOException ex){

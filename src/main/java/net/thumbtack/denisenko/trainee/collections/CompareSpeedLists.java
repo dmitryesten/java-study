@@ -9,6 +9,7 @@ public class CompareSpeedLists {
 
 
     public long getSpeedADD(List<Integer> list, int numberValues){
+    	// REVU instead of date, better use System.nanoTime
         Date startLinked = new Date();
         for(int i = 0; i < numberValues; i++)
             list.add(i);
@@ -19,6 +20,7 @@ public class CompareSpeedLists {
 
 
     public long getSpeedGET(List<Integer> list, int numberValues, int minRandom, int maxRandom){
+    	// REVU The value of the local variable random is not used
         Random random = new Random();
         CompareSpeedLists.randomInRange(minRandom, maxRandom);
 
@@ -35,6 +37,7 @@ public class CompareSpeedLists {
 
 
     public long getSpeedREMOVE(List<Integer> list, int numberValues, int minRandom, int maxRandom){
+    	// REVU The value of the local variable random is not used
         Random random = new Random();
 
         for(int i = 0; i < numberValues; i++)
