@@ -1,0 +1,60 @@
+.wrapper {
+    width: 1000px;
+    height: 500px;
+    background: #5f9ea0;
+    margin: 0 auto;
+    left: 25%;
+    position: absolute;
+}
+
+.header { 
+    color: sandybrown;
+    margin-left:40%;
+    margin-right: 30%; 
+    position: relative;
+}
+
+.field-add-task{
+    width: 500px;
+    height: inherit;
+    background:rgb(68, 114, 122);
+    float: left;
+    position: relative;
+}
+
+.form-task{
+    clear: left;
+    position: relative;
+}
+.form-task label{
+    font-size: 14pt;
+    display: block;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.form-task li{
+    list-style-type: none;
+    padding:12px;
+    position:relative;
+}
+
+.form-task .form-task__field{
+    height:20px;
+    width:220px;
+    padding:5px 8px;
+    clear: left;
+}
+.form-task__button{
+    width: 150px;
+    height: 40px;
+}
+
+.field-list-task{
+    width: 500px;
+    height: inherit;
+    background: blueviolet;
+    float: left;
+    position: relative;
+}
+
