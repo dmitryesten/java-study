@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style_task.css">
+        <title>Lesson_4 "My TODO list"</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 class = "header">My TODO list</h1>
+            <div class="field-add-task">
+                <ul class="form-task">
+                    <li>
+                        <label for="name-task">Name's task </label>
+                        <input class="form-task__field" id="name-task" type="text">
+                    </li>
+                    <li>
+                        <label for="date-create">Date craete</label>
+                        <input class="form-task__field" id="date-create" type="datetime-local" disabled>
+                    </li>
+                    <li>
+                        <label for="date-refresh">Date refresh</label>
+                        <input class="form-task__field" id="date-refresh" type="datetime-local" disabled>
+                    </li>
+                    <li>
+                        <label for="date-remove">Date remove</label>
+                        <input class="form-task__field" id="date-remove" type="datetime-local" disabled>
+                    </li>
+                    <li>
+                        <label for="categories-task">Category</label>
+                        <input class="form-task__field" id="categories-task" list="dl_categories" readonly>
+                    </li>
+                    <li>
+                        <button class="form-task__button" id="add-task">Добавить задачу</button>
+                    </li>
+
+                  </ul>
+            </div>
+            <div class="field-list-task">
+                <p>Задача</p>
+            </div>
+        </div>
+        <script src="task1.js"></script>
+    </body>
+</html>
