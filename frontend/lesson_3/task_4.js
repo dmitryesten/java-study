@@ -7,9 +7,12 @@ class Animale{
         this._energy = 0;
     }
 
+    //REVU getter name should mach the property name
     get getName() {
         return this._name;
     }
+    //REVU setter name should mach the property name
+    //REVY Why are you using [this._name] instead of this._name. Do you expect destructuring here?
     set setName(valueName) {
         [this._name] = valueName;
     }
@@ -26,12 +29,14 @@ class Animale{
     }
     
     eat(numberEnergy){
+        //100 is max value of this._energy, not the max value of food energy
         if(numberEnergy > 100)
             console.log("Number's energy is excess!");
         else this._energy += numberEnergy;
     }
 
     say(message){
+        //REVU this method should display message
         return this._name + " say: " +message;
     }
 }
@@ -50,12 +55,14 @@ class Cat extends Animale{
 
     eat(numberEnergy){
         super.eat(numberEnergy);
+        //REVU whн not this.getEnergy ?
         if(super.getEnergy < 100)
             console.log("I want more");
         else if(super.getEnergy===100) console.log("I ate :) ");
     }
 
     say(message){
+        //It should add Meow to the each message
         return super.say(message);
     }
 
@@ -66,6 +73,7 @@ class Cat extends Animale{
 }
 
 class British extends Cat{
+    //REVU constructor is useless
     constructor(name, color){
         super(name, color);
     }
@@ -117,6 +125,7 @@ class Pitbul extends Dog{
     }
 }
 
+//REVU s is a bad name for variable
 const s = new Pitbul('s', 'a');
 console.log(s.guard());
 

@@ -9,6 +9,7 @@ const rl = readline.createInterface({
 });
 
 rl.question('Enter number: ', (number) => {
+    //REVU use Number.isNaN()  instead
     if (number != +number){
         rl.close(); throw new Error("Chars aren't valide");
     }
@@ -16,6 +17,7 @@ rl.question('Enter number: ', (number) => {
         set.add(number);
         rl.question('Enter number: ', (number) => {
             if (number != +number){
+                //REVU log error message and stop the programm correctly
                 rl.close(); throw new Error("Chars aren't valide");
             }
             else{
@@ -93,6 +95,7 @@ rl.question('Enter number: ', (number) => {
 
 
 function maxValue(set){
+    //REVU Math.max(...set)
     let array = [];
     for (let v of set) {
         array.push(v)

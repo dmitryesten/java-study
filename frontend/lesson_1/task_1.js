@@ -1,3 +1,7 @@
+//REVU the task is not completed ...
+//REVU https://learn.javascript.ru/article/coding-style/code-style.png
+//REVU Remove unused/commented code
+
 'use strict';
 var readlineSync = require('readline-sync');
 printNameGame();
@@ -12,12 +16,18 @@ var statusElementMatrix = {
     simbolO : 'o'
 };
 
+//REVU This is not a constructor, so it should not be started with an uppercase
+//REVU Is this object used anywhere in the code?
+//REVU Do not use this to access global object
 var User = {
     name : this.userName,
     simbol : statusElementMatrix.simbolX,
     set : function(x, y, matrix){
+        //REVU use decrement instead
         var row = minus(x); 
         var col = minus(y);
+            //REVU 1.test is undefined. 2.whatever it is, it's a bad name for variable
+            //REVU loop is useless here. just check if both i and j are valid numbers and within the field range
             for(var i = 0; i < test.length; i++){
                 for(var j = 0; j < test[i].length; j++){
                     if(i===row && j===col){
@@ -56,6 +66,7 @@ console.log(print(matrix));
 function start(){
     var stepUser;
     
+    //REVU use simple readline.question to read the user's input
     readlineSync.promptCLLoop({
         set: function(row, col) {
             checkException(row); checkException(col);
@@ -75,6 +86,8 @@ function start(){
 
 
 function create2DArray(){
+        //REVU more common practise in JS is using literals instead of constructors [['','',''], ['','',''], ['','','']]
+        //REVY Let's make this function more flexible: take initial values and field size from constant
         return new Array(new Array(' ', ' ',' '), new Array(' ', ' ',' '),new Array(' ', ' ',' '));
 };
 
