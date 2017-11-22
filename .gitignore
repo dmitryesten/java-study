@@ -6,6 +6,7 @@
 */target
 /bin
 /node_modules
+/frontend/.vscode/
 
 *.log.*
 *.log
