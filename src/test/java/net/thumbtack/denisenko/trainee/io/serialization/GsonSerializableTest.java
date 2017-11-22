@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.io.serializable;
+package net.thumbtack.denisenko.trainee.io.serialization;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;

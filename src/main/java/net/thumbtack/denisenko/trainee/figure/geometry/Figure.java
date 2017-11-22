@@ -11,10 +11,14 @@ public abstract class Figure implements Colored, Serializable{
 
     private Color color;
 
-    // REVU add constructor public Figure(String color) for this class and descendants 
+
     public Figure(Color color) {
         this.color = color;
     }
+    public Figure(String color) throws ColorException {
+        this.color = Color.colorFromString(color);
+    }
+
 
     public abstract void move(double newX, double newY);
     public abstract double area();

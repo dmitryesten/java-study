@@ -11,23 +11,24 @@ public class WriteRectangle {
 
     /**
      * Write field's rectangle to the binary file
-     * @param r - rectangle
+     * @param rectangle - rectangle
      * @param file - source binary file for writing
      * @throws IOException
      * @throws FileException
      * @throws IllegalAccessException
      */
-    public static void write(Rectangle r, File file) throws IOException, FileException, IllegalAccessException {
-        List<Object> list = getFields(r);
+    public void write(Rectangle rectangle, File file) throws IOException, FileException, IllegalAccessException {
+        List<Object> list = getFields(rectangle);
         try(DataOutputStream dout = new DataOutputStream(new FileOutputStream(file))) {
             for (Object field : list)
                 dout.write(field.toString().getBytes());
         } catch (FileNotFoundException e) {
-            throw new FileException("Ops, file is found", e.getCause());
+            throw new FileException("Ops, file is not found", e.getCause());
         }
     }
 
     /**
+     * Return collection fields of your Rectangle
      * @param rectangle - one of instance's rectangle
      * @return List<Object> that to have a lot of field's rectangle
      * @throws IllegalAccessException

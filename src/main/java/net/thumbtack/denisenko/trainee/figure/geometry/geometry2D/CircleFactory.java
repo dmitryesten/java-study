@@ -17,9 +17,8 @@ class CircleFactory {
         return numberInstances;
     }
 
-
-    // REVU remove, has no sense to set it manually. Or make private
-    public static void setNumberInstances(int numberInstances) {
+    
+    private static void setNumberInstances(int numberInstances) {
         CircleFactory.numberInstances = numberInstances;
     }
 }

@@ -1,5 +1,5 @@
-// REVU better net.thumbtack.denisenko.trainee.io.serialization
-package net.thumbtack.denisenko.trainee.io.serializable;
+
+package net.thumbtack.denisenko.trainee.io.serialization;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,9 +11,9 @@ import java.io.*;
 
 public class GsonSerializable {
 
-    public static String serialize(Trainee t){
+    public static String serialize(Trainee trainee){
         Gson gson = new Gson();
-        return gson.toJson(t);
+        return gson.toJson(trainee);
     }
 
     public static Trainee deserialize(String objectSerialized) throws JsonIOException, JsonSyntaxException{
@@ -33,12 +33,7 @@ public class GsonSerializable {
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
             Trainee t = gson.fromJson(reader, Trainee.class);
-            // REVU You do not need to JsonSyntaxException and throw your own JsonSyntaxException
-            // simply do nothing, let original JsonSyntaxException will be thrown
-        }catch (JsonSyntaxException ex){
-            throw new JsonSyntaxException("Json is malformed for read", ex.getCause());
-        }catch (JsonIOException ex){
-            throw new JsonIOException("Json is unable for reading", ex.getCause());
         }
     }
+
 }

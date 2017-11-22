@@ -1,6 +1,5 @@
-package net.thumbtack.denisenko.trainee.io.serializable;
+package net.thumbtack.denisenko.trainee.io.serialization;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.Test;

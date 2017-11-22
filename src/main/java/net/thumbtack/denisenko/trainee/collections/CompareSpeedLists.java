@@ -6,49 +6,42 @@ import java.util.Random;
 
 public class CompareSpeedLists {
 
-
+    private long startTime;
+    private long endTime;
 
     public long getSpeedADD(List<Integer> list, int numberValues){
-    	// REVU instead of date, better use System.nanoTime
-        Date startLinked = new Date();
+        startTime = System.nanoTime();
         for(int i = 0; i < numberValues; i++)
             list.add(i);
-        Date finishLinked = new Date();
+        endTime = System.nanoTime();
 
-        return  finishLinked.getTime() - startLinked.getTime();
+        return  endTime - startTime;
     }
 
 
     public long getSpeedGET(List<Integer> list, int numberValues, int minRandom, int maxRandom){
-    	// REVU The value of the local variable random is not used
-        Random random = new Random();
-        CompareSpeedLists.randomInRange(minRandom, maxRandom);
-
         for(int i = 0; i < numberValues; i++)
             list.add(i);
 
-        Date startLinked = new Date();
+        startTime = System.nanoTime();
         for(int i = 0; i < numberValues; i++)
             list.indexOf(list.get(CompareSpeedLists.randomInRange(minRandom, maxRandom)));
-        Date finishLinked = new Date();
+        endTime = System.nanoTime();
 
-        return  finishLinked.getTime() - startLinked.getTime();
+        return  endTime - startTime;
     }
 
 
     public long getSpeedREMOVE(List<Integer> list, int numberValues, int minRandom, int maxRandom){
-    	// REVU The value of the local variable random is not used
-        Random random = new Random();
-
         for(int i = 0; i < numberValues; i++)
             list.add(i);
 
-        Date startLinked = new Date();
+        startTime = System.nanoTime();
         for(int i = 0; i < numberValues; i++)
             list.remove(CompareSpeedLists.randomInRange(minRandom, list.size()));
-        Date finishLinked = new Date();
+        endTime = System.nanoTime();
 
-        return  finishLinked.getTime() - startLinked.getTime();
+        return  endTime - startTime;
     }
 
 

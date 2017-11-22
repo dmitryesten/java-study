@@ -1,5 +1,5 @@
 // REVU move to another package
-package net.thumbtack.denisenko.trainee.collections;
+package net.thumbtack.denisenko.trainee.trainee;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;

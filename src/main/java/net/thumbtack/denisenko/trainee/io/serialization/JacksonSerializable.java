@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.io.serializable;
+package net.thumbtack.denisenko.trainee.io.serialization;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -12,9 +12,9 @@ import java.io.IOException;
 
 public class JacksonSerializable {
 
-    public static String serializableJackson(Trainee t) throws JsonProcessingException {
+    public static String serializableJackson(Trainee trainee) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(t);
+        return objectMapper.writeValueAsString(trainee);
     }
 
     public static Trainee deserialiableJackson(String objectSerialized) throws IOException {

@@ -14,8 +14,6 @@ public class CompareSpeedListsTest {
 
     @Test
     public void getSpeedAdd() throws Exception {
-    	// REVU list not used
-        List<Integer> list = new ArrayList<>();
         CompareSpeedLists compare = new CompareSpeedLists();
         long msArrayList = compare.getSpeedADD(new ArrayList<Integer>(), 1000000);
         long msLinkedList = compare.getSpeedADD(new LinkedList<Integer>(), 1000000);

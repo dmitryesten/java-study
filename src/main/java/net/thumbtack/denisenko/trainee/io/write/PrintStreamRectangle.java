@@ -10,12 +10,11 @@ import java.io.PrintStream;
 
 public class PrintStreamRectangle {
 
-    public static void printStream(Rectangle r, File file) throws FileException {
+    public void printStream(Rectangle rectangle, File file) throws FileException {
         try(PrintStream ps = new PrintStream(new FileOutputStream(file))){
-            ps.println(r.toString());
+            ps.println(rectangle.toString());
         } catch (FileNotFoundException e) {
-        	// REVU found ?
-            throw new FileException("Ops, file is found", e.getCause());
+            throw new FileException("Ops, file is not found", e.getCause());
         }
     }
 

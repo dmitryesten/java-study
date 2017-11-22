@@ -1,5 +1,6 @@
 package net.thumbtack.denisenko.trainee.trainee;
 
+
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import org.junit.Test;
 

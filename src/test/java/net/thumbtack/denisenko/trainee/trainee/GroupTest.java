@@ -1,6 +1,7 @@
-package net.thumbtack.denisenko.trainee.collections;
+package net.thumbtack.denisenko.trainee.trainee;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
+import net.thumbtack.denisenko.trainee.trainee.Group;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.Test;
 

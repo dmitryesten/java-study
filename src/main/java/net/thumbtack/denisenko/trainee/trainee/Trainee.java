@@ -51,10 +51,6 @@ public class Trainee implements Serializable, Comparable<Trainee>{
 
 
     public void setRating(int rating) throws TraineeException {
-    	// REVU better reverse
-//        if(rating < 1 ||  rating > 5)
-//            throw new TraineeException(TraineeErrorCodes.ERROR_NUMBER_IS_NOT_CORRECT);
- //       this.rating = rating;
         if(rating >= 1 && rating <= 5)
             this.rating = rating;
         else throw new TraineeException(TraineeErrorCodes.ERROR_NUMBER_IS_NOT_CORRECT);

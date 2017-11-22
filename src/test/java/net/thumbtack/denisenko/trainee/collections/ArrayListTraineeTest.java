@@ -9,8 +9,8 @@ import java.util.*;
 
 public class ArrayListTraineeTest {
 
-    List<Trainee> listTtrainee = new ArrayList<>();
-    //List<Trainee> listTtrainee = new LinkedList<>()
+    List<Trainee> listTtrainee = new ArrayList<>();//new LinkedList<>()
+
 
     public ArrayListTraineeTest() throws TraineeException {
         listTtrainee.add(new Trainee("Tom","Folk", 5));
