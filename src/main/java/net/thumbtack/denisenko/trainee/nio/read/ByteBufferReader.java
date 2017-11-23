@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 
 public class ByteBufferReader {
 
-    public static StringBuilder read(File file) throws IOException, FileException {
+    public StringBuilder read(File file) throws IOException, FileException {
     	int count;
         StringBuilder string = new StringBuilder();
 
