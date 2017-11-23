@@ -10,6 +10,23 @@ while (true) {
     }
 };
 
+readlineSync.promptCLLoop({
+    set: function(row, col) {
+        checkException(row); checkException(col);
+        matrix = create2DArray();
+        //step1 
+        matrix = set(row, col, matrix);
+        console.log(print(matrix));
+        console.log("Ход PC:");
+        matrix = set(getRandomIndexArray(), getRandomIndexArray(), matrix);
+        console.log(print(matrix));
+
+    },
+    ex: function() { return true; }
+  });
+  console.log('Exited');
+};
+
 
 
 /*
