@@ -3,12 +3,9 @@ package net.thumbtack.denisenko.trainee.nio.read;
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
-import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
