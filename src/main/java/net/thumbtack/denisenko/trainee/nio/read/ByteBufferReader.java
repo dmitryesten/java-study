@@ -2,29 +2,44 @@ package net.thumbtack.denisenko.trainee.nio.read;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class ByteBufferReader {
 
-    public static String read(File file) throws IOException, FileException {
-    	// REVU you do not close FileInputStream
-    	// write two elements in try-with-resource\
-        String string = null;
-        /* in dev
-        try(ReadableByteChannel channel = new FileInputStream(file).getChannel()) {
-            ByteBuffer byteBuffer = ByteBuffer.allocate((int)file.length());
-            byte b = byteBuffer.get();
-            string += b;
+    public static StringBuilder read(File file) throws IOException, FileException {
+    	int count;
+        StringBuilder string = new StringBuilder();
+
+        try(ReadableByteChannel channel = Files.newByteChannel(ByteBufferReader.path(file))) {
+            ByteBuffer byteBuffer = ByteBuffer.allocate(64);
+            do {
+                count = channel.read(byteBuffer);
+                byteBuffer.rewind();
+                for (int i = 0; i < count ; i++)
+                    string.append((char)byteBuffer.get());
+            } while(count != -1);
+
+        } catch (IOException e) {
+            throw new FileException("Ops, file is not found", e.getCause());
         }
-        catch (IOException e) {
-            throw new FileException("Ops, file is found", e.getCause());
-        }*/
         return string;
+    }
+
+    private static Path path(File file) throws FileException {
+        Path path = null;
+        try{
+            path = Paths.get(String.valueOf(file));
+        }catch (InvalidPathException e){
+            throw new FileException("Ops, path did not noted correct", e.getCause());
+        }
+        return path;
     }
 
 }
