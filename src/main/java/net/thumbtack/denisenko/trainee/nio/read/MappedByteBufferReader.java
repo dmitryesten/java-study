@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 public class MappedByteBufferReader {
 
     public StringBuilder read(File file) throws FileException {
+    	// REVU see comment to ByteBufferReader
         StringBuilder stringResuult = new StringBuilder();
         try(FileChannel channel = (FileChannel) Files.newByteChannel(MappedByteBufferReader.path(file))){
             long sizeFile = channel.size();
@@ -26,6 +27,8 @@ public class MappedByteBufferReader {
         return  stringResuult;
     }
 
+    // REVU also, copy/paste. You do not need in this method at all, but if you need, do not duplicate it in different classes
+    // E.g. create class ByteBufferUtils and move it to this class. Or create superclass and move to it
     private static Path path(File file) throws FileException {
         Path path = null;
         try{
