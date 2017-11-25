@@ -1,22 +1,26 @@
 package net.thumbtack.denisenko.trainee.nio.read;
 
-import net.thumbtack.denisenko.trainee.exceptions.FileException;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 import java.io.File;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(MappedByteBufferReader.class)
 public class MappedByteBufferReaderTest {
 
     private File file;
 
     @Before
     public void setUp() throws Exception {
-        this.file = new File("rec2.dat");
+        this.file = new File("fields.dat");
     }
 
     @After
@@ -24,13 +28,13 @@ public class MappedByteBufferReaderTest {
         this.file.delete();
     }
 
-    @Test(expected = FileException.class)
+    @Test
     public void read() throws Exception {
-        MappedByteBufferReader fakeMappedByteBuffer = mock(MappedByteBufferReader.class);
-        when(fakeMappedByteBuffer.read(file)).thenReturn(new StringBuilder("test"));
-        when(fakeMappedByteBuffer.read(file)).thenThrow(new FileException());
-        fakeMappedByteBuffer.read(file);
-        verify(fakeMappedByteBuffer).read(file);
+        PowerMockito.mockStatic(MappedByteBufferReader.class);
+        PowerMockito.when(MappedByteBufferReader.read(file)).thenReturn(new StringBuilder("test"));
+        MappedByteBufferReader.read(file);
+        PowerMockito.verifyStatic();
     }
+
 
 }

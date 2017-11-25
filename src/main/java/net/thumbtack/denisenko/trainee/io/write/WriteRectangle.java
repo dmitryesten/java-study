@@ -2,6 +2,8 @@ package net.thumbtack.denisenko.trainee.io.write;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
+import net.thumbtack.denisenko.trainee.io.CheckBinaryFileFormat;
+
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class WriteRectangle {
      * @throws FileException
      * @throws IllegalAccessException
      */
-    public void write(Rectangle rectangle, File file) throws IOException, FileException, IllegalAccessException {
+    public static void write(Rectangle rectangle, File file) throws FileException, IllegalAccessException, IOException {
         List<Object> list = getFields(rectangle);
         try(DataOutputStream dout = new DataOutputStream(new FileOutputStream(file))) {
             for (Object field : list)
@@ -29,9 +31,9 @@ public class WriteRectangle {
 
     /**
      * Return collection fields of your Rectangle
-     * @param rectangle - one of instance's rectangle
      * @return List<Object> that to have a lot of field's rectangle
      * @throws IllegalAccessException
+     * @param rectangle
      */
     private static List<Object> getFields(Rectangle rectangle) throws IllegalAccessException {
         Class reflectionClass = rectangle.getClass();

@@ -1,19 +1,21 @@
 package net.thumbtack.denisenko.trainee.io.write;
 
-import net.thumbtack.denisenko.trainee.exceptions.FileException;
+
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 import java.io.File;
 
 
-import static org.mockito.Mockito.*;
-
-
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(FileWriterTrainee.class)
 public class FileWriterTraineeTest {
-
 
     private File file;
     private Trainee trainee;
@@ -33,34 +35,36 @@ public class FileWriterTraineeTest {
 
     @Test
     public void fileWriter() throws Exception {
-        FileWriterTrainee fakeFileWriterTrainee = mock(FileWriterTrainee.class);
-        fakeFileWriterTrainee.write(trainee, file);
-        verify(fakeFileWriterTrainee).write(trainee, file);
+        PowerMockito.mockStatic(FileWriterTrainee.class);
+        PowerMockito.doNothing().when(FileWriterTrainee.class);
+        FileWriterTrainee.write(trainee, file);
+        PowerMockito.verifyStatic();
     }
 
-
-    @Test(expected = TraineeException.class )
-    public void fileWriterThrowException() throws Exception {
-        FileWriterTrainee fakeFileWriterTrainee = mock(FileWriterTrainee.class);
-        fakeFileWriterTrainee.write(new Trainee("", "Roll", 7), file);
-        doThrow(new TraineeException()).when(fakeFileWriterTrainee).write(new Trainee("", "Roll", 7), file);
-
+    @Test(expected = TraineeException.class)
+    public void fileWriterException() throws Exception {
+        PowerMockito.mockStatic(FileWriterTrainee.class);
+        PowerMockito.doThrow(new TraineeException()).when(FileWriterTrainee.class);
+        FileWriterTrainee.write(new Trainee("", "",5), file);
+        PowerMockito.verifyStatic();
     }
+
 
 
     @Test
     public void writerMonoLine() throws Exception {
-        FileWriterTrainee fakeFileWriterTrainee = mock(FileWriterTrainee.class);
-        fakeFileWriterTrainee.writeMonoLine(trainee, file);
-        verify(fakeFileWriterTrainee).writeMonoLine(trainee, file);
+        PowerMockito.mockStatic(FileWriterTrainee.class);
+        PowerMockito.doNothing().when(FileWriterTrainee.class);
+        FileWriterTrainee.writeMonoLine(trainee, file);
+        PowerMockito.verifyStatic();
     }
 
     @Test(expected = TraineeException.class)
     public void writerMonoLineThrowException() throws Exception {
-        FileWriterTrainee fakeFileWriterTrainee = mock(FileWriterTrainee.class);
-        fakeFileWriterTrainee.writeMonoLine(new Trainee("asd", "Roll", 8), file);
-        doThrow(new TraineeException()).when(fakeFileWriterTrainee).writeMonoLine(new Trainee("asd", "Roll", 8), file);
-
+        PowerMockito.mockStatic(FileWriterTrainee.class);
+        PowerMockito.doThrow(new TraineeException()).when(FileWriterTrainee.class);
+        FileWriterTrainee.writeMonoLine(new Trainee("", "",5), file);
+        PowerMockito.verifyStatic();
     }
 
 

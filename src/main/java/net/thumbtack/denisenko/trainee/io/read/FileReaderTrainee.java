@@ -16,7 +16,7 @@ public class FileReaderTrainee {
      * @throws FileException if file is found
      * @throws IllegalAccessException if parameters's method is not correct
      */
-    public StringBuilder readLines(Trainee trainee, File file) throws IOException, FileException, IllegalAccessException {
+    public static StringBuilder readLines(Trainee trainee, File file) throws IOException, FileException, IllegalAccessException {
         FileWriterTrainee fileWriterTrainee = new FileWriterTrainee();
         fileWriterTrainee.write(trainee,file);
 

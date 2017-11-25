@@ -1,6 +1,7 @@
 package net.thumbtack.denisenko.trainee.io.serialization;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
+import net.thumbtack.denisenko.trainee.io.write.FileWriterTrainee;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
 
 import java.io.*;
@@ -17,12 +18,14 @@ public class Serializable {
     }
 
 
-    public static void deserializeOfFile(File file) throws IOException, ClassNotFoundException, FileException {
+    public static Trainee deserializeOfFile(File file) throws IOException, ClassNotFoundException, FileException {
+        Trainee trainee;
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            Trainee t = (Trainee) ois.readObject();
+             trainee= (Trainee) ois.readObject();
         } catch (FileNotFoundException e) {
             throw new FileException("Ops, file is not found", e.getCause());
         }
+        return trainee;
     }
 
 

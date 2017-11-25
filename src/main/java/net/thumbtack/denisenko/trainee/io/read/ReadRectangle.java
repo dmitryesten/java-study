@@ -1,6 +1,8 @@
 package net.thumbtack.denisenko.trainee.io.read;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
+
+
 import java.io.*;
 
 public class ReadRectangle {
@@ -12,7 +14,7 @@ public class ReadRectangle {
      * @throws IOException
      * @throws FileException
      */
-   public StringBuilder read(File file) throws IOException, FileException {
+   public static StringBuilder read(File file) throws IOException, FileException {
        StringBuilder stringResult = new StringBuilder();
        try(DataInputStream dinput = new DataInputStream(new FileInputStream(file))) {
            int iChar;

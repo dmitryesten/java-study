@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonParseException;
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.trainee.Trainee;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -31,14 +30,14 @@ public class JacksonSerializable {
         }
     }
 
-    public static void read(File file) throws FileException, JsonParseException, JsonMappingException {
+    public static ObjectMapper read(File file) throws FileException, JsonParseException, JsonMappingException {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             objectMapper.readValue(file, Trainee.class);
         } catch (IOException e) {
             throw new FileException(e.getMessage(), e.getCause());
         }
-
+        return objectMapper;
     }
 
 }

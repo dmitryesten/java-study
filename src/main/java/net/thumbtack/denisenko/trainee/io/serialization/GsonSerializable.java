@@ -29,11 +29,13 @@ public class GsonSerializable {
 
     }
 
-    public static void read(File file) throws IOException, JsonIOException, JsonSyntaxException {
+    public static Trainee read(File file) throws IOException, JsonIOException, JsonSyntaxException {
+        Trainee trainee;
         try(Reader reader = new InputStreamReader(new FileInputStream (file))){
             Gson gson = new GsonBuilder().create();
-            Trainee t = gson.fromJson(reader, Trainee.class);
+            trainee = gson.fromJson(reader, Trainee.class);
         }
+        return trainee;
     }
 
 }

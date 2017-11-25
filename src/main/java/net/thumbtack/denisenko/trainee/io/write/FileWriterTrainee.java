@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 
 public class FileWriterTrainee {
 
-    public  void write(Trainee trainee, File file) throws IllegalAccessException, FileException {
+    public static void write(Trainee trainee, File file) throws IllegalAccessException, FileException {
         Class<Trainee> reflectionClass = (Class<Trainee>) trainee.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
 
@@ -26,7 +26,7 @@ public class FileWriterTrainee {
     }
 
 
-    public void writeMonoLine(Trainee trainee, File file) throws IllegalAccessException, FileException {
+    public static void writeMonoLine(Trainee trainee, File file) throws IllegalAccessException, FileException {
         Class<Trainee> reflectionClass = (Class<Trainee>) trainee.getClass();
         Field[] publicFields = reflectionClass.getDeclaredFields();
 

@@ -5,14 +5,22 @@ import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.io.File;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(PrintStreamRectangle.class)
 public class PrintStreamRectangleTest {
     private File file;
+    private Rectangle rectangle = new Rectangle();
     @Before
     public void setUp() throws Exception {
         this.file = new File("test.dat");
@@ -25,18 +33,10 @@ public class PrintStreamRectangleTest {
 
     @Test
     public void printStream() throws Exception {
-        PrintStreamRectangle fakePrintStreamRectangle = mock(PrintStreamRectangle.class);
-        fakePrintStreamRectangle.printStream(new Rectangle(), file);
-        verify(fakePrintStreamRectangle).printStream(new Rectangle(), file);
-
-    }
-
-    @Test
-    public void printStreamThrowException() throws Exception {
-        PrintStreamRectangle fakePrintStreamRectangle = mock(PrintStreamRectangle.class);
-        fakePrintStreamRectangle.printStream(new Rectangle(), null);
-        doThrow(new FileException()).when(fakePrintStreamRectangle).printStream(new Rectangle(), null );
-
+        PowerMockito.mockStatic(PrintStreamRectangle.class);
+        PowerMockito.doThrow(new FileException()).when(PrintStreamRectangle.class);
+        PrintStreamRectangle.printStream(rectangle, file);
+        PowerMockito.verifyStatic();
     }
 
 }
