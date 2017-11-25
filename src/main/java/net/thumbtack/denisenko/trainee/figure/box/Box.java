@@ -1,7 +1,6 @@
 package net.thumbtack.denisenko.trainee.figure.box;
 
 import net.thumbtack.denisenko.trainee.figure.geometry.Figure;
-import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Circle;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
 import net.thumbtack.denisenko.trainee.interfaces.Square;
 import net.thumbtack.denisenko.trainee.mathoperation.FloatingOperations;
@@ -17,7 +16,7 @@ public class Box <T extends Figure> implements Square<Rectangle> {
 
 
     public T create(T b) throws IllegalAccessException, InstantiationException {
-        Class c = b.getClass();
+        Class<? extends Figure> c = b.getClass();
         return (T) c.newInstance();
     }
 
@@ -43,7 +42,6 @@ public class Box <T extends Figure> implements Square<Rectangle> {
     }
 
 
-    // REVU Box is a raw type. References to generic type Box<T> should be parameterized
     public static <T extends Figure>  boolean isSameSquareStatic(Box<Figure> box1, Box<Figure> box2){
         return FloatingOperations.compareValues(box1.square(), box2.square());
     }

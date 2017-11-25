@@ -1,6 +1,5 @@
 package net.thumbtack.denisenko.trainee.collections;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
