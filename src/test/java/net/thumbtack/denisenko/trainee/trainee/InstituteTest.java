@@ -1,7 +1,7 @@
 package net.thumbtack.denisenko.trainee.trainee;
 
 import net.thumbtack.denisenko.trainee.exceptions.TraineeException;
-import net.thumbtack.denisenko.trainee.trainee.Institute;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

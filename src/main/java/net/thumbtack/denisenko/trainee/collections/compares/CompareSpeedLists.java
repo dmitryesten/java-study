@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.collections;
+package net.thumbtack.denisenko.trainee.collections.compares;
 
 import java.util.List;
 import java.util.Random;

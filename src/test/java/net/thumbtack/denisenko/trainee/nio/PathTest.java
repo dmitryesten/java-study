@@ -1,12 +1,8 @@
 package net.thumbtack.denisenko.trainee.nio;
 
 import org.junit.*;
-import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
-
-
 import java.io.File;
-
 import java.nio.file.Path;
 
 

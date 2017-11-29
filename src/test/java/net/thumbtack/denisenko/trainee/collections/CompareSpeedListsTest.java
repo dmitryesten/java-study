@@ -1,14 +1,11 @@
 package net.thumbtack.denisenko.trainee.collections;
 
+import net.thumbtack.denisenko.trainee.collections.compares.CompareSpeedLists;
 import org.junit.Test;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class CompareSpeedListsTest {
 

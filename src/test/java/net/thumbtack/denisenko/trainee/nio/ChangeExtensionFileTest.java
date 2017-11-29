@@ -1,18 +1,12 @@
 package net.thumbtack.denisenko.trainee.nio;
 
-import net.thumbtack.denisenko.trainee.exceptions.FileException;
+
 import org.junit.*;
-import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
-import org.powermock.api.mockito.PowerMockito;
-
 import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
-
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import static org.powermock.api.mockito.PowerMockito.when;
+
 
 public class ChangeExtensionFileTest{
 
