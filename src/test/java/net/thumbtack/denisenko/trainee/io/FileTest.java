@@ -1,57 +1,106 @@
 package net.thumbtack.denisenko.trainee.io;
 
-
-import org.junit.Ignore;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 
 
 public class FileTest {
 
-    private File test = new File("test.txt");
+
+    private File file;
+
+    @Before
+    public void setUp(){
+        this.file = Mockito.mock(File.class);
+    }
+
+    @After
+    public void validate() {
+        validateMockitoUsage();
+    }
+
 
     @Test
     public void testName(){
-        assertEquals("test.txt",test.getName());
+        File file1 = Mockito.mock(File.class);
+        when(file1.getName()).thenReturn("test.txt");
+        file1.getName();
+        Mockito.verify(file1).getName();
     }
 
     @Test
     public void testCreate() throws IOException {
-        File create = new File("create.txt");
-        assertTrue(create.createNewFile());
+        File file1 = Mockito.mock(File.class);
+        when(file1.createNewFile()).thenReturn(true);
+        when(file1.createNewFile()).thenReturn(false);
+        when(file1.createNewFile()).thenThrow(new SecurityException());
 
-        assertTrue(create.isFile());
 
-        boolean exists = create.exists();
-        assertTrue(exists);
-
-        create.delete();
     }
 
 
     @Test
     public void testDelete() throws IOException {
-        File file = new File("testDelete.txt");
-        file.createNewFile();
-        assertTrue(file.delete());
+        when(file.delete()).thenReturn(true);
     }
 
-    @Ignore
+    @Test
     public void testRename() throws IOException {
-        File name = new File("create.txt");
-        //File rename = new File("recreate.txt");
-        name.renameTo(new File("rename.txt"));
-        assertEquals("rename.txt", name.getName());
+       when(file.renameTo(new File("newFile.txt"))).thenReturn(true);
+       when(file.renameTo(new File("newFile.txt"))).thenReturn(false);
+       when(file.renameTo(new File("newFile.txt"))).thenThrow(new SecurityException());
     }
 
 
     @Test
     public void testIsDirectory() throws IOException {
-        assertFalse(test.isDirectory());
+        when(file.isDirectory()).thenReturn(true);
+        when(file.isDirectory()).thenReturn(false);
+        //when(file.isDirectory()).thenThrow(new SecurityException());
+        file.isDirectory();
+        Mockito.verify(file).isDirectory();
+    }
+
+    @Test
+    public void testIsAbsolute() throws IOException {
+        when(file.isAbsolute()).thenReturn(true);
+        when(file.isAbsolute()).thenReturn(false);
+        when(file.isAbsolute()).thenThrow(new SecurityException());
+
+    }
+
+    @Test
+    public void testToPath() throws IOException {
+        when(file.toPath()).thenReturn(new File("test.txt").toPath());
+        file.toPath();
+        Mockito.verify(file).toPath();
+    }
+
+    @Test
+    public void testLength() throws IOException {
+        when(file.length()).thenReturn(Long.valueOf(45));
+        file.length();
+        Mockito.verify(file).length();
+    }
+
+    @Test
+    public void testMkdir() throws IOException {
+        when(file.mkdir()).thenReturn(true);
+        when(file.mkdir()).thenReturn(false);
+        file.mkdir();
+        Mockito.verify(file).mkdir();
+    }
+
+    @Test
+    public void testList() throws IOException {
+        when(file.list()).thenReturn(new String[]{"t1", "t2"});
+        file.list();
+        Mockito.verify(file).list();
     }
 
 
