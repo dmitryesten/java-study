@@ -1,4 +1,4 @@
-package net.thumbtack.denisenko.trainee.collections;
+package net.thumbtack.denisenko.trainee.collections.compares;
 
 import net.thumbtack.denisenko.trainee.collections.compares.CompareSpeedListSet;
 import org.junit.Test;
