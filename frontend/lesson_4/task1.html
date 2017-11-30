@@ -16,7 +16,7 @@
                     </li>
                     <li>
                         <label for="date-create">Date craete</label>
-                        <input class="form-task__field" id="date-create" type="datetime-local" disabled>
+                        <input class="form-task__field" id="date-create" type="datetime" placeholder="yyyy-mm-dd" disabled>
                     </li>
                     <li>
                         <label for="date-refresh">Date refresh</label>
@@ -28,7 +28,12 @@
                     </li>
                     <li>
                         <label for="categories-task">Category</label>
-                        <input class="form-task__field" id="categories-task" list="dl_categories" readonly>
+                        <select class="form-task__field"  id="categories" name="select" size="1">
+                            <!--<option value="s1">Чебурашка</option>
+                            <option value="s2">Крокодил Гена</option>
+                            <option value="s3">Шапокляк</option>
+                            <option value="s4">Крыса Лариса</option>-->
+                        </select>
                     </li>
                     <li>
                         <button class="form-task__button" id="add-task">Добавить задачу</button>
@@ -38,6 +43,9 @@
             </div>
             <div class="field-list-task">
                 <p>Задача</p>
+                <ul class="list-task" id="ltask">
+                    <li class="infcard-task">asd</li>
+                </ul>
             </div>
         </div>
         <script src="task1.js"></script>

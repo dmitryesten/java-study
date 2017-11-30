@@ -1,23 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 .wrapper {
     width: 1000px;
     height: 500px;
-    background: #5f9ea0;
+    background: #21282F;
     margin: 0 auto;
     left: 25%;
     position: absolute;
 }
 
 .header { 
-    color: sandybrown;
+    color: #DC8EB6;
     margin-left:40%;
-    margin-right: 30%; 
+    margin-right: 30%;
+    font-family: 'Roboto', sans-serif; 
     position: relative;
 }
 
 .field-add-task{
     width: 500px;
     height: inherit;
-    background:rgb(68, 114, 122);
+    background:#D7CBC7;
     float: left;
     position: relative;
 }
@@ -27,20 +29,21 @@
     position: relative;
 }
 .form-task label{
-    font-size: 14pt;
+    font-size: 15pt;
     display: block;
     padding-bottom: 4px;
+    font-family: 'Roboto', sans-serif;
     position: relative;
 }
 
 .form-task li{
     list-style-type: none;
-    padding:12px;
+    padding: 12px;
     position:relative;
 }
 
 .form-task .form-task__field{
-    height:20px;
+    height:30px;
     width:220px;
     padding:5px 8px;
     clear: left;
@@ -53,8 +56,20 @@
 .field-list-task{
     width: 500px;
     height: inherit;
-    background: blueviolet;
+    background: #BAC8D5;
     float: left;
     position: relative;
+}
+
+.list-task{
+    background: goldenrod;
+}
+
+.infcard-task{
+    width: 250px;
+    height: 90px;
+    margin: 0 auto;
+    list-style-type: none;
+    background: rebeccapurple;
 }
 
