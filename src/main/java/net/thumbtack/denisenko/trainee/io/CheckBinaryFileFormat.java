@@ -7,6 +7,9 @@ import java.io.File;
  * Class for checking format's a file for tasks
  * where there is need binary a file for I/O stream
  */
+
+// REVU seems that not used
+
 public class CheckBinaryFileFormat{
 
     public File getFile() {
@@ -14,6 +17,7 @@ public class CheckBinaryFileFormat{
     }
 
     private File file;
+    // REVU static final bin and dat
     private String bin = "bin";
     private String dat = "dat";
 
@@ -31,6 +35,7 @@ public class CheckBinaryFileFormat{
      */
     private String format(File file) throws FileException {
         StringBuilder fName = new StringBuilder(file.toString());
+        // REVU too complex. Why do you need to reverse ?
         return fName.reverse().substring((int) file.length(), 3);
     }
 

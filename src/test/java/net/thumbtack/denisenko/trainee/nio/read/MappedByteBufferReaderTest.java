@@ -31,6 +31,7 @@ public class MappedByteBufferReaderTest {
     @Test
     public void read() throws Exception {
         PowerMockito.mockStatic(MappedByteBufferReader.class);
+        // REVU Cannot make a static reference to the non-static method read(File) from the type MappedByteBufferReader
         PowerMockito.when(MappedByteBufferReader.read(file)).thenReturn(new StringBuilder("test"));
         MappedByteBufferReader.read(file);
         PowerMockito.verifyStatic();

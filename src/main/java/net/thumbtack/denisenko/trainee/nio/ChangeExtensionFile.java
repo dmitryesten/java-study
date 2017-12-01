@@ -32,6 +32,7 @@ public class ChangeExtensionFile {
         for (File file: listOfFiles) {
             name = new StringBuilder(file.getName());
             name.replace(name.indexOf("."), name.length(), ".bin");
+            // REVU better use Files.move
             file.renameTo(new File(folder.getAbsoluteFile()+"\\"+name.toString()));
         }
     }

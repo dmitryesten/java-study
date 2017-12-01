@@ -17,6 +17,7 @@ public class ByteBufferReader {
             ByteBuffer byteBuffer = ByteBuffer.allocate(Math.toIntExact(file.length()));
             byte[] array = byteBuffer.array();
             channel.read(ByteBuffer.wrap(array));
+            // REVU unnecessary to rewind
             byteBuffer.rewind();
             result = new String(array,"UTF-8");
         }
