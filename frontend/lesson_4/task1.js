@@ -1,30 +1,25 @@
 'use strict';
 
 let mapCategories = new Map();
-mapCategories.set(1, "Study");
-mapCategories.set(2, "Home");
-mapCategories.set(3, "Job");
-
-let newTaskLi = document.createElement('li');
+let newLi = document.createElement('li');
 let selectedOptionText;
 const addButton = document.getElementById('add-task');
 const categoryTagSelect = document.getElementById('categories');
 
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
+    createOptions(mapCategories);
+});
 
-   createOptions(mapCategories);
-   
-  });
-
-function createOptions(){
-    for (var [key, value] of mapCategories) {
-        var oOption = document.createElement("option");
-        oOption.appendChild(document.createTextNode(value));
-        oOption.setAttribute("value", key);
-        categoryTagSelect.appendChild(oOption);
-    }
-}
+function createOptions(mapCategories){
+  mapCategories = setMapCategories(mapCategories);
+  for (var [key, value] of mapCategories) {
+    var tagOption = document.createElement("option");
+    tagOption.appendChild(document.createTextNode(value));
+    tagOption.setAttribute("value", key);
+    categoryTagSelect.appendChild(tagOption);
+  }
+};
 
 function getTimeCreate () {
     let date = new Date();
@@ -33,9 +28,13 @@ function getTimeCreate () {
 
 let setTime = sel => {  
     document.getElementById(sel).innerText = getTimeCreate; 
-}
+};
 
-//Get array parameters of new task (name's task, date, date, date, category's task)
+
+/*
+Get array parameters 
+of new task (name's task, date, date, date, category's task)
+*/
 function getValuesAddedTask(){
     let array = [];
     var list = document.getElementsByClassName("form-task__field");
@@ -43,27 +42,46 @@ function getValuesAddedTask(){
         array.push(list[i].value);
     }
     return array;    
-}
+};
+
+function newTaskUser(){
+    let newLi =  document.createElement("li");
+    newLi.className = "infcard-task";
+    var textnode = document.createTextNode("Water");
+    newLi.appendChild(textnode);
+
+    var list = document.getElementById("ltask");
+    list.insertBefore(newLi, list.childNodes[0]);
+};
+
+function removeTaskUser(){
+
+
+};
 
 addButton.addEventListener('click', function(e){
     document.getElementById('date-create').value = getTimeCreate();
     selectedOptionText = getTextCurrentOption(categoryTagSelect);
-
-    let listTask = document.getElementById('ltask');
-    newTaskLi.innerHTML = Math.random();
-    listTask.insertBefore(newTaskLi, listTask.firstChild);
-    newTaskLi.innerHTML = Math.random();
-    listTask.insertBefore(newTaskLi, listTask.firstChild);
-  
+    
+    //newTaskUser();
 });
 
 
 function getTextCurrentOption(categorySelect){
-    let textOption;
-    if ( categorySelect.selectedIndex != -1){
-      textOption = categorySelect.options[categorySelect.selectedIndex].text;
-    }
-    return textOption;
+  let textOption;
+
+  if (categorySelect.selectedIndex != -1){
+    textOption = categorySelect.options[categorySelect.selectedIndex].text;
+  }
+  return textOption;
+};
+
+function setMapCategories(mapCategories){
+    mapCategories.set(1, "Study");
+    mapCategories.set(2, "Home");
+    mapCategories.set(3, "Job");
+
+    return mapCategories;
 };
 
 
