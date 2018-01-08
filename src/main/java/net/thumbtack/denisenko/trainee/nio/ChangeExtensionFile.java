@@ -1,10 +1,12 @@
 package net.thumbtack.denisenko.trainee.nio;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
-
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.nio.file.Files;
+
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 
 public class ChangeExtensionFile {
@@ -26,14 +28,13 @@ public class ChangeExtensionFile {
         }
     };
 
-    public void change(){
+    public void change() throws IOException {
         File[] listOfFiles = folder.listFiles(filter);
         StringBuilder name;
         for (File file: listOfFiles) {
             name = new StringBuilder(file.getName());
             name.replace(name.indexOf("."), name.length(), ".bin");
-            // REVU better use Files.move
-            file.renameTo(new File(folder.getAbsoluteFile()+"\\"+name.toString()));
+            Files.move(file.toPath(), new File(folder.getAbsoluteFile()+"\\"+name.toString()).toPath(), REPLACE_EXISTING );
         }
     }
 

@@ -1,17 +1,20 @@
 package net.thumbtack.denisenko.trainee.nio;
 
+import net.thumbtack.denisenko.trainee.io.write.PrintStreamRectangle;
 import org.junit.*;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
 import java.io.File;
 import java.nio.file.Path;
-
-
-
-import static org.mockito.Matchers.*;
+import static org.mockito.Matchers.anyBoolean;
 import static org.powermock.api.mockito.PowerMockito.when;
 
-public class PathTest {
 
+@RunWith(PowerMockRunner.class)
+public class PathTest {
 
     private Path path = Mockito.mock(Path.class);
 

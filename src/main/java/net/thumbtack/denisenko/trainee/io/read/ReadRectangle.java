@@ -1,8 +1,6 @@
 package net.thumbtack.denisenko.trainee.io.read;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
-
-
 import java.io.*;
 
 public class ReadRectangle {

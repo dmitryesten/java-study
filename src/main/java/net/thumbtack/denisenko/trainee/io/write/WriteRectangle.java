@@ -2,8 +2,6 @@ package net.thumbtack.denisenko.trainee.io.write;
 
 import net.thumbtack.denisenko.trainee.exceptions.FileException;
 import net.thumbtack.denisenko.trainee.figure.geometry.geometry2D.Rectangle;
-import net.thumbtack.denisenko.trainee.io.CheckBinaryFileFormat;
-
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
