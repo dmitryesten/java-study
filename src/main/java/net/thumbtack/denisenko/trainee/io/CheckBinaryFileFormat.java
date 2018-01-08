@@ -17,9 +17,8 @@ public class CheckBinaryFileFormat{
     }
 
     private File file;
-    // REVU static final bin and dat
-    private String bin = "bin";
-    private String dat = "dat";
+    private static String bin = "bin";
+    private static String dat = "dat";
 
     public CheckBinaryFileFormat(File file) throws FileException {
         setFile(file);
