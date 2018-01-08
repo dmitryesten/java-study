@@ -1,14 +1,26 @@
 package com.example.test.models;
 
-import java.util.List;
+import com.example.test.interfaces.IDoctor;
 
-public class Doctor {
 
+public class Doctor implements IDoctor {
+
+    public Doctor(){}
+
+    public Doctor(String persID, String name, String surname, String department, String ills){
+        this.persID = persID;
+        this.name = name;
+        this.surname = surname;
+        this.department = department;
+        this.ills = ills;
+    }
+
+    private String persID;
     private String name;
     private String surname;
-    private String personalNumber;
     private String department;
-    private List<String> listIlls;
+    private String ills;
+
 
     public String getName() {
         return name;
@@ -27,11 +39,11 @@ public class Doctor {
     }
 
     public String getPersonalNumber() {
-        return personalNumber;
+        return persID;
     }
 
-    public void setPersonalNumber(String privateNumber) {
-        this.personalNumber = privateNumber;
+    public void setPersonalNumber(String persID) {
+        this.persID = persID;
     }
 
     public String getDepartment() {
@@ -42,16 +54,17 @@ public class Doctor {
         this.department = department;
     }
 
-    public List<String> getListIlls() {
-        return listIlls;
+    public String getListIlls() {
+        return ills;
     }
 
+    public void setListIlls(String listIlls) {
+        StringBuilder currentListIlls = new StringBuilder(this.ills);
+        StringBuilder newIlls = new StringBuilder(listIlls);
 
+        currentListIlls.append(", " + newIlls);
+        this.ills = currentListIlls.toString();
 
-    public void setListIlls(List<String> listIlls) {
-        this.listIlls = listIlls;
     }
-
-
 
 }

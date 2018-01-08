@@ -13,10 +13,8 @@ public class HospitalApplication {
         return new Doctor();
     }
 
-
     public static void main(String[] args) {
         SpringApplication.run(HospitalApplication.class, args);
     }
-
 
 }
