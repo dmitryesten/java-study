@@ -62,14 +62,14 @@ public class DoctorServiceTest {
     }
 
     @Test
-    public void getListDoctors() throws Exception {
+    public void testGetListDoctors() throws Exception {
         assertEquals(expectedListDoctors.values().toString(), doctorService.getListDoctors().toString());
     }
 
     @Test
     public void update() throws Exception {
         docTest3.setName("Евгений");
-        doctorService.update(docTest3);
+        doctorService.update(docTest3.getPersonalNumber(), docTest3);
         assertEquals(docTest3, doctorService.getDoctorByPersonalNumber(docTest3.getPersonalNumber()));
     }
 

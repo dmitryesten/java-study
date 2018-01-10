@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -18,6 +19,8 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -32,7 +35,7 @@ public class DoctorEndpointTest {
         testD.add(new Doctor());
     }
 
-    @MockBean
+    @SpyBean
     private DoctorService service;
 
     @Autowired
@@ -71,6 +74,8 @@ public class DoctorEndpointTest {
 
     @Ignore
     public void addDoctor() throws Exception{
+
+
         this.mvc.perform(
                 post("/add_doctor", new Doctor()))
                 .andExpect(status().isOk())

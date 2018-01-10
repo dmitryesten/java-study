@@ -53,8 +53,8 @@ public class DoctorService {
         return doctorList.values();
     }
 
-    public void update(Doctor doctor){
-        doctorList.replace(doctor.getPersonalNumber(), doctor);
+    public void update(String id, Doctor doctor){
+        doctorList.replace(id, doctor);
     }
 
 

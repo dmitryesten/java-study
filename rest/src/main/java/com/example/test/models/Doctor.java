@@ -1,9 +1,17 @@
 package com.example.test.models;
 
 import com.example.test.interfaces.IDoctor;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 
 public class Doctor implements IDoctor {
+
+    private String persID;
+    private String name;
+    private String surname;
+    private String department;
+    private String ills;
+
 
     public Doctor(){}
 
@@ -14,12 +22,6 @@ public class Doctor implements IDoctor {
         this.department = department;
         this.ills = ills;
     }
-
-    private String persID;
-    private String name;
-    private String surname;
-    private String department;
-    private String ills;
 
 
     public String getName() {

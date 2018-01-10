@@ -24,6 +24,7 @@ public class DoctorEndpoint {
         this.doctorService = doctorService;
     }
 
+
     @ResponseBody
     @GetMapping("/hello")
     public String getHello() {
@@ -59,10 +60,10 @@ public class DoctorEndpoint {
 
     @ResponseBody
     @DeleteMapping(value = "/doctors/{personal_number}",
-                   produces = MediaType.APPLICATION_JSON_VALUE)
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public String deleteDoctor(@PathVariable("personal_number") String id){
-         doctorService.removeDoctor(id);
-         return "Doctor is deleted";
+        doctorService.removeDoctor(id);
+        return "Doctor is deleted";
     }
 
 
@@ -74,11 +75,12 @@ public class DoctorEndpoint {
         return "All doctors are deleted";
     }
 
+
     @ResponseBody
     @PutMapping(value = "/update_doctor/{personal_number}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public String update(@PathVariable("personal_number") String id){
-        doctorService.update(doctorService.getDoctorByPersonalNumber(id));
+    public String update(@PathVariable("personal_number") String id,  @RequestBody Doctor doctor){
+        doctorService.update(id, doctor);
         return "Doctor is updated";
     }
 
