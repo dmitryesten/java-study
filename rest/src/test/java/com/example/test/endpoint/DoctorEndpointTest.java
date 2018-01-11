@@ -74,8 +74,6 @@ public class DoctorEndpointTest {
 
     @Ignore
     public void addDoctor() throws Exception{
-
-
         this.mvc.perform(
                 post("/add_doctor", new Doctor()))
                 .andExpect(status().isOk())
@@ -100,7 +98,7 @@ public class DoctorEndpointTest {
                 .andExpect(content().string("All doctors are deleted"));
     }
 
-    @Test
+    @Ignore
     public void testUpdateDoctor() throws Exception {
         String testID = "01AD";
         this.mvc.perform(

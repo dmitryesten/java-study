@@ -2,6 +2,7 @@ package com.example.test.service;
 
 
 import com.example.test.models.Article;
+import com.example.test.models.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class ArticleService {
     private static DoctorService doctorService = new DoctorService(null);
 
     private static Map<String, Article> articlesDB = new HashMap<>();
+
 
     static {
         initDocs();
@@ -42,9 +44,12 @@ public class ArticleService {
     }
 
 
-    public Article getArticle(String ID){
-        return articlesDB.get(ID);
+    public Article getArticle(String articleID){
+        //List<Article> list = listByDoctor(doctor.getPersonalNumber());
+        //return foundArticle(articleID, list);
+        return articlesDB.get(articleID);
     }
+
 
     public void delete(String ID) {
         articlesDB.remove(ID);
@@ -52,6 +57,26 @@ public class ArticleService {
 
     public void update(String ID, Article article){
         articlesDB.replace(ID, article);
+    }
+
+    private List<Article> listByDoctor(String docID){
+        List<Article> result = new ArrayList<>();
+        for (Article a : articlesDB.values()) {
+            if(a.getDoctor().getPersonalNumber().equals(docID)){
+                result.add(a);
+            }
+        }
+        return result;
+    }
+
+    private Article foundArticle(String articleID, List<Article> list){
+        Article article = null;
+        for (Article iArticle : list) {
+            if(iArticle.getArticleID().equals(articleID)){
+                article = iArticle;
+            }
+        }
+        return article;
     }
 
 
