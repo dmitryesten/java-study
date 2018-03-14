@@ -1,36 +1,33 @@
 package net.thumbtack.denisenko.trainee.threads;
 
-import net.thumbtack.denisenko.trainee.threads.subthread.MyThreadOne;
-import net.thumbtack.denisenko.trainee.threads.subthread.MyThreadThree;
-import net.thumbtack.denisenko.trainee.threads.subthread.MyThreadTwo;
 
-public class MyThreadMain extends Thread {
+public class ThreadProperties extends Thread {
 
     private String name;
-    public MyThreadMain(String nameThread){
+    public ThreadProperties(String nameThread){
         this.name = nameThread;
 
     }
 
     @Override
-    public void run(){
+    public void run() {
         Thread.currentThread().setName(name);
-        System.out.println(Thread.currentThread().getName()+ " запустился");
+        System.out.println(Thread.currentThread().getName()+ " started");
 
         try{
             for (int i = 0; i < 5; i++){
-                System.out.println(Thread.currentThread().getName()+" Проснулся Работа№" + i + "\n " + Thread.currentThread().getName()+" заснул");
+                System.out.println(Thread.currentThread().getName()+Thread.currentThread().isAlive()+" Проснулся use Работа№" + i + "\n " + Thread.currentThread().getName()+" заснул");
                 Thread.sleep(3000);
             }
         }
         catch(InterruptedException e){
-            System.out.println("Поток прерван");
+            System.out.println("Main thread Interrupted");
         }
 
     }
 
 
-    public String propertiesThread(){
+    public String propertiesThread() {
         return "ID="+Thread.currentThread().getId() +
                 ",\nName = " + Thread.currentThread().getName() +
                 ",\nStackTrace = " + Thread.currentThread().getStackTrace() +
