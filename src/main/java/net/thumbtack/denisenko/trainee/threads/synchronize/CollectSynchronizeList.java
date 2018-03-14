@@ -31,6 +31,37 @@ public class CollectSynchronizeList {
         }
 
     }
+
+    synchronized void addValueList(){
+        for (int i = 0; i < 10000 ; i++) {
+            int rand = (int)(0 + (Math.random() * (list.size() - 0)));
+            list.add(rand);
+            System.out.println(ThreadAdd.currentThread().getName()+" ADD value: "+rand);
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted");
+        }
+
+    }
+
+    synchronized void removeValueList(){
+        for (int i = 0; i < 10000 ; i++) {
+            int rand = (int)(0 + (Math.random() * (list.size() - 0)));
+            int value = list.remove(rand);
+            System.out.println(ThreadAdd.currentThread().getName()+" indx: "+rand+" REMOVE value:"+value);
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted");
+        }
+
+    }
+
 }
 
 
@@ -42,11 +73,7 @@ class ThreadAddW extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 10000 ; i++) {
-            int rand = (int)(0 + (Math.random() * (target.list.size() - 0)));
-            target.list.add(rand);
-            System.out.println(ThreadAdd.currentThread().getName()+" ADD value: "+rand);
-        }
+      target.addValueList();
     }
 
 }
@@ -60,11 +87,7 @@ class ThreadRemoveW extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 10000 ; i++) {
-            int rand = (int)(0 + (Math.random() * (target.list.size() - 0)));
-            int value = target.list.remove(rand);
-            System.out.println(ThreadAdd.currentThread().getName()+" indx: "+rand+" REMOVE value:"+value);
-        }
+        target.removeValueList();
     }
 
 }
@@ -78,13 +101,8 @@ class ThreadAddRemoveW extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 10000 ; i++) {
-            int rand = (int)(0 + (Math.random() * (target.list.size() - 0)));
-            target.list.add(rand);
-            System.out.println(ThreadAdd.currentThread().getName()+" ADD value: "+rand);
-            int value = target.list.remove(rand);
-            System.out.println(ThreadAdd.currentThread().getName()+" indx: "+rand+" REMOVE value:"+value);
-        }
+       target.addValueList();
+       target.removeValueList();
     }
 
 }

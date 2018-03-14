@@ -26,5 +26,22 @@ public class CollectSynchronizeListTest {
 
     }
 
+    @Test
+    public void monoThreadCollectionList(){
+        CollectSynchronizeList collectSynchronizeList = new CollectSynchronizeList();
+        ThreadAddRemoveW callerOne = new ThreadAddRemoveW(collectSynchronizeList);
+
+        callerOne.start();
+
+        try {
+            callerOne.join();
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted");
+        }
+
+        assertTrue(CollectSynchronizeList.list.isEmpty());
+
+    }
+
 
 }
