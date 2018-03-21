@@ -31,6 +31,7 @@ public class ThreadArrayList {
 //
 //    }
 
+    // REVU see comment to CollectSynchronizeList
     synchronized void addValueList(){
         for (int i = 0; i < 10000 ; i++) {
             int rand = (int)(0 + (Math.random() * (list.size() - 0)));

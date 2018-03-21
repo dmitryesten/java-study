@@ -32,6 +32,12 @@ public class CollectSynchronizeList {
 
     }
 
+    // REVU it is not interesting
+    // you take a lock for all 10000 operations
+    // so if we enter addValueList, nobody can enter removeValueList
+    // so first will be 10000 adds and after this 10000 removes
+    // more interesting if the can work in parallel
+    // one thread adds 1 number, second thread removes 1 number
     synchronized void addValueList(){
         for (int i = 0; i < 10000 ; i++) {
             int rand = (int)(0 + (Math.random() * (list.size() - 0)));
@@ -49,6 +55,8 @@ public class CollectSynchronizeList {
 
     synchronized void removeValueList(){
         for (int i = 0; i < 10000 ; i++) {
+        	// REVU use Random class and nextInt method
+        	// REVU what will be if list.size == 0 ?
             int rand = (int)(0 + (Math.random() * (list.size() - 0)));
             int value = list.remove(rand);
             System.out.println(ThreadAdd.currentThread().getName()+" indx: "+rand+" REMOVE value:"+value);
